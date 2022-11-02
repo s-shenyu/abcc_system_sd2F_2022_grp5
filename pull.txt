@@ -1,7 +1,0 @@
-<<<<<<< Updated upstream
-バッティングテスト
-test
-=======
-あ
-
->>>>>>> Stashed changes
