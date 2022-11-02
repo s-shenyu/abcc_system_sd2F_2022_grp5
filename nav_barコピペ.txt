@@ -22,10 +22,6 @@
 	    margin: 0 auto;
 	    padding: 0 5%;
 	    width: 94%;
-<<<<<<< Updated upstream
-=======
-	    
->>>>>>> Stashed changes
     }
 
     .nav-item-log{
