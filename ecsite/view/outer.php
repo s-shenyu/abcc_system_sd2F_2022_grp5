@@ -44,7 +44,7 @@
 <div class="container-fluid"style="background-color: #000000;">
   <div class="row">
 
-    <nav class="navbar navbar-expand-md navbar-dark " aria-label="Fourth navbar example" >
+    <nav class=".fixed-top navbar navbar-expand-md navbar-dark " aria-label="Fourth navbar example" >
       <div class="container-fluid"style="background-color: #000000;">
         <a class="navbar-brand" href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
@@ -59,27 +59,27 @@
         <div class="collapse navbar-collapse" id="navbarsExample04">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">outer</a>
+              <a class="nav-link active" aria-current="page" href="./Outer.php">outer</a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link active" href="#">tops</a>
+              <a class="nav-link active" href="./Tops.php">tops</a>
             </li>
            
             <li class="nav-item">
-              <a class="nav-link active" href="#">bottom</a>
+              <a class="nav-link active" href="./Bottoms.php">bottom</a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link active" href="#">shose</a>
+              <a class="nav-link active" href="./Shose.php">shose</a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link active" href="#">accessory/etc</a>
+              <a class="nav-link active" href="./Accesory_etc.php">accessory/etc</a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link active" href="#">look</a>
+              <a class="nav-link active" href="./Look.php">look</a>
             </li>
           </ul>
           
@@ -92,10 +92,10 @@
           </form>
           
           <li class="nav-itemlog">
-            <a class="nav-link active" href="#">login</a>
+            <a class="nav-link active" href="./login.php">login</a>
           </li>
          
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="cart.php">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
               </svg>
@@ -125,5 +125,6 @@
 
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 </html>
