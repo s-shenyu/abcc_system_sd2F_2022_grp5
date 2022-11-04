@@ -165,7 +165,7 @@ class DBManagermst
         }
     }
 
-    public function userInfoChange($list)
+    public function userInfoChange($pass, $name, $id, $post, $ken, $shi, $ban, $detail, $number)
     {
         $pdo = $this->dbConnect();
         $sqln = "UPDATE user SET user_pass=?, user_name=? WHERE user_mail=? AND user_pass=?;";
@@ -186,7 +186,7 @@ class DBManagermst
         $ps->execute();
     }
 
-    public function buyGoods($list)
+    public function buyGoods($id, $addr, $goods)
     {
         $pdo = $this->dbConnect();
         $sqlh = "INSERT INTO perchaseH (user_id, purchaseH_address, purchaseH_date) VALUE (?, ?, ?);";
@@ -195,13 +195,13 @@ class DBManagermst
         $ps->bindValue(2, $addr, PDO::PARAM_STR);
         $ps->bindValue(3, date("c"), PDO::PARAM_STR);
         $ps->execute();
-        foreach ($variable as $key => $value) {
+        foreach ($goods as $good) {
             $sqlp = "INSERT INTO purchaseP (purchaseH_id, goods_id) VALUE (?, ?);
             UPDATE goods SET goods_flg=false WHERE goods_id=?;";
             $ps = $pdo->prepare($sqlp);
-            $ps->bindValue(1, $idp, PDO::PARAM_INT);
-            $ps->bindValue(2, $idg, PDO::PARAM_INT);
-            $ps->bindValue(3, $idg, PDO::PARAM_INT);
+            $ps->bindValue(1, $good['idp'], PDO::PARAM_INT);
+            $ps->bindValue(2, $good['idg'], PDO::PARAM_INT);
+            $ps->bindValue(3, $good['idg'], PDO::PARAM_INT);
             $ps->execute();
         }
     }
