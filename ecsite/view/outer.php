@@ -22,15 +22,17 @@
 	    margin: 0 auto;
 	    padding: 0 5%;
 	    width: 94%;
-<<<<<<< Updated upstream
-=======
-	    
->>>>>>> Stashed changes
-    }
+        }
 
-    .nav-item-log{
+    .nav-itemlog{
       padding: 0 0.5%;
     }
+
+    #serch_icn{
+      margin:0 1%;
+      color:white;
+    }
+
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -81,7 +83,7 @@
             </li>
           </ul>
           
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" id=serch_icn>
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg>
           </a>
@@ -89,7 +91,7 @@
             <input class="form-control" type="search" placeholder="search" aria-label="Search">
           </form>
           
-          <li class="nav-item-log">
+          <li class="nav-itemlog">
             <a class="nav-link active" href="#">login</a>
           </li>
          
@@ -102,6 +104,25 @@
         </ul>
       </div>
     </nav>
+    <div name="maindiv" class="container">
+  	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
+
+  	<div class="col-6 col-md-3">
+  		<div class="card" style="border-style:none;">
+        <button>
+        <a href="top1.html" class="img">
+      		<img src="img/outer.png" class="card-img-top" alt="...画像  " >
+      			<div class="card-body">
+        </a>
+              <h5 class="card-title">ウールジッパージャケット</h5>
+              <div class="iro">
+      				 <p class="card-text">¥121,000</p>
+              </div>
+      			</div>
+        </button>
+  		</div>
+  	</div>
+
   </div>
 </div>
 </body>
