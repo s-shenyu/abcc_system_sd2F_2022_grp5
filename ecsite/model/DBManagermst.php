@@ -103,6 +103,22 @@ class DBManagermst
         }
     }
 
+    public function goodsDetailWishlist($iduser, $idgoods)
+    {
+        $pdo = $this->dbConnect();
+        $sqls = "SELECT * FROM wishlist WHERE user_id=? AND goods_id=?;";
+        $ps = $pdo->prepare($sqls);
+        $ps->bindValue(1, $iduser, PDO::PARAM_INT);
+        $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
+        $ps->execute();
+        $selectdata = $ps->fetchAll();
+        if (count($selectdata) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // public function mypage($iduser)
     // {
     //     $pdo = $this->dbConnect();
@@ -132,22 +148,12 @@ class DBManagermst
     public function addNewWishlist($iduser, $idgoods)
     {
         $pdo = $this->dbConnect();
-        $sqls = "SELECT * FROM wishlist WHERE user_id=? AND goods_id=?;";
-        $ps = $pdo->prepare($sqls);
-        $ps->bindValue(1, $iduser, PDO::PARAM_INT);
-        $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
-        $ps->execute();
-        $selectdata = $ps->fetchAll();
-        if (count($selectdata) != 0) {
-            throw new BadMethodCallException("既に追加しました");
-        } else {
-            $sqli = "INSERT INTO wishlist (user_id, goods_id, wishlist_date) VALUE (?, ?, ?);";
+        $sqli = "INSERT INTO wishlist (user_id, goods_id, wishlist_date) VALUE (?, ?, ?);";
         $ps = $pdo->prepare($sqli);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
         $ps->bindValue(3, date("c"), PDO::PARAM_STR);
         $ps->execute();
-        }
     }
 
     public function showPurchase($iduser)
