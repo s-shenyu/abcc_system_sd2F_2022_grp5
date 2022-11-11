@@ -100,7 +100,7 @@
   		<div class="card" style="border-style:none;">
         <button>
         <a href="top1.html" class="img">
-      		<img src="img/outer.png" class="card-img-top" alt="..." >
+      		<img src="../public/img_site/outer/Outer_1.jpg" class="card-img-top" alt="..." >
       			<div class="card-body">
         </a>
               <h5 class="card-title">ウールジッパージャケット</h5>
@@ -115,29 +115,29 @@
   	<div class="col-6 col-md-3">
   		<div class="card" style="border-style:none;">
         <button>
-          <a href="top1.html">
-        		<img src="img/knit.png" class="card-img-top" alt="..."　style="border:none">
-        			<div class="card-body">
-          </a>
-      				<h5 class="card-title">クルーネックセーター</h5>
+        <a href="top1.html" class="img">
+      		<img src="../public/img_site/outer/Outer_2.jpg" class="card-img-top" alt="..." >
+      			<div class="card-body">
+        </a>
+              <h5 class="card-title">ウールジッパージャケット</h5>
               <div class="iro">
-                <p class="card-text">¥56,100</p>
+      				 <p class="card-text">¥121,000</p>
               </div>
-      			  </div>
-          </button>
-      	</div>
-  	 </div>
+      			</div>
+        </button>
+  		</div>
+  	</div>
 
   	<div class="col-6 col-md-3">
   		<div class="card" style="border-style:none;">
         <button>
-          <a href="top1.html">
-      		<img src="img/denim.png" class="card-img-top" alt="...">
+        <a href="top1.html" class="img">
+      		<img src="../public/img_site/outer/Outer_3.jpg" class="card-img-top" alt="..." >
       			<div class="card-body">
-          </a>
-      				<h5 class="card-title">ルーズフィットジーンズ</h5>
+        </a>
+              <h5 class="card-title">ウールジッパージャケット</h5>
               <div class="iro">
-      				 <p class="card-text">¥48,950</p>
+      				 <p class="card-text">¥121,000</p>
               </div>
       			</div>
         </button>
@@ -145,23 +145,20 @@
   	</div>
 
     <div class="col-6 col-md-3">
-      <div class="card" style="border-style:none;">
+  		<div class="card" style="border-style:none;">
         <button>
-          <a href="top1.html">
-            <img src="img/sho.png" class="card-img-top" alt="...">
-              <div class="card-body">
-          </a>
-                <h5 class="card-title">ハイカットスニーカー</h5>
-                <div class="iro">
-                  <p class="card-text">¥41,800</p>
-                </div>
+        <a href="top1.html" class="img">
+      		<img src="../public/img_site/outer/Outer_4.jpg" class="card-img-top" alt="..." >
+      			<div class="card-body">
+        </a>
+              <h5 class="card-title">ウールジッパージャケット</h5>
+              <div class="iro">
+      				 <p class="card-text">¥121,000</p>
               </div>
+      			</div>
         </button>
-      </div>
-    </div>
-
-      
-
+  		</div>
+  	</div>
   	</div>
   </div>
 

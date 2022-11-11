@@ -100,10 +100,10 @@
   		<div class="card" style="border-style:none;">
         <button>
         <a href="top1.html" class="img">
-      		<img src="img/outer.png" class="card-img-top" alt="..." >
+      		<img src="../public/img_site/Tops/Tops_1.jpg" class="card-img-top" alt="..." >
       			<div class="card-body">
         </a>
-              <h5 class="card-title">ウールジッパージャケット</h5>
+              <h5 class="card-title">ロゴクルーネック セーター </h5>
               <div class="iro">
       				 <p class="card-text">¥121,000</p>
               </div>
@@ -116,10 +116,10 @@
   		<div class="card" style="border-style:none;">
         <button>
           <a href="top1.html">
-        		<img src="img/knit.png" class="card-img-top" alt="..."　style="border:none">
+        		<img src="../public/img_site/Tops/Tops_2.jpg" class="card-img-top" alt="..."　style="border:none">
         			<div class="card-body">
           </a>
-      				<h5 class="card-title">クルーネックセーター</h5>
+      				<h5 class="card-title">ロゴクルーネック セーター </h5>
               <div class="iro">
                 <p class="card-text">¥56,100</p>
               </div>
@@ -132,10 +132,10 @@
   		<div class="card" style="border-style:none;">
         <button>
           <a href="top1.html">
-      		<img src="img/denim.png" class="card-img-top" alt="...">
+      		<img src="../public/img_site/Tops/Tops_3.jpg" class="card-img-top" alt="...">
       			<div class="card-body">
           </a>
-      				<h5 class="card-title">ルーズフィットジーンズ</h5>
+      				<h5 class="card-title">ロゴクルーネック セーター </h5>
               <div class="iro">
       				 <p class="card-text">¥48,950</p>
               </div>
@@ -148,10 +148,10 @@
       <div class="card" style="border-style:none;">
         <button>
           <a href="top1.html">
-            <img src="img/sho.png" class="card-img-top" alt="...">
+            <img src="../public/img_site/Tops/Tops_4.jpg" class="card-img-top" alt="...">
               <div class="card-body">
           </a>
-                <h5 class="card-title">ハイカットスニーカー</h5>
+                <h5 class="card-title">ロゴクルーネック セーター </h5>
                 <div class="iro">
                   <p class="card-text">¥41,800</p>
                 </div>
