@@ -5,8 +5,7 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <title>OnLineShop</title>
     <style>
-
-    .nav-item{
+      .nav-item{
       display: flex;
 	    margin: 0 auto;
 	    padding: 0 5%;
@@ -21,21 +20,20 @@
       margin:0 1%;
       color:white;
     }
-
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 </head>
 
-<body background="img/watercolor_00395.jpeg">
-
+<body background="../img/watercolor_00395.jpeg">
 <div class="container-fluid"style="background-color: #000000;">
+<h2>検索結果</h2>
   <div class="row"　>
 
-    <nav class=".fixed-top navbar navbar-expand-md navbar-dark " aria-label="Fourth navbar example" >
+  <nav class=".fixed-top navbar navbar-expand-md navbar-dark " aria-label="Fourth navbar example" >
       <div class="container-fluid"style="background-color: #000000;">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
             <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
@@ -103,10 +101,10 @@
   		<div class="card" style="border-style:none;">
         <button>
         <a href="top1.html" class="img">
-      		<img src="img/outer.png" class="card-img-top" alt="..." >
+      		<img src="../public/img_site/bottoms/Bottoms_1.jpg" class="card-img-top" alt="..." >
       			<div class="card-body">
         </a>
-              <h5 class="card-title">ウールジッパージャケット</h5>
+              <h5 class="card-title">ルーズブーツカットジーンズ</h5>
               <div class="iro">
       				 <p class="card-text">¥121,000</p>
               </div>
@@ -118,29 +116,29 @@
   	<div class="col-6 col-md-3">
   		<div class="card" style="border-style:none;">
         <button>
-          <a href="top1.html">
-        		<img src="img/knit.png" class="card-img-top" alt="..."　style="border:none">
-        			<div class="card-body">
-          </a>
-      				<h5 class="card-title">クルーネックセーター</h5>
+        <a href="top1.html" class="img">
+      		<img src="../public/img_site/bottoms/Bottoms_7.jpg" class="card-img-top" alt="..." >
+      			<div class="card-body">
+        </a>
+              <h5 class="card-title">ルーズブーツカットジーンズ</h5>
               <div class="iro">
-                <p class="card-text">¥56,100</p>
+      				 <p class="card-text">¥121,000</p>
               </div>
-      			  </div>
-          </button>
-      	</div>
-  	 </div>
+      			</div>
+        </button>
+  		</div>
+  	</div>
 
   	<div class="col-6 col-md-3">
   		<div class="card" style="border-style:none;">
         <button>
-          <a href="top1.html">
-      		<img src="img/denim.png" class="card-img-top" alt="...">
+        <a href="top1.html" class="img">
+      		<img src="../public/img_site/bottoms/Bottoms_8.jpg" class="card-img-top" alt="..." >
       			<div class="card-body">
-          </a>
-      				<h5 class="card-title">ルーズフィットジーンズ</h5>
+        </a>
+              <h5 class="card-title">ルーズブーツカットジーンズ</h5>
               <div class="iro">
-      				 <p class="card-text">¥48,950</p>
+      				 <p class="card-text">¥121,000</p>
               </div>
       			</div>
         </button>
@@ -148,30 +146,26 @@
   	</div>
 
     <div class="col-6 col-md-3">
-      <div class="card" style="border-style:none;">
+  		<div class="card" style="border-style:none;">
         <button>
-          <a href="top1.html">
-            <img src="img/sho.png" class="card-img-top" alt="...">
-              <div class="card-body">
-          </a>
-                <h5 class="card-title">ハイカットスニーカー</h5>
-                <div class="iro">
-                  <p class="card-text">¥41,800</p>
-                </div>
+        <a href="top1.html" class="img">
+      		<img src="../public/img_site/bottoms/Bottoms_4.jpg" class="card-img-top" alt="..." >
+      			<div class="card-body">
+        </a>
+              <h5 class="card-title">ルーズブーツカットジーンズ</h5>
+              <div class="iro">
+      				 <p class="card-text">¥121,000</p>
               </div>
+      			</div>
         </button>
-      </div>
-    </div>
-
-      
-
+  		</div>
   	</div>
+  	</div>
+
   </div>
 
-
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-</body>
+
+  </body>
 
 </html>
