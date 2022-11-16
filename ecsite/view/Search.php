@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 </head>
 
-<body background="../img/watercolor_00395.jpeg" class="1080px">
+<body background="../img/watercolor_00395.jpeg" class="108>
 <div class="container-fluid"style="background-color: #000000;">
   <div class="row">
   <nav class=".fixed-top navbar navbar-expand-md navbar-dark " aria-label="Fourth navbar example" >
