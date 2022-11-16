@@ -32,7 +32,7 @@
 
   <nav class=".fixed-top navbar navbar-expand-md navbar-dark " aria-label="Fourth navbar example" >
       <div class="container-fluid"style="background-color: #000000;">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
             <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
@@ -78,7 +78,7 @@
           </form>
           
           <li class="nav-itemlog">
-            <a class="nav-link active" href="#">login</a>
+            <a class="nav-link active" href="login.php">login</a>
           </li>
          
             <a class="navbar-brand" href="cart.php">
@@ -93,17 +93,17 @@
   </div>
 </div>
 
-  <div name="maindiv"　class="container">
+<div name="maindiv"　class="container">
   	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
 
   	<div class="col-6 col-md-3">
   		<div class="card" style="border-style:none;">
         <button>
         <a href="top1.html" class="img">
-      		<img src="img/outer.png" class="card-img-top" alt="..." >
+      		<img src="../public/img_site/Accesory_etc/Acce_1.jpg" class="card-img-top" alt="..." >
       			<div class="card-body">
         </a>
-              <h5 class="card-title">ウールジッパージャケット</h5>
+              <h5 class="card-title">リッチウールフリンジスカーフ </h5>
               <div class="iro">
       				 <p class="card-text">¥121,000</p>
               </div>
@@ -116,10 +116,10 @@
   		<div class="card" style="border-style:none;">
         <button>
           <a href="top1.html">
-        		<img src="img/knit.png" class="card-img-top" alt="..."　style="border:none">
+        		<img src="../public/img_site/Accesory_etc/Acce_3.jpg" class="card-img-top" alt="..."　style="border:none">
         			<div class="card-body">
           </a>
-      				<h5 class="card-title">クルーネックセーター</h5>
+      				<h5 class="card-title">リッチウールフリンジスカーフ </h5>
               <div class="iro">
                 <p class="card-text">¥56,100</p>
               </div>
@@ -132,10 +132,10 @@
   		<div class="card" style="border-style:none;">
         <button>
           <a href="top1.html">
-      		<img src="img/denim.png" class="card-img-top" alt="...">
+      		<img src="../public/img_site/Accesory_etc/Acce_8.jpg" class="card-img-top" alt="...">
       			<div class="card-body">
           </a>
-      				<h5 class="card-title">ルーズフィットジーンズ</h5>
+      				<h5 class="card-title">リッチウールフリンジスカーフ</h5>
               <div class="iro">
       				 <p class="card-text">¥48,950</p>
               </div>
@@ -148,10 +148,10 @@
       <div class="card" style="border-style:none;">
         <button>
           <a href="top1.html">
-            <img src="img/sho.png" class="card-img-top" alt="...">
+            <img src="../public/img_site/Accesory_etc/Acce_9.jpg" class="card-img-top" alt="...">
               <div class="card-body">
           </a>
-                <h5 class="card-title">ハイカットスニーカー</h5>
+                <h5 class="card-title">リッチウールフリンジスカーフ </h5>
                 <div class="iro">
                   <p class="card-text">¥41,800</p>
                 </div>
@@ -162,7 +162,7 @@
 
       
 
-  	</div>
+  	</div
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
