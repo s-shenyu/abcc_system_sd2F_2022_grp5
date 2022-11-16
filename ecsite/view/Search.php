@@ -26,11 +26,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 </head>
 
-<body background="../img/watercolor_00395.jpeg">
+<body background="../img/watercolor_00395.jpeg" class="1080px">
 <div class="container-fluid"style="background-color: #000000;">
-<h2>検索結果</h2>
-  <div class="row"　>
-
+  <div class="row">
   <nav class=".fixed-top navbar navbar-expand-md navbar-dark " aria-label="Fourth navbar example" >
       <div class="container-fluid"style="background-color: #000000;">
         <a class="navbar-brand" href="index.php">
@@ -93,25 +91,11 @@
     </nav>
   </div>
 </div>
-
+    
   <div name="maindiv"　class="container">
   	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
 
-  	<div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-        <a href="top1.html" class="img">
-      		<img src="../public/img_site/bottoms/Bottoms_1.jpg" class="card-img-top" alt="..." >
-      			<div class="card-body">
-        </a>
-              <h5 class="card-title">ルーズブーツカットジーンズ</h5>
-              <div class="iro">
-      				 <p class="card-text">¥121,000</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
+  	
 
   	<div class="col-6 col-md-3">
   		<div class="card" style="border-style:none;">
@@ -145,22 +129,6 @@
   		</div>
   	</div>
 
-    <div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-        <a href="top1.html" class="img">
-      		<img src="../public/img_site/bottoms/Bottoms_4.jpg" class="card-img-top" alt="..." >
-      			<div class="card-body">
-        </a>
-              <h5 class="card-title">ルーズブーツカットジーンズ</h5>
-              <div class="iro">
-      				 <p class="card-text">¥121,000</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
-  	</div>
 
   </div>
 
