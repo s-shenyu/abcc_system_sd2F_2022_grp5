@@ -153,24 +153,21 @@
         <h3 style="padding-top: 30px; padding-bottom:50px; padding-left:30px; text-align:left">購入アイテム</h3>
 
        <div class="row">
-          <div class="col-7 text-dark "><p style="position:relative;left:280px;">アイテム名</p></div>
-          <div class="col-5 text-dark"><p style="position:relative;left:110px;">単価(税込)</p></div>
+          <div class="col-7 text-dark "><p style="position:relative;left:380px;">アイテム名</p></div>
+          <div class="col-5 text-dark"><p style="position:relative;left:230px;">小計(税込)</p></div>
        </div>
 
        <hr width="100%"/>
 
-       <div class="row mt-4">
-        <div class="col-md-2">
+       <div class="row mt-3">
+        <div class="col-md-3">
         <img src="../public/img_site/s.jpg" width="150" height="150">
         </div>
           <div class="col-md-6 text-dark ">
                 Embroidered MA-1 blouson "Black" [@zastin_tcp] <br>
           </div>
-          <div class="col-md-2 text-dark">
+          <div class="col-md-3 text-dark">
               <p class="text-center">¥29,800</p>
-          </div>
-          <div class="col-md-2 text-dark">
-              <p class="text-center">20XX/XX/XX</p>
           </div>
         </div>  
 
