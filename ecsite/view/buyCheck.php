@@ -126,92 +126,85 @@
         <nobr class="" >
     <font color="silver">
     ご注文方法の指定
+    </font>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">  <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/></svg>
     <font color="white">
     ご注文内容の確認
+    </font>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">  <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/></svg>
     <font color="silver">
     ご注文完了
-    </font>
-    </font>
     </font>
     </nobr>
   </div>
 </div>
 
-<div class="container">
+<div name="" class="container">
     <div class="col-md-10 offset-md-1 mt-5 mb-5" >
       <div style="background-color:#FFFF; style="padding: 1em;">
 
         <h3 style="padding-top: 30px; padding-bottom: 50px;padding-left: 30px; text-align:left">購入アイテム</h3>
 
-        <div class="row mt-3">
-    <div class="col-md-6"><p class="text-center">アイテム名</p></div>
-    <div class="col-md-2 text-dark"><p class="text-center">単価(税込)</p></div>
-</div>
-<hr style="margin: 1px"/>
+       <div class="row mt-3">
+          <div class="col-md-6"><p class="text-center">アイテム名</p></div>
+          <div class="col-md-2 text-dark"><p class="text-center">単価(税込)</p></div>
+       </div>
 
-<div class="row mt-3" style="padding-left:15px;padding-bottom:15px;">
-    <div class="col-md-6 text-dark">
-       <img src="img/x.jpg" width="150" height="150" style="padding-left:1px;">
-       [HEōS]Western blouson<br><br>
-       サイズ：２<br><br>
-    </div>
-	<div class="col-md-2 text-dark">
-        <p class="text-center">¥78,980</p>
-    </div>
-    <div class="col-md-2 text-dark">
-        <table>
-            <tr>
-            <td><button class="btn btn-primary"style="width: 150px;">カートに入れる</button></td>
-            <td><button class="btn btn-outline-dark"style="width: 80px;">はずす</button></td>
-            </tr>
-        </table>
-    </div>
-</div>
+       <hr style="margin: 1px"/>
 
-<div class="row mt-3" style="padding-left:15px;padding-bottom:15px;">
-    <div class="col-md-6 text-dark">
-    <img src="img/f.jpg" width="150" height="150" style="padding-left:1px;">
-        
-    </div>
-    <div class="col-md-6 text-dark" style="padding-left:1px;">
-    Double-breasted setup & shirt & tie [@zastin_tcp] <br><br>
-    </div>
-    <div class="col-md-2 text-dark">
-        <p class="text-center">¥49,800</p>
-    </div>
-    <div class="col-md-2 text-dark">
-        <table>
-            <tr>
-            <td><button class="btn btn-primary"style="width: 150px;">カートに入れる</button></td>
-            <td><button class="btn btn-outline-dark"style="width: 80px;">はずす</button></td>
-            </tr>
-        </table>
-    </div>
-</div>
+      <div class="row mt-3" style="padding-left:15px;padding-bottom:15px;">
+          <div class="col-md-6 text-dark">
+            <img src="img/x.jpg" width="150" height="150" style="padding-left:1px;">
+            <h6>[HEōS]Western blouson<br>サイズ：２</h6>
+          </div>
+	      <div class="col-md-2 text-dark">
+              <p class="text-center">¥78,980</p>
+        </div>
+          <div class="col-md-2 text-dark">
+              <table>
+                  <tr>
+                  <td><button class="btn btn-primary"style="width: 150px;">カートに入れる</button></td>
+                  <td><button class="btn btn-outline-dark"style="width: 80px;">はずす</button></td>
+                  </tr>
+              </table>
+          </div>
+        </div>
 
-<div class="row mt-3" style="padding-left:15px;padding-bottom:15px;">
-    <div class="col-md-6 text-dark">
-    <img src="img/s.jpg" width="150" height="150" style="padding-left:1px;">
-          Embroidered MA-1 blouson "Black" [@zastin_tcp] <br><br>
-    </div>
-    <div class="col-md-2 text-dark">
-        <p class="text-center">¥29,800</p>
-    </div>
-    <div class="col-md-2 text-dark">
-        <table>
-            <tr>
-            <td><button class="btn btn-primary"style="width: 150px;">カートに入れる</button></td>
-            <td><button class="btn btn-outline-dark"style="width: 80px;">はずす</button></td>
-            </tr>
-        </table>
-    </div>
-</div>
+       <div class="col-md-6 text-dark">
+            <img src="img/x.jpg" width="150" height="150" style="padding-left:1px;">
+            <h6>[HEōS]Western blouson<br>サイズ：２</h6>
+          </div>
+	      <div class="col-md-2 text-dark">
+              <p class="text-center">¥78,980</p>
+        </div>
+          <div class="col-md-2 text-dark">
+              <table>
+                  <tr>
+                  <td><button class="btn btn-primary"style="width: 150px;">カートに入れる</button></td>
+                  <td><button class="btn btn-outline-dark"style="width: 80px;">はずす</button></td>
+                  </tr>
+               </table>
+           </div>
+       </div>
 
-      </div>
-    </div>
-</div>
+       <div class="col-md-6 text-dark">
+              <img src="img/x.jpg" width="150" height="150" style="padding-left:1px;">
+              <h6>[HEōS]Western blouson<br>サイズ：２</h6>
+        </div>
+          <div class="col-md-2 text-dark">
+                <p class="text-center">¥78,980</p>
+          </div>
+            <div class="col-md-2 text-dark">
+                <table>
+                    <tr>
+                    <td><button class="btn btn-primary"style="width: 150px;">カートに入れる</button></td>
+                    <td><button class="btn btn-outline-dark"style="width: 80px;">はずす</button></td>
+                    </tr>
+                </table>
+            </div>
+         </div>
+       </div>
+  </div>
 </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
