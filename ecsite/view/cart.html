@@ -5,7 +5,15 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>カート</title>
 <style>
- 
+.nav-item{
+  display: flex;
+  margin: 0 auto;
+  padding: 0 5%;
+  width: 94%;
+  }
+.nav-itemlog{
+  padding: 0 0.5%;
+}
 </style>
 <link href="../public/css/style2.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -15,79 +23,143 @@
 
 </head>
 
-<body>
-<div name="maindiv"class="container">
-   
-<h1 class="text-dark text-center">LOGO</h1>
-<div class="row">
-    <div class="col-md-12 text-dark text-left">
-      <font size="5">カートに入ってるアイテム</font>
-    </div>
- </div>
- <hr>
+<body background="../img/watercolor_00395.jpeg">
+  <div class="container-fluid"style="background-color: #000000;">
+    <div class="row"　>
 
- <div class="row mt-3">
-  <div class="col-md-6"><p class="text-center">アイテム名</p></div>
-  <div class="col-md-2 text-dark"><p class="text-center">単価(税込)</p></div>
-  <div class="col-md-2 text-dark"><p class="text-center">数量</p></div>
-  <div class="col-md-2 text-dark"><p class="text-center">小計(税込)</p></div>
-</div>
-<hr style="margin-top: 1px"/>
-   
-<div class="row mt-3">
-	<div class="col-md-6 text-dark">
-		
-    <img src="img/x.jpg" width="150" height="150" align="left">
-      HEōS]Western blouson<br><br>
-      サイズ：２<br><br>
-    <button class="btn btn-light">x削除</button>
-  </div>
-	<div class="col-md-2 text-dark">
-		
-    <p class="text-center">¥78,980</p>
-  </div>
-  <div class="col-md-2 text-dark">
-		<div class="spinner-container">
-      <span class="spinner-sub disabled">-</span>
-      <input class="spinner" type="number" min="0" max="5" value="0">
-      <span class="spinner-add">+</span>
+      <nav class="navbar navbar-expand-md navbar-dark " aria-label="Fourth navbar example" >
+        <div class="container-fluid"style="background-color: #000000;">
+          <a class="navbar-brand" href="Top.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+              <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+          </svg>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample04">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Outer.php">outer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="Tops.php">tops</a>
+              <li class="nav-item">
+                <a class="nav-link active" href="Bottoms.php">bottom</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="Shose.php">shose</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="Accesory_etc.php">accessory/etc</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">look</a>
+              </li>
+            </ul>
+            <a class="navbar-brand" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </a>
+            <form role="search">
+              <input class="form-control" type="search" placeholder="search" aria-label="Search">
+            </form>
+            <li class="nav-itemlog">
+              <a class="nav-link active" href="#">login</a>
+            </li>
+              <a class="navbar-brand" href="Cart.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+              </a>
+          </div>
+        </div>
+      </nav>
     </div>
-	</div>
-  <div class="col-md-2 text-dark">
-    <p class="text-center">¥78,980</p>
-	</div>
+  </div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-10 offset-md-1 mt-5 mb-5">
+        <div class="p-5" style ="background-color:#FFFF">
+
+          <div class="col-md-12 text-dark text-left">
+            <font size="5">カートに入ってるアイテム</font>
+          </div>
+
+       <div class="row mt-3">
+        <div class="col-md-6"><p class="text-center">アイテム名</p></div>
+        <div class="col-md-2 text-dark"><p class="text-center">単価(税込)</p></div>
+        <div class="col-md-2 text-dark"><p class="text-center">数量</p></div>
+        <div class="col-md-2 text-dark"><p class="text-center">小計(税込)</p></div>
+      </div>
+      <hr style="margin-top: 1px"/>
+
+      <div class="row mt-3">
+      	<div class="col-md-6 text-dark">
+
+          <img src="../img/knit.png" width="100" height="150" align="left" hspace="10px">
+            HEōS]Western blouson<br><br>
+            サイズ：２<br><br>
+          <button class="btn btn-light">x削除</button>
+        </div>
+      	<div class="col-md-2 text-dark">
+
+          <p class="text-center">¥78,980</p>
+        </div>
+        <div class="col-md-2 text-dark">
+      		<div class="spinner-container">
+            <span class="spinner-sub disabled">-</span>
+            <input class="spinner" type="number" min="0" max="5" value="0">
+            <span class="spinner-add">+</span>
+          </div>
+      	</div>
+        <div class="col-md-2 text-dark">
+          <p class="text-center">¥78,980</p>
+      	</div>
+      </div>
+
+      <div class="row mt-3">
+          <div class="col-md-6 text-dark">
+            <img src="../img/knit.png" width="100" height="150" align="left" hspace="10px">
+            Double-breasted setup  <br><br>
+            サイズ：２<br><br>
+          <button class="btn btn-light">x削除</button>
+          </div>
+          <div class="col-md-2 text-dark">
+            <p class="text-center">¥49,800</p>
+          </div>
+          <div class="col-md-2 text-dark">
+            <div class="spinner-container">
+            <span class="spinner-sub disabled">-</span>
+            <input class="spinner" type="number" min="0" max="5" value="0">
+            <span class="spinner-add">+</span>
+          </div>
+          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+          </div>
+          <div class="col-md-2 text-dark">
+            <p class="text-center">¥49,800</p>
+          </div>
+      </div>
+      <div class="row">
+        <p style="line-height:100%">
+        <hr>
+        <p class="text-dark text-end"><b>合計(税込) ¥128,780</b></p>
+        <a href=" ">
+         <center><a href="G1-6-1_1.php"><button type="button" class="btn btn-primary btn-lg rounded-pill" style="width: 300px;">注文手続きへ</button></a></center>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 
-<div class="row mt-3">
-    <div class="col-md-6 text-dark">
-      <img src="img/f.jpg" width="150" height="150" align="left">
-      Double-breasted setup & shirt & tie [@zastin_tcp] <br><br>
-      サイズ：２<br><br>
-    <button class="btn btn-light">x削除</button>
-    </div>
-    <div class="col-md-2 text-dark">
-      <p class="text-center">¥49,800</p>
-    </div>
-    <div class="col-md-2 text-dark">
-      <div class="spinner-container">
-      <span class="spinner-sub disabled">-</span>
-      <input class="spinner" type="number" min="0" max="5" value="0">
-      <span class="spinner-add">+</span>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    </div>
-    <div class="col-md-2 text-dark">
-      <p class="text-center">¥49,800</p>
-    </div>
-</div>
-<div class="row">
-  <p style="line-height:100%">
-  <hr>
-  <p class="text-dark text-end"><b>合計(税込) ¥128,780</b></p>
-  <a href=" ">
-   <center><a href="G1-6-1_1.php"><button type="button" class="btn btn-primary btn-lg rounded-pill" style="width: 300px;">注文手続きへ</button></a></center>
-  </a>        
-</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
@@ -104,7 +176,7 @@ $(function() {
           return --oldval;
         });
       }
-     
+
       if (el.val() == parseInt(el.attr('min'))) {
         el.prev(sub).addClass('disabled');
       }
@@ -113,14 +185,14 @@ $(function() {
       }
     });
 
-    
+
     el.parent().on('click', '.spinner-add', function() {
       if (el.val() < parseInt(el.attr('max'))) {
         el.val(function(i, oldval) {
           return ++oldval;
         });
       }
-      
+
       if (el.val() > parseInt(el.attr('min'))) {
         el.prev(sub).removeClass('disabled');
       }
@@ -134,12 +206,3 @@ $(function() {
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
