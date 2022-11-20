@@ -20,13 +20,24 @@
       margin:0 1%;
       color:white;
     }
+
+    .bg{
+        background:url(../img/watercolor_00395.jpeg);
+        background-size:auto;
+      position: relative;
+      }
+
+    .moji{
+      position:absolute ;
+    }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 </head>
 
-<body background="../img/watercolor_00395.jpeg" >
+<body  class="bg">
+  <div>
 <div class="container-fluid"style="background-color: #000000;">
   <div class="row">
   <nav class=".fixed-top navbar navbar-expand-md navbar-dark " aria-label="Fourth navbar example" >
@@ -92,7 +103,8 @@
   </div>
 </div>
     
-  <div name="maindiv"　class="container">
+   <h4 class="moji">検索結果</h4>
+   <div name="maindiv"　class="container">
   	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
 
   	
@@ -129,11 +141,11 @@
   		</div>
   	</div>
 
+  
+   </div>
 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-
   </body>
 
 </html>
