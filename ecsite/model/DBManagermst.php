@@ -3,7 +3,7 @@ class DBManagermst
 {
     public function dbConnect()
     {
-        $pdo = new PDO('mysql:host=localhost; dbname=webdb; charset=utf8', 'webuser', 'abccsd2');
+        $pdo = new PDO('mysql:host=mysql208.phy.lolipop.lan; dbname=LAA1418453-ecsite; charset=utf8', 'LAA1418453', 'ecsite');
         return $pdo;
     }
 
