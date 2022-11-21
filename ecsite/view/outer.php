@@ -28,7 +28,7 @@
 
 <body background="../img/watercolor_00395.jpeg">
 <div class="container-fluid"style="background-color: #000000;">
-  <div class="row"　>
+  <div class="row">
 
   <nav class=".fixed-top navbar navbar-expand-md navbar-dark " aria-label="Fourth navbar example" >
       <div class="container-fluid"style="background-color: #000000;">
@@ -93,7 +93,7 @@
   </div>
 </div>
 
-  <div name="maindiv"　class="container">
+  <div name="maindiv" class="container-fuluid">
   	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
 
   	<div class="col-6 col-md-3">
