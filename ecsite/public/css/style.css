@@ -1,0 +1,37 @@
+.nav-item {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 5%;
+    width: 94%;
+}
+
+.nav-itemlog {
+    padding: 0 0.5%;
+}
+
+.hoge_button3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+button.btn--orange3 {
+    color: #fff;
+    background-color: #1E90FF;
+    border-bottom: 5px solid #1E90FF;
+}
+
+button.btn--orange3:hover {
+    margin-top: 3px;
+    color: #fff;
+    background: #C0C0C0;
+    border-bottom: 2px solid #C0C0C0;
+}
+
+button.btn--shadow3 {
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.typeError {
+    color: #e74c3c;
+}
