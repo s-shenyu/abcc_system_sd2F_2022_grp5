@@ -2,24 +2,25 @@
 <html>
 
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>カート</title>
-<style>
-.nav-item{
-  display: flex;
-  margin: 0 auto;
-  padding: 0 5%;
-  width: 94%;
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <title>カート</title>
+  <style>
+  .nav-item{
+    display: flex;
+    margin: 0 auto;
+    padding: 0 5%;
+    width: 94%;
+    }
+  .nav-itemlog{
+    padding: 0 0.5%;
   }
-.nav-itemlog{
-  padding: 0 0.5%;
-}
-</style>
-<link href="../public/css/style2.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </style>
+  <link href="../public/css/style2.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 </head>
 
@@ -83,7 +84,7 @@
 
 
 
-<div class="container-fluid">
+<div class="container">
   <div class="row">
       <div class="col-md-10 offset-md-1 mt-5 mb-5">
         <div class="p-5" style ="background-color:#FFFF">
@@ -94,34 +95,20 @@
 
        <div class="row mt-3">
         <div class="col-md-6"><p class="text-center">アイテム名</p></div>
-        <div class="col-md-2 text-dark"><p class="text-center">単価(税込)</p></div>
-        <div class="col-md-2 text-dark"><p class="text-center">数量</p></div>
-        <div class="col-md-2 text-dark"><p class="text-center">小計(税込)</p></div>
+        <div class="col-md-6 text-dark"><p class="text-center">小計(税込)</p></div>
       </div>
       <hr style="margin-top: 1px"/>
 
       <div class="row mt-3">
       	<div class="col-md-6 text-dark">
-
           <img src="../img/knit.png" width="100" height="150" align="left" hspace="10px">
             HEōS]Western blouson<br><br>
             サイズ：２<br><br>
           <button class="btn btn-light">x削除</button>
         </div>
-      	<div class="col-md-2 text-dark">
-
+      	<div class="col-md-6  text-dark">
           <p class="text-center">¥78,980</p>
         </div>
-        <div class="col-md-2 text-dark">
-      		<div class="spinner-container">
-            <span class="spinner-sub disabled">-</span>
-            <input class="spinner" type="number" min="0" max="5" value="0">
-            <span class="spinner-add">+</span>
-          </div>
-      	</div>
-        <div class="col-md-2 text-dark">
-          <p class="text-center">¥78,980</p>
-      	</div>
       </div>
 
       <div class="row mt-3">
@@ -131,21 +118,11 @@
             サイズ：２<br><br>
           <button class="btn btn-light">x削除</button>
           </div>
-          <div class="col-md-2 text-dark">
-            <p class="text-center">¥49,800</p>
-          </div>
-          <div class="col-md-2 text-dark">
-            <div class="spinner-container">
-            <span class="spinner-sub disabled">-</span>
-            <input class="spinner" type="number" min="0" max="5" value="0">
-            <span class="spinner-add">+</span>
-          </div>
-          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-          </div>
-          <div class="col-md-2 text-dark">
+          <div class="col-md-6 text-dark">
             <p class="text-center">¥49,800</p>
           </div>
       </div>
+
       <div class="row">
         <p style="line-height:100%">
         <hr>
@@ -154,88 +131,12 @@
          <center><a href="G1-6-1_1.php"><button type="button" class="btn btn-primary btn-lg rounded-pill" style="width: 300px;">注文手続きへ</button></a></center>
         </a>
       </div>
+
     </div>
   </div>
 </div>
 </div>
-</div>
 
-<<<<<<< HEAD
-=======
-<div class="row mt-3">
-    <div class="col-md-6 text-dark">
-      <img src="../public/img_site/f.jpg" width="150" height="150" align="left">
-      Double-breasted setup & shirt & tie [@zastin_tcp] <br><br>
-      サイズ：２<br><br>
-    <button class="btn btn-light">x削除</button>
-    </div>
-    <div class="col-md-2 text-dark">
-      <p class="text-center">¥49,800</p>
-    </div>
-    <div class="col-md-2 text-dark">
-      <div class="spinner-container">
-      <span class="spinner-sub disabled">-</span>
-      <input class="spinner" type="number" min="0" max="5" value="0">
-      <span class="spinner-add">+</span>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    </div>
-    <div class="col-md-2 text-dark">
-      <p class="text-center">¥49,800</p>
-    </div>
-</div>
-<div class="row">
-  <p style="line-height:100%">
-  <hr>
-  <p class="text-dark text-end"><b>合計(税込) ¥128,780</b></p>
-  <a href=" ">
-   <center><a href="G1-6-1_1.php"><button type="button" class="btn btn-primary btn-lg rounded-pill" style="width: 300px;">注文手続きへ</button></a></center>
-  </a>
-</div>
->>>>>>> 4ab69065ecd55019ad22daa11ff3cb1703b7c046
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-
-$(function() {
-  $('.spinner').each(function() {
-    var el  = $(this);
-    var add = $('.spinner-add');
-    var sub = $('.spinner-sub');
-
-    el.parent().on('click', '.spinner-sub', function() {
-      if (el.val() > parseInt(el.attr('min'))) {
-        el.val(function(i, oldval) {
-          return --oldval;
-        });
-      }
-
-      if (el.val() == parseInt(el.attr('min'))) {
-        el.prev(sub).addClass('disabled');
-      }
-      if (el.val() < parseInt(el.attr('max'))) {
-        el.next(add).removeClass('disabled');
-      }
-    });
-
-
-    el.parent().on('click', '.spinner-add', function() {
-      if (el.val() < parseInt(el.attr('max'))) {
-        el.val(function(i, oldval) {
-          return ++oldval;
-        });
-      }
-
-      if (el.val() > parseInt(el.attr('min'))) {
-        el.prev(sub).removeClass('disabled');
-      }
-      if (el.val() == parseInt(el.attr('max'))) {
-        el.next(add).addClass('disabled');
-      }
-    });
-  });
-});
-    </script>
 </body>
 
 </html>
