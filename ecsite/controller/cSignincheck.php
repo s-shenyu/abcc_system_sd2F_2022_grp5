@@ -3,8 +3,11 @@ session_start();
 require '../model/DBManagermst.php';
 $dbmng = new DBManagermst();
 
+$mailAndPass = base64_decode($_GET['info']);
+$mail = explode('userMandP', $mailAndPass)[0];
+$pass = explode('userMandP', $mailAndPass)[1];
 try {
-    $result = $dbmng->login($_GET['m'], $_GET['p']);
+    $result = $dbmng->loginN($mail, $pass);
     foreach ($result as $row) {
         $_SESSION['usermailo'] = $row['user_mail'];
         $_SESSION['usernameo'] = $row['user_name'];

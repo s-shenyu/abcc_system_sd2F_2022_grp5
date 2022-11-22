@@ -28,6 +28,26 @@ class DBManagermst
         }
     }
 
+    public function loginN($mail, $pass)
+    {
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM user WHERE user_mail=?;";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $mail, PDO::PARAM_STR);
+        $ps->execute();
+        $result = $ps->fetchAll();
+        if (count($result) == 0) {
+            throw new BadMethodCallException("アカウントが存在しません");
+        } else {
+            foreach ($result as $row) {
+                if ($pass != $row['user_pass']) {
+                    throw new LogicException("パスワードが一致しません");
+                }
+            }
+            return $result;
+        }
+    }
+
     public function signin($mail, $pass)
     {
         $pdo = $this->dbConnect();
