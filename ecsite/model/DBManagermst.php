@@ -59,24 +59,25 @@ class DBManagermst
         if (count($result) != 0) {
             throw new BadMethodCallException("メールアドレスは既に登録しました");
         } else {
-            $sqld = "INSERT INTO user (user_mail, user_pass) VALUE (?, ?);";
+            $sqld = "INSERT INTO user (user_mail, user_pass, user_createdate) VALUE (?, ?, ?);";
             $ps = $pdo->prepare($sqld);
             $ps->bindValue(1, $mail, PDO::PARAM_STR);
             $ps->bindValue(2, password_hash($pass, PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $ps->bindValue(3, date("c"), PDO::PARAM_STR);
             $ps->execute();
         }
     }
 
-    // public function signinAddName($mail, $pass, $name)
-    // {
-    //     $pdo = $this->dbConnect();
-    //     $sql = "UPDATE user (user_name) SET user_name=? WHERE user_mail=? AND user_pass=?;";
-    //     $ps = $pdo->prepare($sql);
-    //     $ps->bindValue(1, $name, PDO::PARAM_STR);
-    //     $ps->bindValue(2, $mail, PDO::PARAM_STR);
-    //     $ps->bindValue(3, password_hash($pass, PASSWORD_DEFAULT), PDO::PARAM_STR);
-    //     $ps->execute();
-    // }
+    public function signinAddName($mail, $pass, $name)
+    {
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE user (user_name) SET user_name=? WHERE user_mail=? AND user_pass=?;";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $name, PDO::PARAM_STR);
+        $ps->bindValue(2, $mail, PDO::PARAM_STR);
+        $ps->bindValue(3, $pass, PDO::PARAM_STR);
+        $ps->execute();
+    }
 
     public function showGoodsByTag($tag)
     {
