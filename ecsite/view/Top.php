@@ -123,11 +123,12 @@
       echo "<div class='col-6 col-md-3'>";
       echo "<div class='card' style='border-style:none;'>";
       echo "<button>";
-      echo "<a href='Datail.html' class='img'>";
+      echo "<a href='Datail.php' class='img'>";
+      echo "<img src='".$row['goods_imgurl']."' class='card-img-top'  style='border:none'>";
       echo "<div class='card-body'></a>";
-      echo "<h7 class='card-title'>".$row['shohin_name']."</h7>";
+      echo "<h7 class='card-title'>".$row['goods_name']."</h7>";
       echo "<div class='iro'>";
-      echo "<p class='card-text'>".$row['¥shohin_tanka']."</p></div></div>"; 
+      echo "<p class='card-text'>".$row['goods_price']."</p></div></div>"; 
       echo "</button>";
   		echo "</div>";
   	  echo "</div>";
@@ -139,7 +140,7 @@
   		<div class="card" style="border-style:none;">
         <button>
           <a href="Datail.html">
-        		<img src="../img/knit.png" class="card-img-top" alt="..." style="border:none">
+          <img src="../public/img_site/shose/Shose_1.jpg" class="card-img-top" alt="..." >
         			<div class="card-body">
           </a>
       				<h7 class="card-title">クルーネックセーター</h7>
@@ -150,102 +151,6 @@
           </button>
       	</div>
   	 </div>
-
-  	<div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-          <a href="Datail.html">
-      		<img src="../img/denim.png" class="card-img-top" alt="...">
-      			<div class="card-body">
-          </a>
-      				<h7 class="card-title">ルーズフィットジーンズ</h7>
-              <div class="iro">
-      				 <p class="card-text">¥48,950</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
-
-    <div class="col-6 col-md-3">
-      <div class="card" style="border-style:none;">
-        <button>
-          <a href="Datail.html">
-            <img src="../img/sho.png" class="card-img-top" alt="...">
-              <div class="card-body">
-          </a>
-                <h7 class="card-title">ハイカットスニーカー</h7>
-                <div class="iro">
-                  <p class="card-text">¥41,800</p>
-                </div>
-              </div>
-        </button>
-      </div>
-    </div>
-
-    <div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-          <a href="Datail.html">
-      		<img src="../img/tr.png" class="card-img-top" alt="...">
-      			<div class="card-body">
-          </a>
-              <h7 class="card-title">リップストップカーゴトラウザー</h7>
-              <div class="iro">
-      				  <p class="card-text">¥56,100</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
-
-    <div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-          <a href="Datail.html">
-        		<img src="../img/broch.png" class="card-img-top" alt="...">
-        			<div class="card-body">
-          </a>
-                <h7 class="card-title">アンティークシルバーブローチ</h7>
-                <div class="iro">
-        				 <p class="card-text">¥85,800</p>
-                </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
-
-    <div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-          <a href="Datail.html">
-        		<img src="../img/bag.png" class="card-img-top" alt="...">
-        			<div class="card-body">
-          </a>
-              <h7 class="card-title">ディストーションハンドバック</h7>
-              <div class="iro">
-      				 <p class="card-text">¥156,200</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
-
-    <div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-          <a href="Datail.html">
-        		<img src="../img/shut.png" class="card-img-top" alt="...">
-        			<div class="card-body">
-          </a>
-              <h7 class="card-title">コーデュロイボタンアップシャツ</h7>
-              <div class="iro">
-      				 <p class="card-text">¥41,800</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
 
   	</div>
   </div>
