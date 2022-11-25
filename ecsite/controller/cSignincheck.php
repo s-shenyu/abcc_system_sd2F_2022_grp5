@@ -12,7 +12,7 @@ try {
         $_SESSION['usermailo'] = $row['user_mail'];
         $_SESSION['usernameo'] = $row['user_name'];
     }
-    header('Location: ../view/mypagechange.php');
+    header('Location: ../view/mypage.php');
 } catch (Exception $ex) {
     header("refresh: 3; url= ../view/Login.php");
     error_log($ex->getMessage() . "\n", 3, "error_log.txt");

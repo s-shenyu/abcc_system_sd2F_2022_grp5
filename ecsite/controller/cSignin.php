@@ -11,12 +11,13 @@ require '../model/SMTP.php';
 $dbmng = new DBManagermst();
 $sendMail = new PHPMailer(true);
 
-$mailAndPass = $_POST['mail'].'userMandP'.password_hash($pass, PASSWORD_DEFAULT);
+$pass = password_hash($pass, PASSWORD_DEFAULT);
+$mailAndPass = $_POST['mail'].'userMandP'.$pass;
 $signinUrl = 'http://localhost/web/ecsite/controller/cSignincheck.php?info='.base64_encode($mailAndPass);
 
 try {
-    $dbmng->signin($_POST['mail'], $_POST['pass']);
-    header('Location: ../view/index.html');
+    $dbmng->signin($_POST['mail'], $pass);
+    header('Location: ../view/cSiginnext.php');
 
     $sendMail->CharSet = 'UTF-8';
     $sendMail->SMTPDebug = 0;
@@ -38,10 +39,11 @@ try {
 
     $sendMail->send();
 } catch (BadMethodCallException $ex) {
-    header("refresh: 3; url= ../view/Login.php");
+    header("refresh: 3; url= ../view/Signin.php");
     error_log($ex->getMessage() . "\n", 3, "error_log.txt");
     echo $ex->getMessage();
 } catch (Exception $ex) {
+    header("refresh: 3; url= ../view/Signin.php");
     error_log($ex->getMessage() . "\n", 3, "error_log.txt");
     echo 'メール発信失敗：', $sendMail->ErrorInfo;
 }
