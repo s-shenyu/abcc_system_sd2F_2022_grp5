@@ -9,7 +9,7 @@ try {
         $_SESSION['usermailo'] = $row['user_mail'];
         $_SESSION['usernameo'] = $row['user_name'];
     }
-    header('Location: ../Index.php');
+    header('Location: ../view/Top.php');
 } catch (BadMethodCallException $ex) {
     header("refresh: 3; url= ../view/Login.php");
     error_log($ex->getMessage() . "\n", 3, "error_log.txt");
