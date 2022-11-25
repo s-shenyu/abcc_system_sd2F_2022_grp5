@@ -5,50 +5,51 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <title>購入履歴</title>
   <style>
-    .bg-img{
-  		background-image: url("img/topimage.jpg");
-  		background-size: cover;
-  		background-position: center 60%;
-  	}
+    .bg-img {
+      background-image: url("img/topimage.jpg");
+      background-size: cover;
+      background-position: center 60%;
+    }
 
     .iro {
       color: gray;
       text-decoration: none;
     }
-  
-    .nav-item{
-      display: flex;
-	    margin: 0 auto;
-	    padding: 0 5%;
-	    width: 94%;
-        }
 
-    .nav-itemlog{
+    .nav-item {
+      display: flex;
+      margin: 0 auto;
+      padding: 0 5%;
+      width: 94%;
+    }
+
+    .nav-itemlog {
       padding: 0 0.5%;
       display: flex;
       list-style-type: none;
     }
 
-    #serch_icn{
-      margin:0 1%;
-      color:white;
+    #serch_icn {
+      margin: 0 1%;
+      color: white;
     }
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../public/css/style.css">
 </head>
 
 <body background="../public/img_site/topimage.jpg">
 
   <?php include_once '../controller/Navbar.php' ?>
-  </div>
-  <div name="maindiv" class="container mt-5 mb-5" style="background-color:#fff;">
-
+  <div class="container">
     <div class="row">
-      <div class="col-md-12 text-dark text-left">
+      <div class="col-md-10 offset-md-1 mt-5 mb-5">
+        <div style="background-color:#FFFF">
+
+          <div class="row">
+            <div class="col-md-12 text-dark text-left pt-3">
         <h2>購入履歴</h2>
       </div>
     </div>
