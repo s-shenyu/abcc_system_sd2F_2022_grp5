@@ -115,22 +115,28 @@
   <div name="maindiv" class="container">
   	<div class="row  gy-5 gx-3 mt-1 mb-5">
 
+  
   	<div class="col-6 col-md-3">
+
   		<div class="card" style="border-style:none;">
         <button>
         <a href="Datail.html" class="img">
-      		<img src="../img/outer.png" class="card-img-top" alt="..." >
+          <?php
+      		      session_start();
+                require '../model/DBManagermst.php';//<img src="../img/outer.png" class="card-img-top" alt="..." >
+                $dbmng = new DBManagermst();
       			<div class="card-body">
         </a>
-              <h7 class="card-title">ウールジッパージャケット</h7>
-              <div class="iro">
-      				 <p class="card-text">¥121,000</p>
+              echo "<h7 class="card-title">ウールジッパージャケット</h7>";
+              echo "<div class="iro">";
+      				echo "<p class="card-text">¥121,000</p>";
               </div>
       			</div>
+            ?>
         </button>
   		</div>
   	</div>
-
+  
   	<div class="col-6 col-md-3">
   		<div class="card" style="border-style:none;">
         <button>

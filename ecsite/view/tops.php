@@ -12,8 +12,10 @@
 	    width: 94%;
         }
 
-    .nav-itemlog{
+        .nav-itemlog{
       padding: 0 0.5%;
+      display: flex;
+      list-style-type: none;
     }
 
     #serch_icn{
