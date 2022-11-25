@@ -93,7 +93,7 @@
   </div>
 </div>
 
-  <div name="maindiv" class="container-fuluid">
+  <div name="maindiv" class="container">
   	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
 
   	<div class="col-6 col-md-3">
