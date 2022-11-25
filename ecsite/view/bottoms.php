@@ -103,7 +103,7 @@
   </div>
 </div>
 
-  <div name="maindiv"　class="container">
+  <div name="maindiv" class="container">
   	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
 
   	<div class="col-6 col-md-3">
@@ -111,13 +111,13 @@
         <button>
         <a href="top1.html" class="img">
       		<img src="../public/img_site/bottoms/Bottoms_1.jpg" class="card-img-top" alt="..." >
-      			<div class="card-body">
-        </a>
+        </a><div class="card-body">    
               <h5 class="card-title">ルーズブーツカットジーンズ</h5>
               <div class="iro">
       				 <p class="card-text">¥121,000</p>
               </div>
       			</div>
+          </a>
         </button>
   		</div>
   	</div>

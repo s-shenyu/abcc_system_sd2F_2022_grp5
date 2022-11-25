@@ -110,8 +110,7 @@ class DBManagermst
         }
     }
 
-    public function goodsDetail($id)
-    {
+    public function goodsDetail($id){
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM goods WHERE goods_id=?;";
         $ps = $pdo->prepare($sql);
@@ -123,6 +122,7 @@ class DBManagermst
         } else {
             return $selectdata;
         }
+
     }
 
     public function goodsDetailWishlist($iduser, $idgoods)

@@ -115,33 +115,31 @@
   <div name="maindiv" class="container">
   	<div class="row  gy-5 gx-3 mt-1 mb-5">
 
-  
-  	<div class="col-6 col-md-3">
+  <?php
+  require '../model/DBManagermst.php';
+  $dbmng = new DBManagermst();
+  $result = $dbmng->showGoodsByTag('*');
+  foreach($result as $row){
+      echo "<div class='col-6 col-md-3'>";
+      echo "<div class='card' style='border-style:none;'>";
+      echo "<button>";
+      echo "<a href='Datail.html' class='img'>";
+      echo "<div class='card-body'></a>";
+      echo "<h7 class='card-title'>".$row['shohin_name']."</h7>";
+      echo "<div class='iro'>";
+      echo "<p class='card-text'>".$row['¥shohin_tanka']."</p></div></div>"; 
+      echo "</button>";
+  		echo "</div>";
+  	  echo "</div>";
+  }
+  ?>
 
-  		<div class="card" style="border-style:none;">
-        <button>
-        <a href="Datail.html" class="img">
-          <?php
-      		      session_start();
-                require '../model/DBManagermst.php';//<img src="../img/outer.png" class="card-img-top" alt="..." >
-                $dbmng = new DBManagermst();
-      			<div class="card-body">
-        </a>
-              echo "<h7 class="card-title">ウールジッパージャケット</h7>";
-              echo "<div class="iro">";
-      				echo "<p class="card-text">¥121,000</p>";
-              </div>
-      			</div>
-            ?>
-        </button>
-  		</div>
-  	</div>
-  
+
   	<div class="col-6 col-md-3">
   		<div class="card" style="border-style:none;">
         <button>
           <a href="Datail.html">
-        		<img src="../img/knit.png" class="card-img-top" alt="..."　style="border:none">
+        		<img src="../img/knit.png" class="card-img-top" alt="..." style="border:none">
         			<div class="card-body">
           </a>
       				<h7 class="card-title">クルーネックセーター</h7>
