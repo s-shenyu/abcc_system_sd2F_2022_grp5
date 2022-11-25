@@ -79,6 +79,20 @@ class DBManagermst
         $ps->execute();
     }
 
+    public function showGoods()
+    {
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM goods LIMIT 16;";
+        $ps = $pdo->prepare($sql);
+        $ps->execute();
+        $selectdata = $ps->fetchAll();
+        if (count($selectdata) == 0) {
+            throw new BadMethodCallException("只今エラー中、商品表示できません");
+        } else {
+            return $selectdata;
+        }
+    }
+
     public function showGoodsByTag($tag)
     {
         $pdo = $this->dbConnect();
