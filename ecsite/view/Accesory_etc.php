@@ -21,7 +21,7 @@
 	    margin: 0 auto;
 	    padding: 0 5%;
 	    width: 94%;
-        }
+     }
 
     .nav-itemlog{
       padding: 0 0.5%;
