@@ -18,7 +18,10 @@ CREATE TABLE `goods` (
   `goods_tag` varchar(20) NOT NULL,
   `goods_price` int(11) NOT NULL,
   `goods_flg` tinyint(1) NOT NULL,
-  `goods_imgurl` varchar(100) NOT NULL,
+  `goods_imgurl1` varchar(100) NOT NULL,
+  `goods_imgurl2` varchar(100) NOT NULL,
+  `goods_imgurl3` varchar(100) NOT NULL,
+  `goods_imgurl4` varchar(100) NOT NULL,
   `goods_detail` mediumtext NOT NULL,
   `goods_createdate` date NOT NULL,
   `goods_changedate` date DEFAULT NULL

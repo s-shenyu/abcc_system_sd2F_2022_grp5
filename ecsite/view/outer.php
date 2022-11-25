@@ -110,7 +110,7 @@
   		<div class="card" style="border-style:none;">
         <button>
         <a href="top1.html" class="img">
-      		<img src="../public/img_site/outer/Outer_1.jpg" class="card-img-top" alt="..." >
+      		<img src="../public/img_goods/outer/Outer_1.jpg" class="card-img-top" alt="..." >
       			<div class="card-body">
         </a>
               <h5 class="card-title">ウールジッパージャケット</h5>
