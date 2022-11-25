@@ -2,7 +2,7 @@ INSERT INTO `goods`
 (`goods_name`, `goods_tag`, `goods_price`, `goods_flg`, `goods_imgurl1`, `goods_imgurl2`, `goods_imgurl3`, `goods_imgurl4`,`goods_detail`, `goods_createdate`)
 VALUES ('リバーシブルダウンジャケット',
         'Outer',
-        132000
+        132000,
         true,
         '../public/img_goods/Outer_1.jpg',
         '../public/img_goods/Outer_1-2.jpg',
@@ -372,4 +372,4 @@ VALUES ('リバーシブルダウンジャケット',
         '../public/img_goods/Tops_12-3.jpg',
         '../public/img_goods/Tops_12-4.jpg',
         '環境にやさしい方法で栽培した、コーヒーブラウンのコットンを使用。胸元に大きなコンポーザープリント入り。',
-        now()),
+        now());
