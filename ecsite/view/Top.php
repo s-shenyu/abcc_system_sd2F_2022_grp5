@@ -115,25 +115,24 @@
   <div name="maindiv" class="container">
   	<div class="row  gy-5 gx-3 mt-1 mb-5">
 
-  
-  	<div class="col-6 col-md-3">
-      <div class="card" style="border-style:none;">
-        <button>
-        <a href="Datail.html" class="img">
-          <?php
-      		    $pdo = new PDO('mysql:host=localhost; dbname=webdb; charset=utf8', 'webuser', 'abccsd2');//<img src="../img/outer.png" class="card-img-top" alt="..." >
-              $sql=" SELECT * FROM user_mst WHERE user_mail = ?"
-              $dbmng = new DBManagermst();
-              $result = $dbmng->showGoodsByTag();
-      			  echo "<div class="card-body"></a>";
-              echo "<h7 class="card-title">".$DB['shohin_name']."</h7>";
-              echo "<div class="iro">";
-      				echo "<p class="card-text">".$DB['¥shohin_tanka']."</p></div></div>"; 
-            ?>
-        </button>
-  		</div>
-  	</div>
-  
+  <?php
+  require '../model/DBManagermst.php';
+  $dbmng = new DBManagermst();
+  $result = $dbmng->showGoodsByTag('*');
+  foreach($result as $row){
+      echo "<div class='col-6 col-md-3'>";
+      echo "<div class='card' style='border-style:none;'>";
+      echo "<button>";
+      echo "<a href='Datail.html' class='img'>";
+      echo "<div class='card-body'></a>";
+      echo "<h7 class='card-title'>".$row['shohin_name']."</h7>";
+      echo "<div class='iro'>";
+      echo "<p class='card-text'>".$row['¥shohin_tanka']."</p></div></div>"; 
+      echo "</button>";
+  		echo "</div>";
+  	  echo "</div>";
+  }
+  ?>
 
 
   	<div class="col-6 col-md-3">
