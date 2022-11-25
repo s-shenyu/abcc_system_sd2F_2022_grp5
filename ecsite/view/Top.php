@@ -117,31 +117,30 @@
 
   
   	<div class="col-6 col-md-3">
-
-  		<div class="card" style="border-style:none;">
+      <div class="card" style="border-style:none;">
         <button>
         <a href="Datail.html" class="img">
           <?php
-      		      session_start();
-                require '../model/DBManagermst.php';//<img src="../img/outer.png" class="card-img-top" alt="..." >
-                $dbmng = new DBManagermst();
-      			<div class="card-body">
-        </a>
-              echo "<h7 class="card-title">ウールジッパージャケット</h7>";
+      		    $pdo = new PDO('mysql:host=localhost; dbname=webdb; charset=utf8', 'webuser', 'abccsd2');//<img src="../img/outer.png" class="card-img-top" alt="..." >
+              $sql=" SELECT * FROM user_mst WHERE user_mail = ?"
+              $dbmng = new DBManagermst();
+              $result = $dbmng->showGoodsByTag();
+      			  echo "<div class="card-body"></a>";
+              echo "<h7 class="card-title">".$DB['shohin_name']."</h7>";
               echo "<div class="iro">";
-      				echo "<p class="card-text">¥121,000</p>";
-              </div>
-      			</div>
+      				echo "<p class="card-text">".$DB['¥shohin_tanka']."</p></div></div>"; 
             ?>
         </button>
   		</div>
   	</div>
   
+
+
   	<div class="col-6 col-md-3">
   		<div class="card" style="border-style:none;">
         <button>
           <a href="Datail.html">
-        		<img src="../img/knit.png" class="card-img-top" alt="..."　style="border:none">
+        		<img src="../img/knit.png" class="card-img-top" alt="..." style="border:none">
         			<div class="card-body">
           </a>
       				<h7 class="card-title">クルーネックセーター</h7>
