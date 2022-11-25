@@ -93,14 +93,14 @@
   </div>
 </div>
 
-<div name="maindiv" class="container-fuluid;">
+<div name="maindiv" class="container">
   	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
 
   	<div class="col-6 col-md-3">
   		<div class="card" style="border-style:none;">
         <button>
         <a href="top1.html" class="img">
-      		<img src="../public/img_site/Accesory_etc/Acce_1.jpg" class="card-img-top" alt="..." >
+      		<img src="../public/img_goods/Accesory_etc/Acce_1.jpg" class="card-img-top" alt="..." >
       			<div class="card-body">
         </a>
               <h5 class="card-title">リッチウールフリンジスカーフ </h5>

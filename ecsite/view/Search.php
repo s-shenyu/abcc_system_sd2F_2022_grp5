@@ -94,7 +94,7 @@
 </div>
     
    <font color="white"><h4 style="position:relative;left:2%;padding-top: 1%;">検索結果 . . .</h4></font>
-   <div name="maindiv" class="container-fuluid">
+   <div name="maindiv" class="container">
   	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
 
   	
