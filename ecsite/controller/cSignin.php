@@ -12,7 +12,7 @@ $dbmng = new DBManagermst();
 $sendMail = new PHPMailer(true);
 
 $mailAndPass = $_POST['mail'].'userMandP'.password_hash($pass, PASSWORD_DEFAULT);
-$signinUrl = '../view/'.base64_encode($mailAndPass);
+$signinUrl = 'http://localhost/web/ecsite/controller/cSignincheck.php?info='.base64_encode($mailAndPass);
 
 try {
     $dbmng->signin($_POST['mail'], $_POST['pass']);

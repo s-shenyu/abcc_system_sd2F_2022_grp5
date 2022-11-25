@@ -18,6 +18,7 @@ try {
     header("refresh: 3; url= ../view/Login.php");
     error_log($ex->getMessage() . "\n", 3, "error_log.txt");
     echo $ex->getMessage();
+    echo $_POST['pass'];
 } catch (Exception $ex) {
     header("refresh: 3; url= ../view/Login.php");
     error_log($ex->getMessage() . "\n", 3, "error_log.txt");

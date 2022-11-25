@@ -21,7 +21,7 @@ class DBManagermst
         } else {
             foreach ($result as $row) {
                 if (password_verify($pass, $row['user_pass']) == false) {
-                    throw new LogicException("パスワードが一致しません");
+                    throw new LogicException("パスワードが一致しません".$row['user_pass']);
                 }
             }
             return $result;
