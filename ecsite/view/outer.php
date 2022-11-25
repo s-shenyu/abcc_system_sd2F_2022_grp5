@@ -103,73 +103,48 @@
   </div>
 </div>
 
-  <div name="maindiv" class="container">
-  	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div background="../img/watercolor_00395.jpeg">
 
-  	<div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-        <a href="top1.html" class="img">
-      		<img src="../public/img_goods/outer/Outer_1.jpg" class="card-img-top" alt="..." >
-      			<div class="card-body">
-        </a>
-              <h5 class="card-title">ウールジッパージャケット</h5>
-              <div class="iro">
-      				 <p class="card-text">¥121,000</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
+          <div name="maindiv" class="container">
+            <div class="row  gy-5 gx-3 mt-1 mb-5">
 
-  	<div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-        <a href="top1.html" class="img">
-      		<img src="../public/img_site/outer/Outer_2.jpg" class="card-img-top" alt="..." >
-      			<div class="card-body">
-        </a>
-              <h5 class="card-title">ウールジッパージャケット</h5>
-              <div class="iro">
-      				 <p class="card-text">¥121,000</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
+              <?php
+              require '../model/DBManagermst.php';
+              $dbmng = new DBManagermst();
+              $result = $dbmng->showGoodsByTag('*');
+              try {
+                foreach ($result as $row) {
+                  echo '<div class="col-6 col-md-3">';
+                  echo '<div class="card" style="border-style:none;">';
+                  echo '<button>';
+                  echo '<a href="Datail.php" class="img">';
+                  echo '<img src="' . $row['goods_imgurl1'] . '" class="card-img-top"  style="border:none">';
+                  echo '<div class="card-body"></a>';
+                  echo '<h7 class="card-title">' . $row['goods_name'] . '</h7>';
+                  echo '<div class="iro">';
+                  echo '<p class="card-text">￥' . $row['goods_price'] . '</p></div></div>';
+                  echo '</button>';
+                  echo '</div>';
+                  echo '</div>';
+                }
+              } catch (error $err) {
+                echo "dead";
+              }
+              ?>
 
-  	<div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-        <a href="top1.html" class="img">
-      		<img src="../public/img_site/outer/Outer_3.jpg" class="card-img-top" alt="..." >
-      			<div class="card-body">
-        </a>
-              <h5 class="card-title">ウールジッパージャケット</h5>
-              <div class="iro">
-      				 <p class="card-text">¥121,000</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
 
-    <div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-        <a href="top1.html" class="img">
-      		<img src="../public/img_site/outer/Outer_4.jpg" class="card-img-top" alt="..." >
-      			<div class="card-body">
-        </a>
-              <h5 class="card-title">ウールジッパージャケット</h5>
-              <div class="iro">
-      				 <p class="card-text">¥121,000</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
-  	</div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
