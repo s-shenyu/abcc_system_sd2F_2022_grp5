@@ -21,7 +21,7 @@ class DBManagermst
         } else {
             foreach ($result as $row) {
                 if (password_verify($pass, $row['user_pass']) == false) {
-                    throw new LogicException("パスワードが一致しません".$row['user_pass']);
+                    throw new LogicException("パスワードが一致しません");
                 }
             }
             return $result;
@@ -62,7 +62,7 @@ class DBManagermst
             $sqld = "INSERT INTO user (user_mail, user_pass, user_createdate) VALUE (?, ?, ?);";
             $ps = $pdo->prepare($sqld);
             $ps->bindValue(1, $mail, PDO::PARAM_STR);
-            $ps->bindValue(2, password_hash($pass, PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $ps->bindValue(2, $pass, PDO::PARAM_STR);
             $ps->bindValue(3, date("c"), PDO::PARAM_STR);
             $ps->execute();
         }

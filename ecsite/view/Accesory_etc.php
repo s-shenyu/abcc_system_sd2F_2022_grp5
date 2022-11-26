@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -39,142 +39,49 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 </head>
 
-<body background="../img/watercolor_00395.jpeg">
-<div class="container-fluid"style="background-color: #000000;">
-  <div class="row">
+<body background="../public/img_site/topimage.jpg">
 
-    <nav class="navbar navbar-expand-md navbar-dark" aria-label="Fourth navbar example" >
-      <div class="container-fluid"style="background-color: #000000;">
-        <a class="navbar-brand" href="Top.php">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-        </svg>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<?php include_once '../controller/Navbar.php' ?>
 
-        <div class="collapse navbar-collapse" id="navbarsExample04">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item list-style-type: none;">
-              <a class="nav-link active" aria-current="page" href="./Outer.php">outer</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./Tops.php">tops</a>
-            </li>
-           
-            <li class="nav-item">
-              <a class="nav-link active" href="./Bottoms.php">bottom</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link active" href="./Shose.php">shose</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link active" href="./Accesory_etc.php">accessory/etc</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link active" href="./Look.php">look</a>
-            </li>
-          </ul>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" id=serch_icn>
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-          </svg>
-        </a>
-        <form role="search">
-          <input class="form-control" type="search" placeholder="search" aria-label="Search">
-        </form>
-        
-        <li class="nav-itemlog">
-          <a class="nav-link active" href="login.php">login</a>
-        </li>
-       
-          <a class="navbar-brand" href="cart.php">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </svg>
-          </a>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+
+          <div name="maindiv" class="container">
+            <div class="row  gy-5 gx-3 mt-1 mb-5">
+
+              <?php
+              require '../model/DBManagermst.php';
+              $dbmng = new DBManagermst();
+              $result = $dbmng->showGoodsByTag('*');
+              try {
+                foreach ($result as $row) {
+                  echo '<div class="col-6 col-md-3">';
+                  echo '<div class="card" style="border-style:none;">';
+                  echo '<button>';
+                  echo '<a href="Datail.php" class="img">';
+                  echo '<img src="' . $row['goods_imgurl1'] . '" class="card-img-top"  style="border:none">';
+                  echo '<div class="card-body"></a>';
+                  echo '<h7 class="card-title">' . $row['goods_name'] . '</h7>';
+                  echo '<div class="iro">';
+                  echo '<p class="card-text">￥' . $row['goods_price'] . '</p></div></div>';
+                  echo '</button>';
+                  echo '</div>';
+                  echo '</div>';
+                }
+              } catch (error $err) {
+                echo "error";
+              }
+              ?>
+
+
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-  </div>
-</div>
-
-<div name="maindiv" class="container">
-  	<div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
-
-  	<div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-        <a href="top1.html" class="img">
-      		<img src="../public/img_goods/Accesory_etc/Acce_1.jpg" class="card-img-top" alt="..." >
-      			<div class="card-body">
-        </a>
-              <h5 class="card-title">リッチウールフリンジスカーフ </h5>
-              <div class="iro">
-      				 <p class="card-text">¥121,000</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
-
-  	<div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-          <a href="top1.html">
-        		<img src="../public/img_site/Accesory_etc/Acce_3.jpg" class="card-img-top" alt="..."　style="border:none">
-        			<div class="card-body">
-          </a>
-      				<h5 class="card-title">リッチウールフリンジスカーフ </h5>
-              <div class="iro">
-                <p class="card-text">¥56,100</p>
-              </div>
-      			  </div>
-          </button>
-      	</div>
-  	 </div>
-
-  	<div class="col-6 col-md-3">
-  		<div class="card" style="border-style:none;">
-        <button>
-          <a href="top1.html">
-      		<img src="../public/img_site/Accesory_etc/Acce_8.jpg" class="card-img-top" alt="...">
-      			<div class="card-body">
-          </a>
-      				<h5 class="card-title">リッチウールフリンジスカーフ</h5>
-              <div class="iro">
-      				 <p class="card-text">¥48,950</p>
-              </div>
-      			</div>
-        </button>
-  		</div>
-  	</div>
-
-    <div class="col-6 col-md-3">
-      <div class="card" style="border-style:none;">
-        <button>
-          <a href="top1.html">
-            <img src="../public/img_site/Accesory_etc/Acce_9.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-          </a>
-                <h5 class="card-title">リッチウールフリンジスカーフ </h5>
-                <div class="iro">
-                  <p class="card-text">¥41,800</p>
-                </div>
-              </div>
-        </button>
-      </div>
     </div>
-
-      
-
-  	</div
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
   </body>
