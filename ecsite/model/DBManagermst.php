@@ -228,6 +228,17 @@ class DBManagermst
         $ps->execute();
     }
 
+    public function userInfoBuy($id)
+    {
+        $pdo = $this->dbConnect();
+        $sqln = "SELECT * FROM user AS U LEFT JOIN address AS A ON U.user_id = A.user_id WHERE user_id=? LIMIT 1;";
+        $ps = $pdo->prepare($sqln);
+        $ps->bindValue(1, $id, PDO::PARAM_INT);
+        $ps->execute();
+        $selectdata = $ps->fetchAll();
+        return $selectdata;
+    }
+
     public function buyGoods($id, $addr, $goods)
     {
         $pdo = $this->dbConnect();
