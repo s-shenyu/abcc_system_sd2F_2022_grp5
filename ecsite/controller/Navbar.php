@@ -30,18 +30,26 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="../view/Accesory_etc.php">accessory/etc</a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link active" href="#">look</a>
-                        </li>
+                        </li>-->
                     </ul>
-                    <a class="navbar-brand" href="../view/Search.php">
+                    <!--<a class="navbar-brand" href="../view/Search.php">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                         </svg>
                     </a>
                     <form role="search">
                         <input class="form-control" type="search" placeholder="search" aria-label="Search">
+                    </form>-->
+
+                    <form action="../view/Search.php" method="post">
+                        <div class="d-flex">
+                            <button class="btn" type="submit" id="button-addon" onclick="location.href='../view/Search.php'" name="keyword"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="#fff" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" /></svg></button>
+                            <input name="keyword" type="text" class="form-control" placeholder="キーワードを入力">
+                        </div>
                     </form>
+
                     <li class="nav-itemlog">
                         <a class="nav-link active" href="../view/Login.php">login</a>
                     </li>
