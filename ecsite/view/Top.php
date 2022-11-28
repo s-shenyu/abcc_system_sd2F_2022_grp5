@@ -76,19 +76,14 @@
                   echo '</div>';
                 }
               } catch (error $err) {
-                echo "dead";
+                echo "error";
               }
               ?>
-
-
-
 
             </div>
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
 
