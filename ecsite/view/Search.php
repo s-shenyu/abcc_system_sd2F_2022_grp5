@@ -60,7 +60,7 @@
                   <?php
                   require '../model/DBManagermst.php';
                   $dbmng = new DBManagermst();
-                  $result = $dbmng->showGoodsBySearch('*');
+                  $result = $dbmng->showGoodsBySearch($_POST['customname']);
                   try {
                     foreach ($result as $row) {
                       echo '<div class="col-6 col-md-3">';
@@ -77,7 +77,7 @@
                       echo '</div>';
                     }
                   } catch (error $err) {
-                    echo "error";
+                    echo '<font color="white"><h4 style="position:relative;left:2%;padding-top: 1%;">エラーです</h4></font>';
                   }
                   ?>
 

@@ -47,12 +47,12 @@ $dbmng = new DBManagermst();
             foreach ($_SESSION['cartgoods'] as $row) {
               $result = $dbmng->goodsDetail($row);
               echo '<div class="col-md-6 text-dark">';
-              echo '<img src="'.$result['goods_imgurl1'].'" width="100" height="150" align="left" hspace="10px">';
-              echo $result['goods_name'];
-              echo '<button class="btn btn-light">削除</button>'; 
+              echo '<img src="../img/knit.png" width="100" height="150" align="left" hspace="10px">';
+              echo $row['goods_name'];
+              echo '<button class="btn btn-light">x削除</button>'; //?
               echo '</div>';
               echo '<div class="col-md-6  text-dark">';
-              echo '<p class="text-center">' . $result['goods_price'] . '</p>';
+              echo '<p class="text-center">' . $row['goods_price'] . '</p>';
               echo '</div>';
             }
             ?>

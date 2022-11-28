@@ -1,5 +1,8 @@
 <?php
 session_start();
+$_SESSION['cartgoods'] = array();
+$_SESSION['wishgoods'] = array();
+
 require '../model/DBManagermst.php';
 $dbmng = new DBManagermst();
 $goods = $dbmng->goodsDetail($_GET['idgoods']);
@@ -38,19 +41,28 @@ $goods = $dbmng->goodsDetail($_GET['idgoods']);
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="<?php echo $goods['goods_imgurl1']?>" class="d-block w-100" alt="...">
+                    <img src="<?php foreach ($goods as $good) {
+                                echo $good['goods_imgurl1'];
+                              } ?>" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="<?php echo $goods['goods_imgurl2']?>" class="d-block w-100" alt="...">
+                    <img src="<?php foreach ($goods as $good) {
+                                echo $good['goods_imgurl2'];
+                              } ?>" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="<?php echo $goods['goods_imgurl3']?>" class="d-block w-100" alt="...">
+                    <img src="<?php foreach ($goods as $good) {
+                                echo $good['goods_imgurl3'];
+                              } ?>" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="<?php echo $goods['goods_imgurl4']?>" class="d-block w-100" alt="...">
+                    <img src="<?php foreach ($goods as $good) {
+                                echo $good['goods_imgurl4'];
+                              } ?>" class="d-block w-100" alt="...">
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -67,27 +79,43 @@ $goods = $dbmng->goodsDetail($_GET['idgoods']);
             <div class="col-md-6  p-5">
               <!-- 商品名 -->
               <h4>
-                <?php echo $goods['goods_name']?>
+                <?php foreach ($goods as $good) {
+                  echo $good['goods_name'];
+                } ?>
               </h4>
 
 
               <!-- 商品価格 -->
-              <h5>¥<?php echo $goods['goods_price']?>
+              <h5>¥<?php foreach ($goods as $good) {
+                      echo $good['goods_price'];
+                    } ?>
               </h5><br>
 
+              <form action="Detail.php" method="post">
+                <input type="hidden" name="shohin_id" value="<?php echo $shohin_id ?>">
+
+                <?php if ($dbmng->goodsDetailWishlist($member_id, $shohin_id) == false) : ?>
+                  <input type="hidden" name="favorite" value="addfav">
+                  <button type="submit" class="btn">
+                    <h2><i class="bi bi-heart"></i></h2>
+                  </button>
+                <?php else : ?>
+                  <input type="hidden" name="favorite" value="delfav">
+                  <button type="submit" class="btn">
+                    <h2><i class="bi bi-heart-fill"></i></h2>
+                  </button>
+                <?php endif; ?>
+              </form>
 
               <p>
 
-                <?php
-                //addNewWishlist
-                echo "
-                   <a href='' class='btn btn--orange2 btn--cubic2 btn--shadow2　hoge_button2'>
-                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi-heart' viewBox='0 0 16 16'>
-                      <path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z'/>
-                    </svg>
-                    お気入り登録
-                    </a>
-                    "; ?>
+
+                <a href='' class='btn btn--orange2 btn--cubic2 btn--shadow2　hoge_button2'>
+                  <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi-heart' viewBox='0 0 16 16'>
+                    <path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z' />
+                  </svg>
+                  お気入り登録
+                </a>
               </p>
 
 
