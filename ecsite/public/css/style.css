@@ -36,40 +36,73 @@ button.btn--shadow3 {
     color: #e74c3c;
 }
 
-.nav-item{
+.nav-item {
     display: flex;
     margin: 0 auto;
     padding: 0 5%;
     width: 94%;
-    }
-    .nav-itemlog{
+}
+
+.nav-itemlog {
     padding: 0 0.5%;
     display: flex;
     list-style-type: none;
-  }
-  .hoge_button3{
-   text-align: center;
-   margin-bottom:20px;
-  }
+}
 
-  a.btn--orange3 {
+.hoge_button3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a.btn--orange3 {
     color: #fff;
     background-color: #1E90FF;
     border-bottom: 5px solid #1E90FF;
-  }
-  a.btn--orange3:hover {
-  margin-top: 3px;
-  color: #fff;
-  background:#1E90FF     ;
-  border-bottom: 2px solid #1E90FF;
-  }
-  a.btn--shadow3 {
-  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
-  }
+}
 
-  .link{
-    display:block;
-   text-align: center;
-   padding-bottom: 50px;
-  }
+a.btn--orange3:hover {
+    margin-top: 3px;
+    color: #fff;
+    background: #1E90FF;
+    border-bottom: 2px solid #1E90FF;
+}
+
+a.btn--shadow3 {
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.link {
+    display: block;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.bg-img {
+    background-image: url("img/topimage.jpg");
+    background-size: cover;
+    background-position: center 60%;
+}
+
+.iro {
+    color: gray;
+    text-decoration: none;
+}
+
+.nav-item {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 5%;
+    width: 94%;
+}
+
+.nav-itemlog {
+    padding: 0 0.5%;
+    display: flex;
+    list-style-type: none;
+}
+
+#serch_icn {
+    margin: 0 1%;
+    color: white;
+}

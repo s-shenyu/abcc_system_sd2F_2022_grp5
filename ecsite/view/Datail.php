@@ -196,42 +196,74 @@
             <div class="col-md-6  p-5">
 
               <?php
-                require 'DBManagermst.php';
+                require_once '../model/DBManagermst.php';
 
                 $dbmng = new DBManagermst();
 
-
+                //$searchArray = $dbmng->goodsDetail($_POST['id']);
 
               ?>
 
 
-                <h4>
-                  クルーネックセーター
+                //商品名
+                <h4><?php
+                //DBManagerから商品詳細情報を取得
+                //$getData = $dbmng->XXXXX(XXXXX);
+                //foreach ($getData as $row) {
+                  //echo "$_GET['googs_name']";
+                  //}
+                  ?>
                 </h4>
 
 
-                <h5>¥56,100</h5><br>
+                //商品価格
+                <h5>¥
+                  <?php
+                  //DBManagerから商品詳細情報を取得
+                  //$getData = $dbmng->XXXXX(XXXXX);
+                  //foreach ($getData as $row) {
+                    //echo "$_GET['goods_price']";
+                    //}
+                  ?>
+                </h5><br>
+
 
                 <p>
-                   <a href="" class="btn btn--orange2 btn--cubic2 btn--shadow2　hoge_button2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi-heart" viewBox="0 0 16 16">
-                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                  </svg>
-                  お気入り登録
-                  </a>
+
+                  <?php
+                  //addNewWishlist
+                  echo "
+                   <a href='' class='btn btn--orange2 btn--cubic2 btn--shadow2　hoge_button2'>
+                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi-heart' viewBox='0 0 16 16'>
+                      <path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z'/>
+                    </svg>
+                    お気入り登録
+                    </a>
+                    ";?>
                 </p>
 
+
+
                 <p>
-                  <a href="" class="btn btn--orange3 btn--cubic3 btn--shadow3　hoge_button3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi-cart" viewBox="0 0 16 16">
-                      <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  <?php
+                  echo "
+                  <a href='' class='btn btn--orange3 btn--cubic3 btn--shadow3　hoge_button3'>
+                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi-cart' viewBox='0 0 16 16'>
+                      <path d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z'/>
                     </svg>
                     カートに入れる
                   </a>
+                  ";?>
                 </p>
 
-                着用感サイズ : M<br>
-                <p>ランダムパターンの柄にフェイクスウェードの生地切り替えが施されたクルーネックニットです。<br>
+
+
+                <?php
+
+                ?>
+
+
+                <p>ランダムパターンの柄にフェイクスウェードの生地切り替えが施されたクルーネックニットです<br>
 
                 こちらイタリア製のニットということもあり、<br>
                 デザイン物の割に落ち着いた雰囲気があります。<br>
@@ -248,30 +280,6 @@
                 セットアップなどとモードに合わせるのカッコ良いですよ。</p>
 
 
-                <p><平置き寸法><br>
-                着丈：66.0cm<br>
-                身幅：55.0cm<br>
-                袖丈：58.0cm<br>
-                肩幅：50.0cm</p>
-
-                <p><素材><br>
-                ウール50%<br>
-                アクリル50%</p>
-
-                <p><お色></p>
-                ブラック<br>
-
-                <p>＜着用可能シーズン＞<br>
-                春（ー）<br>
-                夏（ー）<br>
-                秋（◎）<br>
-                冬（◎）</p>
-
-                状態 : A<br>
-                Sデッドストックや、使用感が極めて少ない状態。<br>
-                A若干の使用感はあるが、状態の良いUSED。<br>
-                B使用感はあるが、目立つ傷や大きな汚れはない。<br>
-                C部分的に目立つ傷や汚れ、使用感がある状態。<br>
 
                 ＊アイロン後に発送致しますが、あくまで古着のため、理解のある方のみのご購入をお願いいたします。<br>
                 ＊＊全アイテム古着の為、一点物となります予めご了承下さい。<br>
