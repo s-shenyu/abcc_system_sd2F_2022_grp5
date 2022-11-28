@@ -82,7 +82,7 @@ class DBManagermst
     public function showGoods()
     {
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM goods LIMIT 16;";
+        $sql = "SELECT * FROM goods;";
         $ps = $pdo->prepare($sql);
         $ps->execute();
         $selectdata = $ps->fetchAll();
@@ -96,7 +96,7 @@ class DBManagermst
     public function showGoodsByTag($tag)
     {
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM goods WHERE goods_tag=? LIMIT 16;";
+        $sql = "SELECT * FROM goods WHERE goods_tag=?;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $tag, PDO::PARAM_STR);
         $ps->execute();
@@ -111,7 +111,7 @@ class DBManagermst
     public function showGoodsBySearch($keyword)
     {
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM goods WHERE goods_tag LIKE ? OR goods_name LIKE ? LIMIT 16;";
+        $sql = "SELECT * FROM goods WHERE goods_tag LIKE ? OR goods_name LIKE ?;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, '%' . $keyword . '%', PDO::PARAM_STR);
         $ps->bindValue(2, '%' . $keyword . '%', PDO::PARAM_STR);
@@ -126,7 +126,7 @@ class DBManagermst
 
     public function goodsDetail($id){
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM goods WHERE goods_id=?;";
+        $sql = "SELECT * FROM goods WHERE goods_id=? LIMIT 1;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $id, PDO::PARAM_INT);
         $ps->execute();
