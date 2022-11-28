@@ -17,7 +17,7 @@ $signinUrl = 'http://localhost/web/ecsite/controller/cSignincheck.php?info='.bas
 
 try {
     $dbmng->signin($_POST['mail'], $pass);
-    header('Location: ../view/cSiginnext.php');
+    header('Location: ../controller/cSigninnext.php');
 
     $sendMail->CharSet = 'UTF-8';
     $sendMail->SMTPDebug = 0;
