@@ -136,10 +136,7 @@
     <div class="col-md-10 offset-md-1  mb-5">
         <div style="background-color:#FFFF; padding-top: 20px; padding-bottom: 40px; ">
             <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">購入者さま</h3>
-            <?php
-                
-                
-            ?>
+
             <form action="Buyconfirm.php"method="post">
             <h4 style="padding-left: 30px;">お名前<br><input type="text" value=></h4>
             <h4 class="font border-bottom"></h4>

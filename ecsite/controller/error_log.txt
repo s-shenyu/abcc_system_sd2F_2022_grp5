@@ -1,3 +1,4 @@
 アカウントが存在しません
 SQLSTATE[HY000] [1045] Access denied for user 'webuser'@'localhost' (using password: YES)
 SQLSTATE[HY000] [1045] Access denied for user 'webuser'@'localhost' (using password: YES)
+SQLSTATE[HY000] [1045] Access denied for user 'webuser'@'localhost' (using password: YES)
