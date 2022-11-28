@@ -54,7 +54,7 @@
               <?php
               require '../model/DBManagermst.php';
               $dbmng = new DBManagermst();
-              $result = $dbmng->showGoodsByTag('*');
+              $result = $dbmng->showGoodsByTag('Outer');
               try {
                 foreach ($result as $row) {
                   echo '<div class="col-6 col-md-3">';
