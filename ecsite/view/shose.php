@@ -40,7 +40,7 @@
           <div name="maindiv" class="container">
             <div class="row  gy-5 gx-3 mt-1 mb-5">
 
-              <?php
+            <?php
               require '../model/DBManagermst.php';
               $dbmng = new DBManagermst();
               $result = $dbmng->showGoodsByTag('Shoes');
@@ -48,14 +48,14 @@
                 foreach ($result as $row) {
                   echo '<div class="col-6 col-md-3">';
                   echo '<div class="card" style="border-style:none;">';
+                  echo '<a href="Detail.php?idgoods='.$row['goods_id'].'" class="img">';
                   echo '<button>';
-                  echo '<a href="Datail.php" class="img">';
                   echo '<img src="' . $row['goods_imgurl1'] . '" class="card-img-top"  style="border:none">';
-                  echo '<div class="card-body"></a>';
+                  echo '<div class="card-body">';
                   echo '<h7 class="card-title">' . $row['goods_name'] . '</h7>';
                   echo '<div class="iro">';
                   echo '<p class="card-text">￥' . $row['goods_price'] . '</p></div></div>';
-                  echo '</button>';
+                  echo '</button></a>';
                   echo '</div>';
                   echo '</div>';
                 }
