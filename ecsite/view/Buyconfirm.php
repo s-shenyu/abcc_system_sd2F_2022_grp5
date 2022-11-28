@@ -134,28 +134,31 @@
         <div style="background-color:#FFFF; padding-top: 20px; padding-bottom: 40px; ">
             <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">購入者さま</h3>
             <?php
-                
-                
+                $initial_name = "名前";
+                $initial_addres = "番号";
+                $initial_shi = "福岡";
+                $initial_ban = "1-1-1";
+                $initial_detail = "アドレス";
             ?>
             <form action="Buyconfirm.php"method="post">
-            <h4 style="padding-left: 30px;">お名前<br><input type="text" value=></h4>
+            <h4 style="padding-left: 30px;">お名前<br><input type="text" value=<?=$initial_name ?>></h4>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">郵便番号<br><input type="text" value=></h4>
+            <h4 style="padding-left: 30px;">郵便番号<br><input type="text" value=<?=$initial_addres ?>></h4>
             <h4 class="font border-bottom"></h4>
 
-            <div class="row"><h4 class="col-md-4" style="padding-left: 30px;">都道府県 <select class="form-select col-md-8" aria-label="都道府県"><option selected>都道府県</select></option></h4></div>
+            <div class="row"><h4 class="col-md-4" style="padding-left: 30px;">都道府県 <select class="form-select col-md-8" aria-label="都道府県"><option selected></select></option></h4></div>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">市区町村<br><input type="text" value=></h4>
+            <h4 style="padding-left: 30px;">市区町村<br><input type="text" value=<?=$initial_shi ?>></h4>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">番地以降<br><input type="text" value=></h4>
+            <h4 style="padding-left: 30px;">番地以降<br><input type="text" value=<?=$initial_ban ?>></h4>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">メールアドレス<br><input type="text" value=></h4>
+            <h4 style="padding-left: 30px;">メールアドレス<br><input type="text" value=<?=$initial_detail ?>></h4>
             <h4 class="font border-bottom"></h4>
-
+            </form>
             <form style="text-align: center;">
               <br><br>
                </form>
