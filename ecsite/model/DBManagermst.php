@@ -82,7 +82,7 @@ class DBManagermst
     public function showGoods()
     {
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM goods;";
+        $sql = "SELECT * FROM goods ORDER BY rand();";
         $ps = $pdo->prepare($sql);
         $ps->execute();
         $selectdata = $ps->fetchAll();

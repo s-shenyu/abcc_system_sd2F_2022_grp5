@@ -65,7 +65,7 @@
                   echo '<div class="col-6 col-md-3">';
                   echo '<div class="card" style="border-style:none;">';
                   echo '<button>';
-                  echo '<a href="Datail.php" class="img">';
+                  echo '<a href="Detail.php?idgoods='.$row['goods_id'].'" class="img">';
                   echo '<img src="' . $row['goods_imgurl1'] . '" class="card-img-top"  style="border:none">';
                   echo '<div class="card-body"></a>';
                   echo '<h7 class="card-title">' . $row['goods_name'] . '</h7>';
