@@ -65,7 +65,7 @@
           echo '</div>';
         }
       } catch (error $err) {
-        echo "error";
+        echo '<font color="white"><h4 style="position:relative;left:2%;padding-top: 1%;">エラーです</h4></font>';
       }
       ?>
     </div>
