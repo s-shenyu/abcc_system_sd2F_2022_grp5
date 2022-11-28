@@ -25,7 +25,7 @@
                             <a class="nav-link active" href="../view/bottoms.php">bottom</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="../view/shose.php">shose</a>
+                            <a class="nav-link active" href="../view/shose.php">shoes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="../view/Accesory_etc.php">accessory/etc</a>
