@@ -5,10 +5,6 @@
     width: 94%;
 }
 
-.nav-itemlog {
-    padding: 0 0.5%;
-}
-
 .hoge_button3 {
     text-align: center;
     margin-bottom: 50px;
@@ -36,22 +32,10 @@ button.btn--shadow3 {
     color: #e74c3c;
 }
 
-.nav-item {
-    display: flex;
-    margin: 0 auto;
-    padding: 0 5%;
-    width: 94%;
-}
-
 .nav-itemlog {
     padding: 0 0.5%;
     display: flex;
     list-style-type: none;
-}
-
-.hoge_button3 {
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 a.btn--orange3 {
@@ -87,19 +71,6 @@ a.btn--shadow3 {
 .iro {
     color: gray;
     text-decoration: none;
-}
-
-.nav-item {
-    display: flex;
-    margin: 0 auto;
-    padding: 0 5%;
-    width: 94%;
-}
-
-.nav-itemlog {
-    padding: 0 0.5%;
-    display: flex;
-    list-style-type: none;
 }
 
 #serch_icn {

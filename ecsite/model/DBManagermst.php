@@ -126,7 +126,7 @@ class DBManagermst
 
     public function goodsDetail($id){
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM goods WHERE goods_id=?;";
+        $sql = "SELECT * FROM goods WHERE goods_id=? LIMIT 1;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $id, PDO::PARAM_INT);
         $ps->execute();
