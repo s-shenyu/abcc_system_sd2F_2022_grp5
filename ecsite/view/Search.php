@@ -60,7 +60,7 @@
                   <?php
                   require '../model/DBManagermst.php';
                   $dbmng = new DBManagermst();
-                  $result = $dbmng->showGoodsBySearch('*');
+                  $result = $dbmng->showGoodsBySearch($_POST['customname']);
                   try {
                     foreach ($result as $row) {
                       echo '<div class="col-6 col-md-3">';
