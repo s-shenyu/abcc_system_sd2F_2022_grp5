@@ -50,8 +50,8 @@
                       echo '</div>';
                       echo '</div>';
                     }
-                  } catch (error $err) {
-                    echo '<font color="white"><h4 style="position:relative;left:2%;padding-top: 1%;">エラーです</h4></font>';
+                  } catch (BadMethodCallException $ex) {
+                    echo '<font color="white"><h4 style="position:relative;left:2%;padding-top: 1%;">'.$ex->getMessage().'</h4></font>';
                   }
                   ?>
 
