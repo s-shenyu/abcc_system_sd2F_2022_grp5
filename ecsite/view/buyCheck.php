@@ -106,8 +106,12 @@
        </div>
 
        <hr width="100%">
-
-       <div class="row mt-3">
+      <?php
+      require '../model/DBManagermst.php';
+      $dbmng = new DBManagermst();
+      try{
+        $result = $dbmng->カートの中身();
+       echo '<div class="row mt-3">';
         echo '<div class="col-md-3">';
         echo '<img src="../public/img_site/s.jpg" width="150" height="150">';
         echo '</div>';
@@ -118,47 +122,30 @@
         echo '<p class="text-center">¥29,800</p>';
         echo '</div>';
         echo '</div>';  
-
-        <div class="row mt-3">
-        <div class="col-md-3">
-        <img src="../public/img_site/s.jpg" width="150" height="150">
-        </div>
-          <div class="col-md-6 text-dark ">
-                Embroidered MA-1 blouson "Black" [@zastin_tcp] <br>
-          </div>
-          <div class="col-md-3 text-dark">
-              <p class="text-center">¥29,800</p>
-          </div>
-        </div>  
-
-        <div class="row mt-3">
-        <div class="col-md-3">
-        <img src="../public/img_site/s.jpg" width="150" height="150">
-        </div>
-          <div class="col-md-6 text-dark ">
-                Embroidered MA-1 blouson "Black" [@zastin_tcp] <br>
-          </div>
-          <div class="col-md-3 text-dark">
-              <p class="text-center">¥29,800</p>
-          </div> 
-        </div>  
+      }catch(error $er){
+          echo '読み込みエラー';
+      }
+      ?>
         
       <hr>
-      <h4 class="gokei">合計(税込) :￥123,000</h4>
-      <h3 style="padding-top: 2%; padding-bottom:1%; padding-left:2%; text-align:left">購入者情報</h3>
-      <hr>
-      <h5>お名前</h5>
-      <hr>
-      <h5>お届け先</h5>
-      <hr>
-      <h5>電話番号</h5>
-      <hr>
-      <h5>お支払方法</h5>
-      <hr>
-      <div align="center">
-      <button class=" btn btn-primary"style="width: 20%;">注文する</button>
-      </div>
 
+      <?php //buyconfilm.phpからPOSTで持ってくる
+      echo '<h4 class="gokei">合計(税込) :￥'.'合計'.'</h4>';
+      
+      echo '<h3 style="padding-top: 2%; padding-bottom:1%; padding-left:2%; text-align:left">購入者情報</h3>';
+      echo '<hr>';
+      echo '<h5>お名前 : '.$_POST['name'].'</h5>';
+      echo '<hr>';
+      echo '<h5>お届け先 : '.$_POST['address'].'</h5>';
+      echo '<hr>';
+      echo '<h5>電話番号 : '.$_POST['tell'].'</h5>';
+      echo '<hr>';
+      echo '<h5>お支払方法 : '.$_POST['payment'].'</h5>';
+      echo '<hr>';
+      echo '<div align="center">';
+      echo '<button class=" btn btn-primary"style="width: 20%;">注文する</button>';
+      echo '</div>';
+      ?>
       </div>
     </div>
 </div>
