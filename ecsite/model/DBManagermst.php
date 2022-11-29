@@ -71,7 +71,7 @@ class DBManagermst
     public function signinAddName($mail, $pass, $name)
     {
         $pdo = $this->dbConnect();
-        $sql = "UPDATE user (user_name) SET user_name=? WHERE user_mail=? AND user_pass=?;";
+        $sql = "UPDATE user SET user_name=? WHERE user_mail=? AND user_pass=?;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $name, PDO::PARAM_STR);
         $ps->bindValue(2, $mail, PDO::PARAM_STR);
@@ -124,7 +124,8 @@ class DBManagermst
         }
     }
 
-    public function goodsDetail($id){
+    public function goodsDetail($id)
+    {
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM goods WHERE goods_id=? LIMIT 1;";
         $ps = $pdo->prepare($sql);
@@ -136,13 +137,12 @@ class DBManagermst
         } else {
             return $selectdata;
         }
-
     }
 
     public function goodsDetailWishlist($iduser, $idgoods)
     {
         $pdo = $this->dbConnect();
-        $sqls = "SELECT * FROM wishlist WHERE user_id=? AND goods_id=?;";
+        $sqls = "SELECT * FROM wishlist WHERE user_id=? AND goods_id=? AND wishlist_isdelete=0;";
         $ps = $pdo->prepare($sqls);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
@@ -155,6 +155,21 @@ class DBManagermst
         }
     }
 
+    public function goodsDetailCart($iduser, $idgoods)
+    {
+        $pdo = $this->dbConnect();
+        $sqls = "SELECT * FROM cart WHERE user_id=? AND goods_id=? AND cart_isdelete=0;";
+        $ps = $pdo->prepare($sqls);
+        $ps->bindValue(1, $iduser, PDO::PARAM_INT);
+        $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
+        $ps->execute();
+        $selectdata = $ps->fetchAll();
+        if (count($selectdata) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     // public function mypage($iduser)
     // {
     //     $pdo = $this->dbConnect();
@@ -169,7 +184,7 @@ class DBManagermst
     public function showWishlist($iduser)
     {
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM wishlist WHERE user_id=?;";
+        $sql = "SELECT * FROM wishlist WHERE user_id=? AND wishlist_isdelete=0;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->execute();
@@ -181,14 +196,51 @@ class DBManagermst
         }
     }
 
+    public function showCart($iduser)
+    {
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM cart WHERE user_id=? AND cart_isdelete=0;";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $iduser, PDO::PARAM_INT);
+        $ps->execute();
+        $selectdata = $ps->fetchAll();
+        if (count($selectdata) == 0) {
+            throw new BadMethodCallException("買い物カートはまだございません");
+        } else {
+            return $selectdata;
+        }
+    }
+
     public function addNewWishlist($iduser, $idgoods)
     {
         $pdo = $this->dbConnect();
-        $sqli = "INSERT INTO wishlist (user_id, goods_id, wishlist_date) VALUE (?, ?, ?);";
+        $sqli = "INSERT INTO wishlist (user_id, goods_id, wishlist_createdate, wishlist_isdelete) VALUE (?, ?, ?, 0);";
         $ps = $pdo->prepare($sqli);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
         $ps->bindValue(3, date("c"), PDO::PARAM_STR);
+        $ps->execute();
+    }
+
+    public function addNewCart($iduser, $idgoods)
+    {
+        $pdo = $this->dbConnect();
+        $sqli = "INSERT INTO cart (user_id, goods_id, cart_createdate, cart_isdelete) VALUE (?, ?, ?, 0);";
+        $ps = $pdo->prepare($sqli);
+        $ps->bindValue(1, $iduser, PDO::PARAM_INT);
+        $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
+        $ps->bindValue(3, date("c"), PDO::PARAM_STR);
+        $ps->execute();
+    }
+
+    public function deleteCart($iduser, $idgoods)
+    {
+        $pdo = $this->dbConnect();
+        $sqli = "UPDATE cart SET cart_isdelete=1, cart_changedate=? WHERE user_id=? AND goods_id=?;";
+        $ps = $pdo->prepare($sqli);
+        $ps->bindValue(1, date("c"), PDO::PARAM_STR);
+        $ps->bindValue(2, $iduser, PDO::PARAM_INT);
+        $ps->bindValue(3, $idgoods, PDO::PARAM_INT);
         $ps->execute();
     }
 

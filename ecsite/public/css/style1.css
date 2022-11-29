@@ -21,20 +21,20 @@ table {
     margin-bottom: 50px;
 }
 
-a.btn--orange {
+.btn--orange {
     color: #fff;
     background-color: #000000;
     border-bottom: 5px solid #000000;
 }
 
-a.btn--orange:hover {
+.btn--orange:hover {
     margin-top: 3px;
     color: #fff;
     background: #000000;
     border-bottom: 2px solid #000000;
 }
 
-a.btn--shadow {
+.btn--shadow {
     -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
     box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
@@ -44,20 +44,20 @@ a.btn--shadow {
     width: 250px;
 }
 
-a.btn--orange2 {
+.btn--orange2 {
     color: #808080;
     background-color: #EEEEEE;
     border-bottom: 5px solid #EEEEEE;
 }
 
-a.btn--orange2:hover {
+.btn--orange2:hover {
     margin-top: 3px;
     color: #808080;
     background: #EEEEEE;
     border-bottom: 2px solid #EEEEEE;
 }
 
-a.btn--shadow2 {
+.btn--shadow2 {
     -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
     box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
@@ -67,20 +67,20 @@ a.btn--shadow2 {
     width: 250px;
 }
 
-a.btn--orange3 {
+.btn--orange3 {
     color: #fff;
     background-color: #1E90FF;
     border-bottom: 5px solid #1E90FF;
 }
 
-a.btn--orange3:hover {
+.btn--orange3:hover {
     margin-top: 3px;
     color: #fff;
     background: #1E90FF;
     border-bottom: 2px solid #1E90FF;
 }
 
-a.btn--shadow3 {
+.btn--shadow3 {
     -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
     box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }

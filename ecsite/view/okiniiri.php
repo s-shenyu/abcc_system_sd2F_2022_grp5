@@ -44,7 +44,7 @@
             <?php
             require '../model/DBManagermst.php';
             $dbmng = new DBManagermst();
-            $result = $dbmng->showWishlist('*');
+            $result = $dbmng->showWishlist('wish');
             try {
               foreach ($result as $row) {
                 echo '<div class="col-md-6 text-dark">';

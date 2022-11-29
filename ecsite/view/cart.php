@@ -36,24 +36,38 @@ $dbmng = new DBManagermst();
             <div class="col-md-6">
               <p class="text-center">アイテム名</p>
             </div>
-            <div class="col-md-6 text-dark">
+            <div class="col-md-4 text-dark">
               <p class="text-center">小計(税込)</p>
+            </div>
+            <div class="col-md-2 text-dark">
+              <p class="text-center">操作</p>
             </div>
           </div>
           <hr style="margin-top: 1px" />
 
           <div class="row mt-3">
             <?php
-            foreach ($_SESSION['cartgoods'] as $row) {
-              $result = $dbmng->goodsDetail($row);
-              echo '<div class="col-md-6 text-dark">';
-              echo '<img src="../img/knit.png" width="100" height="150" align="left" hspace="10px">';
-              echo $row['goods_name'];
-              echo '<button class="btn btn-light">x削除</button>'; //?
-              echo '</div>';
-              echo '<div class="col-md-6  text-dark">';
-              echo '<p class="text-center">' . $row['goods_price'] . '</p>';
-              echo '</div>';
+            try {
+              $results = $dbmng->showCart($_SESSION['userido']);
+              foreach ($results as $result) {
+                $rows = $dbmng->goodsDetail($result['goods_id']);
+                foreach ($rows as $row) {
+                  echo '<form class="row mb-1" action="../controller/cDeletecart.php" method="post">';
+                  echo '<input type="hidden" name="id" value="' . $row['goods_id'] . '">';
+                  echo '<div class="col-md-6 text-dark">';
+                  echo '<img src="' . $row['goods_imgurl1'] . '" width="100" height="150" align="left" hspace="10px">';
+                  echo $row['goods_name'];
+                  echo '</div>';
+                  echo '<div class="col-md-4  text-dark">';
+                  echo '<p class="text-center">' . $row['goods_price'] . '</p>';
+                  echo '</div>';
+                  echo '<div class="col-md-2  text-dark">';
+                  echo '<button type="submit" class="btn btn-light">削除</button>';
+                  echo '</div></from>';
+                }
+              }
+            } catch (BadMethodCallException $ex) {
+              echo '<font color="black"><h4 style="position:relative;left:2%;padding-top: 1%;">'.$ex->getMessage().'</h4></font>';
             }
             ?>
           </div>

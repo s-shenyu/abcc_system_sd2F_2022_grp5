@@ -5,7 +5,7 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <title>OnLineShop</title>
   <style>
-    
+
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,13 +34,14 @@
                   <?php
                   require '../model/DBManagermst.php';
                   $dbmng = new DBManagermst();
-                  $result = $dbmng->showGoodsBySearch($_POST['keyword']);
+
                   try {
+                    $result = $dbmng->showGoodsBySearch($_POST['keyword']);
                     foreach ($result as $row) {
                       echo '<div class="col-6 col-md-3">';
                       echo '<div class="card" style="border-style:none;">';
                       echo '<button>';
-                      echo '<a href="Datail.php" class="img">';
+                      echo '<a href="Detail.php" class="img">';
                       echo '<img src="' . $row['goods_imgurl1'] . '" class="card-img-top"  style="border:none">';
                       echo '<div class="card-body"></a>';
                       echo '<h7 class="card-title">' . $row['goods_name'] . '</h7>';
@@ -50,11 +51,11 @@
                       echo '</div>';
                       echo '</div>';
                     }
-                  } catch (error $err) {
-                    echo '<font color="white"><h4 style="position:relative;left:2%;padding-top: 1%;">エラーです</h4></font>';
+                  } catch (BadMethodCallException $ex) {
+                    echo '<font color="white"><h4 style="position:relative;left:2%;padding-top: 1%;">' . $ex->getMessage() . '</h4></font>';
                   }
-                  ?>
 
+                  ?>
 
                 </div>
               </div>
