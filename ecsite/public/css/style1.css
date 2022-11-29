@@ -21,20 +21,20 @@ table {
     margin-bottom: 50px;
 }
 
-button.btn--orange {
+.btn--orange {
     color: #fff;
     background-color: #000000;
     border-bottom: 5px solid #000000;
 }
 
-button.btn--orange:hover {
+.btn--orange:hover {
     margin-top: 3px;
     color: #fff;
     background: #000000;
     border-bottom: 2px solid #000000;
 }
 
-button.btn--shadow {
+.btn--shadow {
     -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
     box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
@@ -44,20 +44,20 @@ button.btn--shadow {
     width: 250px;
 }
 
-button.btn--orange2 {
+.btn--orange2 {
     color: #808080;
     background-color: #EEEEEE;
     border-bottom: 5px solid #EEEEEE;
 }
 
-button.btn--orange2:hover {
+.btn--orange2:hover {
     margin-top: 3px;
     color: #808080;
     background: #EEEEEE;
     border-bottom: 2px solid #EEEEEE;
 }
 
-button.btn--shadow2 {
+.btn--shadow2 {
     -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
     box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
