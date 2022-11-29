@@ -26,14 +26,5 @@ new Vue({
             if(isErr==true) this.err+=1;
             return isErr;
         }
-    },
-    methods: {
-        submitCheck() {
-            if(this.mail!='' && this.pass!='' &&this.pass2!='' && this.err==0) {
-                this.type = "submit";
-            }else {
-                alert('error');
-            }
-        }
     }
 });

@@ -47,7 +47,7 @@
             <p v-else class="typeError" style="height:30px"></p>
 
             <div class="hoge_button3">
-              <button type={{type}} @click="submitCheck()" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">確認</button>
+              <button type="submit" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">確認</button>
             </div>
           </div>
         </form>

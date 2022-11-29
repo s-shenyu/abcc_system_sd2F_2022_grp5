@@ -14,10 +14,10 @@ $sendMail = new PHPMailer(true);
 $mail = $_POST['mail'];
 $pass = password_hash($pass, PASSWORD_DEFAULT);
 $mailAndPass = $mail.'userMandP'.$pass;
-$signinUrl = 'http://localhost/web/ecsite/controller/cSignincheck.php?info='.base64_encode($mailAndPass);
+$signinUrl = 'http://localhost/web/abcc_system_sd2F_2022_grp5/ecsite/controller/cSignincheck.php?info='.base64_encode($mailAndPass);
 
 try {
-    $dbmng->signin($_POST['mail'], $pass);
+    $dbmng->signin($mail, $pass);
     header('Location: ../controller/cSigninnext.php');
 
     $sendMail->CharSet = 'UTF-8';

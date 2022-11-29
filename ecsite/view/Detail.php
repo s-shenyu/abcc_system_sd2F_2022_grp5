@@ -1,11 +1,19 @@
 <?php
 session_start();
-$_SESSION['cartgoods'] = array();
-$_SESSION['wishgoods'] = array();
+
+if (isset($_SESSION['userido'])) {
+  $iduser = $_SESSION['userido'];
+} else {
+  $iduser = 0;
+}
 
 require '../model/DBManagermst.php';
 $dbmng = new DBManagermst();
 $goods = $dbmng->goodsDetail($_GET['idgoods']);
+$idgood;
+foreach ($goods as $row) {
+  $idgood = $row['goods_id'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +51,7 @@ $goods = $dbmng->goodsDetail($_GET['idgoods']);
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner mb-5">
                   <div class="carousel-item active">
                     <img src="<?php foreach ($goods as $good) {
                                 echo $good['goods_imgurl1'];
@@ -76,9 +84,9 @@ $goods = $dbmng->goodsDetail($_GET['idgoods']);
               </div>
 
             </div>
-            <div class="col-md-6  p-5">
+            <div class="col-md-6 p-5">
               <!-- 商品名 -->
-              <h4>
+              <h4 class="mb-3">
                 <?php foreach ($goods as $good) {
                   echo $good['goods_name'];
                 } ?>
@@ -91,25 +99,31 @@ $goods = $dbmng->goodsDetail($_GET['idgoods']);
                     } ?>
               </h5><br>
 
-              <form action="Detail.php" method="post">
-                <input type="hidden" name="shohin_id" value="<?php echo $shohin_id ?>">
+              <form action="../controller/cWishlist.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $idgood ?>">
 
-                <?php if ($dbmng->goodsDetailWishlist($member_id, $shohin_id) == false) : ?>
+                <?php if ($dbmng->goodsDetailWishlist($iduser, $idgood) == true) : ?>
                   <input type="hidden" name="favorite" value="addfav">
-                  <button type="submit" class="btn">
-                    <h2><i class="bi bi-heart"></i></h2>
+                  <button type="submit" class='btn btn--orange2 btn--cubic2 btn--shadow2　hoge_button2'>
+                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi-heart' viewBox='0 0 16 16'>
+                      <path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z' />
+                    </svg>
+                    お気入り登録
                   </button>
                 <?php else : ?>
-                  <input type="hidden" name="favorite" value="delfav">
-                  <button type="submit" class="btn">
-                    <h2><i class="bi bi-heart-fill"></i></h2>
-                  </button>
+                  <p class='btn btn--orange2 btn--cubic2 btn--shadow2　hoge_button2'>
+                    <!-- <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi-heart' viewBox='0 0 16 16'>
+                      <path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z' />
+                    </svg> -->
+                    お気入り登録した
+                  </p>
                 <?php endif; ?>
-              </form>
+              </form><br>
 
-              <p>
+              <form action="../controller/cCart.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $idgood ?>">
 
-
+<<<<<<< Updated upstream
                 <a href='' class='btn btn--orange2 btn--cubic2 btn--shadow2 hoge_button2'>
                   <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi-heart' viewBox='0 0 16 16'>
                     <path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z' />
@@ -133,50 +147,39 @@ $goods = $dbmng->goodsDetail($_GET['idgoods']);
               </p>
 
 
+=======
+                <?php if ($dbmng->goodsDetailCart($iduser, $idgood) == true) : ?>
+                  <input type="hidden" name="favorite" value="addfav">
+                  <button type="submit" class='btn btn--orange3 btn--cubic3 btn--shadow3　hoge_button3'>
+                  <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi-cart' viewBox='0 0 16 16'>
+                    <path d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z' />
+                  </svg>
+                  カートに入れる
+                  </button>
+                <?php else : ?>
+                  <p type="submit" class='btn btn--orange3 btn--cubic3 btn--shadow3　hoge_button3'>
+                    <!-- <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi-heart' viewBox='0 0 16 16'>
+                      <path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z' />
+                    </svg> -->
+                    カートに入れた
+                  </p>
+                <?php endif; ?>
+              </form>
+>>>>>>> Stashed changes
 
               <?php
-
+              echo '<p>';
+              foreach ($goods as $good) {
+                echo $good['goods_detail'];
+              }
+              echo '</p>';
               ?>
-
-
-              <p>ランダムパターンの柄にフェイクスウェードの生地切り替えが施されたクルーネックニットです<br>
-
-                こちらイタリア製のニットということもあり、<br>
-                デザイン物の割に落ち着いた雰囲気があります。<br>
-
-                ウールほどチクチクしないしアクリルほどボサボサな感じがなく、<br>
-                コットンニットに近い触り心地。<br>
-                高級感と言うには少し地味なのですが、<br>
-                袖を通した時に「あぁ良いニットだなぁ」と<br>
-                感じて頂ける生地感かと思います。<br>
-
-                スタイリングですが、<br>
-                レザージャケットや黒デニムと合わせて"素材感"をアクセントにした<br>
-                組み合わせがオススメ。<br>
-                セットアップなどとモードに合わせるのカッコ良いですよ。</p>
-
-
-
-              ＊アイロン後に発送致しますが、あくまで古着のため、理解のある方のみのご購入をお願いいたします。<br>
-              ＊＊全アイテム古着の為、一点物となります予めご了承下さい。<br>
-
-              ※配送に関しては、月~水までにお支払い頂いたご注文→木曜日に発送。木~日までにお支払い頂いたご注文→月曜日に発送。<br>
-              ※郵便局が閉まっているため土日、祝日の発送は不可能となります予めご了承ください。<br>
-
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
-
-  <div class="hoge_button">
-    <a href="" class="btn btn--orange btn--cubic btn--shadow　hoge_button" onclick="history.back(-1);return false">一覧に戻る</a>
-  </div>
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>

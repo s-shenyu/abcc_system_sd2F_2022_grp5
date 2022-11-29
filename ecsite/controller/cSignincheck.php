@@ -9,10 +9,11 @@ $pass = explode('userMandP', $mailAndPass)[1];
 try {
     $result = $dbmng->loginN($mail, $pass);
     foreach ($result as $row) {
+        $_SESSION['userido'] = $row['user_id'];
         $_SESSION['usermailo'] = $row['user_mail'];
         $_SESSION['usernameo'] = $row['user_name'];
     }
-    header('Location: ../view/mypage.php');
+    header('Location: ../view/AccountSet.html');
 } catch (Exception $ex) {
     header("refresh: 3; url= ../view/Login.php");
     error_log($ex->getMessage() . "\n", 3, "error_log.txt");

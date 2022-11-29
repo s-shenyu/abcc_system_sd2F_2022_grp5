@@ -6,6 +6,7 @@ $dbmng = new DBManagermst();
 try {
     $result = $dbmng->login($_POST['mail'], $_POST['pass']);
     foreach ($result as $row) {
+        $_SESSION['userido'] = $row['user_id'];
         $_SESSION['usermailo'] = $row['user_mail'];
         $_SESSION['usernameo'] = $row['user_name'];
     }
