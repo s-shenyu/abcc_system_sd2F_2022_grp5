@@ -138,22 +138,46 @@
             <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">購入者さま</h3>
 
             <form action="Buyconfirm.php"method="post">
-            <h4 style="padding-left: 30px;">お名前<br><input type="text" value=></h4>
+            <h4 style="padding-left: 30px;">お名前<br><input type="text" name="name"></h4>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">郵便番号<br><input type="text" value=></h4>
+            <h4 style="padding-left: 30px;">郵便番号<br><input type="text" name="pcode"></h4>
             <h4 class="font border-bottom"></h4>
 
-            <div class="row"><h4 class="col-md-4" style="padding-left: 30px;">都道府県 <select class="form-select col-md-8" aria-label="都道府県"><option selected>都道府県</select></option></h4></div>
+            <div class="row"><h4 class="col-md-4" style="padding-left: 30px;">都道府県
+            <?php
+// ①配列にデータを設定
+$ken_data = ['hokkaido'=>'北海道',//北海道
+             'aomori'=>'青森県','akita'=>'秋田県','yamagata'=>'山形県','iwate'=>'岩手県','miyagi'=>'宮城県','hukushima'=>'福島県',//東北地方
+             'tochigi'=>'栃木県','ibaraki'=>'茨城県','gunma'=>'群馬県','saitama'=>'埼玉県','chiba'=>'千葉県','tokyo'=>'東京都','kanagawa'=>'神奈川県',//関東地方
+             'nigata'=>'新潟県','toyama'=>'富山県','ishikawa'=>'石川県','hukui'=>'福井県','nagano'=>'長野県','gihu'=>'岐阜県','yamanashi'=>'山梨県','shizuoka'=>'静岡県',//中部地方
+             'shiga'=>'滋賀県','mie'=>'三重県','kyoto'=>'京都府','osaka'=>'大阪府','nara'=>'奈良県','wakayama'=>'和歌山県','hyogo'=>'兵庫県',//近畿地方
+             'tootori'=>'鳥取県','okayama'=>'岡山県','shimane'=>'島根県','hiroshima'=>'広島県','yamaguchi'=>'山口県',//中国地方
+             'kagawa'=>'香川県','ehime'=>'愛媛県','kochi'=>'高知県','kochi'=>'徳島県',//四国地方
+             'hukuoka'=>'福岡県','saga'=>'佐賀県','nagasaki'=>'長崎県','oita'=>'大分県','kumamoto'=>'熊本県','miyazaki'=>'宮崎県','kagoshima'=>'鹿児島県','okinawa'=>'沖縄県'//九州沖縄地方
+            ];
+
+foreach($ken_data as $ken_data_key => $ken_data_val){
+   $ken_data .= "<option value='". $ken_data_key;
+   $ken_data .= "'>". $ken_data_val. "</option>";
+}
+ 
+?>
+<select name='ken'>
+<?php 
+echo $ken_data; 
+?>
+</select>
+</h4></div>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">市区町村<br><input type="text" value=></h4>
+            <h4 style="padding-left: 30px;">市区町村<br><input type="text" name="addres"></h4>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">番地以降<br><input type="text" value=></h4>
+            <h4 style="padding-left: 30px;">番地以降<br><input type="text" name="ban"></h4>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">メールアドレス<br><input type="text" value=></h4>
+            <h4 style="padding-left: 30px;">メールアドレス<br><input type="text" name="mail"></h4>
             <h4 class="font border-bottom"></h4>
 
             <form style="text-align: center;">
@@ -161,16 +185,16 @@
                </form>
             <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">お支払方法</h3>
             
-            <h4 style="padding-left: 30px;"><input type="radio" name="way" value="credit"> クレジットカード<h4 style="padding-left: 30px;"><img src="../img/viza.png" class="img-fluid picture" alt=""><img src="../img/master card.png" class="img-fluid picture" alt=""><img src="../img/jcb.png" class="img-fluid picture" alt=""><img src="../img/american express.png" class="img-fluid picture" alt=""><img src="../img/diners club.png" class="img-fluid picture" alt=""></h4></h4>
+            <h4 style="padding-left: 30px;"><input type="radio" name="way" name="credit"> クレジットカード<h4 style="padding-left: 30px;"><img src="../img/viza.png" class="img-fluid picture" alt=""><img src="../img/master card.png" class="img-fluid picture" alt=""><img src="../img/jcb.png" class="img-fluid picture" alt=""><img src="../img/american express.png" class="img-fluid picture" alt=""><img src="../img/diners club.png" class="img-fluid picture" alt=""></h4></h4>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;"><input type="radio" name="way" value="bank">銀行振込</h4>
+            <h4 style="padding-left: 30px;"><input type="radio" name="way" name="bank">銀行振込</h4>
             <h4 class="font border-bottom"></h4>
             
-            <h4 style="padding-left: 30px;"><input type="radio" name="way" value="convenience">コンビニ決済</h4>
+            <h4 style="padding-left: 30px;"><input type="radio" name="way" name="convenience">コンビニ決済</h4>
             <h4 class="font border-bottom"></h4>
             
-            <h4 style="padding-left: 30px;"><input type="radio" name="way" value="paypay">PayPay払い</h4>
+            <h4 style="padding-left: 30px;"><input type="radio" name="way" name="paypay">PayPay払い</h4>
             <p style="padding-left: 43px;">お支払いはPayPay残高のみご利用いただけます。</p>
             <h4 class="font border-bottom"></h4>
 
