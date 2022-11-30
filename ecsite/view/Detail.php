@@ -32,7 +32,7 @@ foreach ($goods as $row) {
   <link rel="stylesheet" href="../public/css/style1.css">
 </head>
 
-<body background="../img/watercolor_00395.jpeg">
+<body background="../public/img_site/topimage.jpg">
   <?php include_once '../controller/Navbar.php' ?>
 
   <div class="container-fluid">
