@@ -144,19 +144,20 @@ function cancel(){
             <div class="row"><h4 class="col-md-4" style="padding-left: 30px;">都道府県
             <?php
 // ①配列にデータを設定
-$ken_data = ['hokkaido'=>'北海道',//北海道
-             'aomori'=>'青森県','akita'=>'秋田県','yamagata'=>'山形県','iwate'=>'岩手県','miyagi'=>'宮城県','hukushima'=>'福島県',//東北地方
-             'tochigi'=>'栃木県','ibaraki'=>'茨城県','gunma'=>'群馬県','saitama'=>'埼玉県','chiba'=>'千葉県','tokyo'=>'東京都','kanagawa'=>'神奈川県',//関東地方
-             'nigata'=>'新潟県','toyama'=>'富山県','ishikawa'=>'石川県','hukui'=>'福井県','nagano'=>'長野県','gihu'=>'岐阜県','yamanashi'=>'山梨県','shizuoka'=>'静岡県',//中部地方
-             'shiga'=>'滋賀県','mie'=>'三重県','kyoto'=>'京都府','osaka'=>'大阪府','nara'=>'奈良県','wakayama'=>'和歌山県','hyogo'=>'兵庫県',//近畿地方
-             'tootori'=>'鳥取県','okayama'=>'岡山県','shimane'=>'島根県','hiroshima'=>'広島県','yamaguchi'=>'山口県',//中国地方
-             'kagawa'=>'香川県','ehime'=>'愛媛県','kochi'=>'高知県','kochi'=>'徳島県',//四国地方
-             'hukuoka'=>'福岡県','saga'=>'佐賀県','nagasaki'=>'長崎県','oita'=>'大分県','kumamoto'=>'熊本県','miyazaki'=>'宮崎県','kagoshima'=>'鹿児島県','okinawa'=>'沖縄県'//九州沖縄地方
+$ken_data = ['北海道',//北海道       
+             '青森県','秋田県','山形県','岩手県','宮城県','福島県',//東北地方
+             '栃木県','茨城県','群馬県','埼玉県','千葉県','東京都','神奈川県',//関東地方
+             '新潟県','富山県','石川県','福井県','長野県','岐阜県','山梨県','静岡県',//中部地方
+             '滋賀県','三重県','京都府','大阪府','奈良県','和歌山県','兵庫県',//近畿地方
+             '鳥取県','岡山県','島根県','広島県','山口県',//中国地方
+             '香川県','愛媛県','高知県','徳島県',//四国地方
+             '福岡県','佐賀県','長崎県','大分県','熊本県','宮崎県','鹿児島県','沖縄県'//九州沖縄地方
+
             ];
 
 foreach($ken_data as $ken_data_key => $ken_data_val){
    $ken_data .= "<option value='".$ken_data_key;
-   $ken_data .= "'>". $ken_data_val. "</option>";
+   $ken_data .= "'>".$ken_data_val . "</option>";
 }
  
 ?>
