@@ -1,3 +1,8 @@
+<?php
+session_start();
+require '../model/DBManagermst.php';
+$dbmng = new DBManagermst();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -32,9 +37,6 @@
                 <div class="row  gy-5 gx-3 mt-1 mb-5">
 
                   <?php
-                  require '../model/DBManagermst.php';
-                  $dbmng = new DBManagermst();
-
                   try {
                     $result = $dbmng->showGoodsBySearch($_POST['keyword']);
                     foreach ($result as $row) {

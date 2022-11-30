@@ -29,7 +29,7 @@
 
         <hr class="hr1">
 
-        <form action="../controller/cSignin.php" method="post" style="text-align:center;">
+        <form action="../controller/ckSignin.php" method="post" style="text-align:center;">
           <div id="signinform">
             <p style="text-align:center">メールアドレスを入力して下さい</p>
             <input v-model="mail" type="text" placeholder="sample@stor.jp" size="10" name="mail" style="width:400px; height:30px;">
