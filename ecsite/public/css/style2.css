@@ -1,45 +1,3 @@
-.spinner-container {
-  display: flex;
-  justify-content: center;
-  user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}
-
-.spinner {
-  width: 70px;
-  padding: 0;
-  text-align: center;
-  border: none;
-  background: none;
-  outline: none;
-  pointer-events: none;
-}
-
-.spinner::-webkit-inner-spin-button,
-.spinner::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-
-.spinner-sub,
-.spinner-add {
-  display: block;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  border: 1px solid #000;
-  border-radius: 50%;
-  cursor: pointer;
-  line-height: 35px;
-}
-
-.disabled {
-  opacity: 0.3;
-  cursor: inherit;
-}
-
 .nav-item {
   display: flex;
   margin: 0 auto;
@@ -55,7 +13,7 @@
 
 .hoge_button3 {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 
 a.btn--orange3 {
@@ -76,10 +34,10 @@ a.btn--shadow3 {
   box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 
-.bi-heart {
-  color: red
+.font {
+  color: #ffff;
 }
 
-.hr1 {
-  margin: 50px;
+.ban {
+  color: red;
 }

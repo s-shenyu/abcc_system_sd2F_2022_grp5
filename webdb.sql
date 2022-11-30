@@ -30,7 +30,10 @@ CREATE TABLE `goods` (
 CREATE TABLE `purchaseh` (
   `purchaseH_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `purchaseH_address` int(11) NOT NULL,
+  `purchaseH_name` varchar(100) NOT NULL,
+  `purchaseH_post` varchar(10) NOT NULL,
+  `purchaseH_address` varchar(255) NOT NULL,
+  `purchaseH_number` varchar(20) NOT NULL,
   `purchaseH_createdate` date NOT NULL,
   `purchaseH_changedate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

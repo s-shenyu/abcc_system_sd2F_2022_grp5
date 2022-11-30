@@ -1,7 +1,9 @@
 <?php
 session_start();
 require '../model/DBManagermst.php';
+require '../model/ArrayKen.php';
 $dbmng = new DBManagermst();
+$arrk = new ArrayKen();
 ?>
 
 <!DOCTYPE html>
@@ -56,88 +58,86 @@ $dbmng = new DBManagermst();
       <div style="background-color:#FFFF; padding-top: 20px; padding-bottom: 40px; ">
         <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">購入者さま</h3>
 
-        <h4 style="padding-left: 30px;">お名前<br><input type="text" id="name"></h4>
-        <p id="name_error"></p>
-        <h4 class="font border-bottom"></h4>
-
-        <h4 style="padding-left: 30px;">郵便番号<br><input type="text" id="pcode"></h4>
-        <p id="post_error"></p>
-        <h4 class="font border-bottom"></h4>
-
-        <div class="row">
-          <h4 class="col-md-4" style="padding-left: 30px;">都道府県
-            <?php
-            // ①配列にデータを設定
-            $ken_data = [
-              '北海道', //北海道       
-              '青森県', '秋田県', '山形県', '岩手県', '宮城県', '福島県', //東北地方
-              '栃木県', '茨城県', '群馬県', '埼玉県', '千葉県', '東京都', '神奈川県', //関東地方
-              '新潟県', '富山県', '石川県', '福井県', '長野県', '岐阜県', '山梨県', '静岡県', //中部地方
-              '滋賀県', '三重県', '京都府', '大阪府', '奈良県', '和歌山県', '兵庫県', //近畿地方
-              '鳥取県', '岡山県', '島根県', '広島県', '山口県', //中国地方
-              '香川県', '愛媛県', '高知県', '徳島県', //四国地方
-              '福岡県', '佐賀県', '長崎県', '大分県', '熊本県', '宮崎県', '鹿児島県', '沖縄県' //九州沖縄地方
-
-            ];
-
-            foreach ($ken_data as $ken_data_key => $ken_data_val) {
-              $ken_data .= "<option value='" . $ken_data_key;
-              $ken_data .= "'>" . $ken_data_val . "</option>";
+        <?php
+        $name = '';
+        $post = '';
+        $ken = '';
+        $shi = '';
+        $ban = '';
+        $dtl = '';
+        $tel = '';
+        try {
+          $results = $dbmng->showInfo($_SESSION['userido']);
+          foreach ($results as $result) {
+            $name = empty($result['user_name']) ? $name : $result['user_name'];
+            $rows = $dbmng->showAddress($result['user_id']);
+            foreach ($rows as $row) {
+              $post = empty($row['address_post']) ? $post : $row['address_post'];
+              $ken = empty($row['address_ken']) ? $ken : $row['address_ken'];
+              $shi = empty($row['address_shi']) ? $shi : $row['address_shi'];
+              $ban = empty($row['address_ban']) ? $ban : $row['address_ban'];
+              $dtl = empty($row['address_detail']) ? $dtl : $row['address_detail'];
+              $tel = empty($row['address_number']) ? $tel : $row['address_number'];
             }
-
+          }
+        } catch (BadMethodCallException $ex) {
+          echo '<font color="black"><h4 style="position:relative;left:2%;padding-top: 1%;">' . $ex->getMessage() . '</h4></font>';
+        }
+        ?>
+        <form action="./BuyCheck.php" method="post">
+          <h4 style="padding-left: 30px;">お名前<br><input type="text" name="name" value="<?php echo $name ?>"></h4>
+          <hr class="hr1">
+          <h4 style="padding-left: 30px;">郵便番号<br><input type="tel" name="post" value="<?php echo $post ?>"></h4>
+          <h4 class="col-md-4" style="padding-left: 30px;">都道府県<br>
+            <?php
+            $ken_datas = '';
+            foreach ($arrk->ken_data as $ken_data_key => $ken_data_val) {
+              if ($ken_data_key == $ken) {
+                $ken_datas .= '<option value="' . $ken_data_key . '" selected>' . $ken_data_val . '</option>';
+              } else {
+                $ken_datas .= '<option value="' . $ken_data_key . '">' . $ken_data_val . '</option>';
+              }
+            }
             ?>
             <select name='ken'>
               <?php
-              echo $ken_data;
+              echo $ken_datas;
               ?>
             </select>
           </h4>
-        </div>
-        <h4 class="font border-bottom"></h4>
-
-        <h4 style="padding-left: 30px;">市区町村<br><input type="text" id="city"></h4>
-        <p id="city_error"></p>
-        <h4 class="font border-bottom"></h4>
-
-        <h4 style="padding-left: 30px;">番地以降<br><input type="text" id="ban"></h4>
-        <p id="ban_error"></p>
-        <h4 class="font border-bottom"></h4>
-
-        <h4 style="padding-left: 30px;">メールアドレス<br><input type="text" id="email"></h4>
-        <p id="email_error"></p>
-        <h4 class="font border-bottom"></h4>
-
-        <form style="text-align: center;">
-          <br><br>
+          <h4 style="padding-left: 30px;">市区町村<br><input type="text" name="shi" value="<?php echo $shi ?>"></h4>
+          <h4 style="padding-left: 30px;">番地<br><input type="text" name="ban" value="<?php echo $ban ?>"></h4>
+          <h4 style="padding-left: 30px;">詳細住所<br><input type="text" name="dtl" value="<?php echo $dtl ?>"></h4>
+          <h4 style="padding-left: 30px;">電話番号<br><input type="tel" name="tel" value="<?php echo $tel ?>"></h4>
+          <hr class="hr1"><br>
+          <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">お支払方法</h3>
+          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="credit" checked>
+            クレジットカード
+            <div style="padding-left: 30px;">
+              <img src="../public/img_site/viza.png" class="img-fluid picture" alt="" style="height: 50px;">
+              <img src="../public/img_site/master.png" class="img-fluid picture" alt="" style="height: 50px;">
+              <img src="../public/img_site/jcb.png" class="img-fluid picture" alt="" style="height: 50px;">
+              <img src="../public/img_site/amex.png" class="img-fluid picture" alt="" style="height: 50px;">
+              <img src="../public/img_site/diners.png" class="img-fluid picture" alt="" style="height: 50px;">
+            </div>
+          </h4>
+          <h4 class="font border-bottom"></h4>
+          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="bank">銀行振込</h4>
+          <h4 class="font border-bottom"></h4>
+          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="convenience">コンビニ決済</h4>
+          <h4 class="font border-bottom"></h4>
+          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="paypay">PayPay払い</h4>
+          <h4 class="font border-bottom"></h4>
+          <div class="hoge_button3">
+            <button type="submit" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
+              確認画面へ
+            </button>
+          </div>
         </form>
-        <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">お支払方法</h3>
-
-        <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="credit" checked> クレジットカード<h4 style="padding-left: 30px;"><img src="../public/img_site/viza.png" class="img-fluid picture" alt=""><img src="../public/img_site/master card.png" class="img-fluid picture" alt=""><img src="../public/img_site/jcb.png" class="img-fluid picture" alt=""><img src="../public/img_site/american express.png" class="img-fluid picture" alt=""><img src="../public/img_site/diners club.png" class="img-fluid picture" alt=""></h4>
-        </h4>
-        <h4 class="font border-bottom"></h4>
-
-        <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="bank">銀行振込</h4>
-        <h4 class="font border-bottom"></h4>
-
-        <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="convenience">コンビニ決済</h4>
-        <h4 class="font border-bottom"></h4>
-
-        <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="paypay">PayPay払い</h4>
-        <p style="padding-left: 43px;">お支払いはPayPay残高のみご利用いただけます。</p>
-        <h4 class="font border-bottom"></h4>
-
-        <form style="text-align: center;">
-          <br><br>
-        </form>
-        <div class="hoge_button3">
-          <a href="buyCheck.php" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
-            内容のご確認へ
-          </a>
-        </div>
-
       </div>
     </div>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 

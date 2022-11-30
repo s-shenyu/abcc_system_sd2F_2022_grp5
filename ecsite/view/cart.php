@@ -71,9 +71,15 @@ $dbmng = new DBManagermst();
                 }
               }
             } catch (BadMethodCallException $ex) {
-              echo '<font color="black"><h4 style="position:relative;left:2%;padding-top: 1%;">'.$ex->getMessage().'</h4></font>';
+              echo '<font color="black"><h4 style="position:relative;left:2%;padding-top: 1%;">' . $ex->getMessage() . '</h4></font>';
             }
             ?>
+          </div>
+
+          <div class="hoge_button3">
+            <a href="./Buy.php" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button5">
+              注文画面へ
+            </a>
           </div>
         </div>
       </div>
