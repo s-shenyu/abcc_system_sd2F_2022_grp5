@@ -34,40 +34,49 @@ $dbmng = new DBManagermst();
 <body background="../public/img_site/topimage.jpg">
   <?php include_once '../controller/Navbar.php' ?>
 
-  <div name="maindiv" class="container">
-    <div class="row  gy-5 gx-3 mt-1 mr-1 ml-1 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div>
 
-      <?php
-      try {
-        $result = $dbmng->showGoodsByTag('Bottoms');
-        foreach ($result as $row) {
-          echo '<div class="col-6 col-md-3">';
-          echo '<div style="width:100%; border-style:none;">';
+          <div name="maindiv" class="container">
+            <div class="row  gy-5 gx-3 mt-1 mb-5">
 
-          echo '<a href="Detail.php?idgoods=' . $row['goods_id'] . '" class="img">';
+            <?php
+              try {
+                $result = $dbmng->showGoodsByTag('Bottoms');
+                foreach ($result as $row) {
+                  echo '<div class="col-6 col-md-3">';
+                  echo '<div style="width:100%; border-style:none;">';
 
-          echo '<button type="button" class="btn btn-light">';
-          echo '<img src="' . $row['goods_imgurl1'] . '" class="card-img-top"  style="border:none"><br>';
+                  echo '<a href="Detail.php?idgoods=' . $row['goods_id'] . '" class="img">';
 
-          echo '<div>';
-          echo '<div class="goodsNa" style="margin:auto;"><b>' . $row['goods_name'] . '</b></div>';
-          echo '<p style="color:#4e454a; padding-top:5%;">￥' . $row['goods_price'] . '</p>';
-          echo '</div>';
+                  echo '<button type="button" class="btn btn-light">';
+                  echo '<img src="' . $row['goods_imgurl1'] . '" class="card-img-top"  style="border:none"><br>';
 
-          echo '</button>';
-          echo '</a>';
+                  echo '<div>';
+                  echo '<div class="goodsNa" style="margin:auto;"><b>' . $row['goods_name'] . '</b></div>';
+                  echo '<p style="color:#4e454a; padding-top:5%;">￥' . $row['goods_price'] . '</p>';
+                  echo '</div>';
 
-          echo '</div>';
-          echo '</div>';
-        }
-      } catch (error $err) {
-        echo '<font color="white"><h4 style="position:relative;left:2%;padding-top: 1%;">エラーです</h4></font>';
-      }
-      ?>
+                  echo '</button>';
+                  echo '</a>';
+
+                  echo '</div>';
+                  echo '</div>';
+                }
+              } catch (error $err) {
+                echo '<font color="white"><h4 style="position:relative;left:2%;padding-top: 1%;">エラーです</h4></font>';
+              }
+              ?>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
 </body>
