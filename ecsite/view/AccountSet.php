@@ -61,7 +61,7 @@ $dbmng = new DBManagermst();
           </div> -->
 
         <div class="hoge_button3">
-          <a href="" class="btn btn--orange3 btn--cubic3 btn--shadow3　hoge_button3">
+          <a href="" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
             登録
           </a>
         </div>
