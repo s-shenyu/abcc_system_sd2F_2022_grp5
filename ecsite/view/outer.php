@@ -1,3 +1,8 @@
+<?php
+session_start();
+require '../model/DBManagermst.php';
+$dbmng = new DBManagermst();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -26,10 +31,8 @@
             <div class="row  gy-5 gx-3 mt-1 mb-5">
 
             <?php
-              require '../model/DBManagermst.php';
-              $dbmng = new DBManagermst();
-              $result = $dbmng->showGoodsByTag('Outer');
               try {
+                $result = $dbmng->showGoodsByTag('Outer');
                 foreach ($result as $row) {
                   echo '<div class="col-6 col-md-3">';
                   echo '<div class="card" style="border-style:none;">';
