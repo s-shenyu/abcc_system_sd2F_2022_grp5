@@ -40,7 +40,7 @@
                     </form>
 
                     <li class="nav-itemlog">
-                        <a class="nav-link active" href="../view/Login.php">login</a>
+                        <a class="nav-link active" href="../view/Mypage.php">Mypage</a>
                     </li>
                     <a class="navbar-brand" href="../view/cart.php">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">

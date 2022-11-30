@@ -46,7 +46,62 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <script>
+function cancel(){
+  let ngflg = 0;
+        let name = document.getElementById("name").value;
+        let post = document.getElementById("pcode").value;
+        let city = document.getElementById("city").value;
+        let ban = document.getElementById("ban").value;
+        let email = document.getElementById("email").value;
 
+        name_error.innerHTML = "";
+        if(name == ""){ 
+          name_error.innerHTML = "入力は必須です。";
+          ngflg = 1;
+        }
+
+        post_error.innerHTML = "";
+        if(post == ""){
+          post_error.innerHTML = "入力は必須です。";
+          ngflg = 1;
+        }else{
+          var regexp = /^\d{7}$/;
+        if(regexp.test(post) != true){ 
+          ngflg = 1;
+          post_error.innerHTML = "正しい郵便番号を入力してください。";
+         }
+        }
+
+        city_error.innerHTML = "";
+        if(city == ""){ 
+          city_error.innerHTML = "入力は必須です。";
+          ngflg = 1;
+        }
+
+        ban_error.innerHTML = "";
+        if(ban == ""){
+          ban_error.innerHTML = "入力は必須です。";
+          ngflg = 1;
+        }
+
+        email_error.innerHTML = "";
+        if(email == ""){
+          email_error.innerHTML = "入力は必須です。";
+          ngflg = 1;
+        }else{
+          var regexp = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
+        if(regexp.test(email) != true){
+          email_error.innerHTML = "正しいメールアドレスを入れてください。";
+          ngflg = 1;
+           }
+          }
+
+        if(ngflg == 1){
+          return false;
+        }
+      }
+      </script>
 </head>
 
 <body background="../public/img_site/topimage.jpg">
@@ -78,11 +133,12 @@
         <div style="background-color:#FFFF; padding-top: 20px; padding-bottom: 40px; ">
             <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">購入者さま</h3>
 
-            <form action="Buyconfirm.php"method="post">
-            <h4 style="padding-left: 30px;">お名前<br><input type="text" name="name"></h4>
+            <h4 style="padding-left: 30px;">お名前<br><input type="text" id="name"></h4>
+            <p id="name_error"></p>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">郵便番号<br><input type="text" name="pcode"></h4>
+            <h4 style="padding-left: 30px;">郵便番号<br><input type="text" id="pcode"></h4>
+            <p id="post_error"></p>
             <h4 class="font border-bottom"></h4>
 
             <div class="row"><h4 class="col-md-4" style="padding-left: 30px;">都道府県
@@ -99,7 +155,7 @@ $ken_data = ['hokkaido'=>'北海道',//北海道
             ];
 
 foreach($ken_data as $ken_data_key => $ken_data_val){
-   $ken_data .= "<option value='". $ken_data_key;
+   $ken_data .= "<option value='".$ken_data_key;
    $ken_data .= "'>". $ken_data_val. "</option>";
 }
  
@@ -112,14 +168,16 @@ echo $ken_data;
 </h4></div>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">市区町村<br><input type="text" name="addres"></h4>
-            
+            <h4 style="padding-left: 30px;">市区町村<br><input type="text" id="city"></h4>
+            <p id="city_error"></p>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">番地以降<br><input type="text" name="ban"></h4>
+            <h4 style="padding-left: 30px;">番地以降<br><input type="text" id="ban"></h4>
+            <p id="ban_error"></p>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;">メールアドレス<br><input type="text" name="mail"></h4>
+            <h4 style="padding-left: 30px;">メールアドレス<br><input type="text" id="email"></h4>
+            <p id="email_error"></p>
             <h4 class="font border-bottom"></h4>
 
             <form style="text-align: center;">
@@ -127,29 +185,28 @@ echo $ken_data;
                </form>
             <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">お支払方法</h3>
             
-            <h4 style="padding-left: 30px;"><input type="radio" name="way" name="credit"> クレジットカード<h4 style="padding-left: 30px;"><img src="../img/viza.png" class="img-fluid picture" alt=""><img src="../img/master card.png" class="img-fluid picture" alt=""><img src="../img/jcb.png" class="img-fluid picture" alt=""><img src="../img/american express.png" class="img-fluid picture" alt=""><img src="../img/diners club.png" class="img-fluid picture" alt=""></h4></h4>
+            <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="credit" checked> クレジットカード<h4 style="padding-left: 30px;"><img src="../img/viza.png" class="img-fluid picture" alt=""><img src="../img/master card.png" class="img-fluid picture" alt=""><img src="../img/jcb.png" class="img-fluid picture" alt=""><img src="../img/american express.png" class="img-fluid picture" alt=""><img src="../img/diners club.png" class="img-fluid picture" alt=""></h4></h4>
             <h4 class="font border-bottom"></h4>
 
-            <h4 style="padding-left: 30px;"><input type="radio" name="way" name="bank">銀行振込</h4>
+            <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="bank">銀行振込</h4>
             <h4 class="font border-bottom"></h4>
             
-            <h4 style="padding-left: 30px;"><input type="radio" name="way" name="convenience">コンビニ決済</h4>
+            <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="convenience">コンビニ決済</h4>
             <h4 class="font border-bottom"></h4>
             
-            <h4 style="padding-left: 30px;"><input type="radio" name="way" name="paypay">PayPay払い</h4>
+            <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="paypay">PayPay払い</h4>
             <p style="padding-left: 43px;">お支払いはPayPay残高のみご利用いただけます。</p>
             <h4 class="font border-bottom"></h4>
 
             <form style="text-align: center;">
               <br><br>
                </form>
-            <div class="hoge_button3">
-             <a href="buyCheck.php" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3" >
+               <div class="hoge_button3">
+              <a href="buyCheck.php" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3" >
               内容のご確認へ
-            </a>
-            </div>
-
-
+               </a>
+              </div>
+            
         </div>
     </div>
 </div>
