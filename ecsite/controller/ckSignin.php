@@ -9,8 +9,11 @@ $pass = $_POST['pass'];
 
 try {
     $dbmng->signin($mail, $pass);
-    $_SESSION['userido'] = $mail;
-    $_SESSION['usermailo'] = $mail;
+    $result = $dbmng->login($mail, $pass);
+    foreach ($result as $row) {
+        $_SESSION['userido'] = $row['user_id'];
+        $_SESSION['usermailo'] = $row['user_mail'];
+    }
     header('Location: ../view/AccountSet.php');
 } catch (BadMethodCallException $ex) {
     header("refresh: 3; url= ../view/Signin.php");

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="jp">
 
@@ -15,7 +19,11 @@
 </head>
 
 <body background="../public/img_site/topimage.jpg">
-  <?php include_once '../controller/Navbar.php' ?>
+  <?php if (isset($_SESSION['userido'])) : ?>
+    <?php header('Location: ../view/Top.php'); ?>
+  <?php else : ?>
+    <?php include_once '../controller/Navbar.php' ?>
+  <?php endif; ?>
 
   <div class="container">
     <div class="col-md-10 offset-md-1 mt-5 mb-5">

@@ -4,20 +4,25 @@ require '../model/DBManagermst.php';
 
 $dbmng = new DBManagermst();
 
-$mail = $_POST['mail'];
+$id = $_SESSION['userido'];
+$name = $_POST['name'];
 $pass = $_POST['pass'];
+$post = $_POST['post'];
+$ken = $_POST['ken'];
+$shi = $_POST['shi'];
+$ban = $_POST['ban'];
+$dtl = $_POST['dtl'];
+$tel = $_POST['tel'];
 
-try {
-    $dbmng->signin($mail, $pass);
-    $_SESSION['usermailo'] = $mail;
-    header('Location: ../view/AccountSet.php');
-} catch (BadMethodCallException $ex) {
-    header("refresh: 3; url= ../view/Signin.php");
-    error_log($ex->getMessage() . "\n", 3, "error_log.txt");
-    echo $ex->getMessage();
-} catch (Exception $ex) {
-    header("refresh: 3; url= ../view/Signin.php");
-    error_log($ex->getMessage() . "\n", 3, "error_log.txt");
-    echo 'メール発信失敗：', $sendMail->ErrorInfo;
+$dbmng->addInfo($id, $name);
+$result = $dbmng->showInfo($id);
+foreach ($result as $row) {
+    if ($pass!=$row['user_pass']) {
+        $dbmng->changePass($id, $pass);
+    }
 }
+if (!(empty($post) && empty($shi) && empty($ban) && empty($dtl) && empty($tel))) {
+    $dbmng->addAdress($id, $post, $ken, $shi, $ban, $dtl, $tel);
+}
+header('Location: ../view/Top.php');
 ?>

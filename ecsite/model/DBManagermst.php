@@ -68,15 +68,66 @@ class DBManagermst
         }
     }
 
-    public function signinAddName($mail, $pass, $name)
+    public function addInfo($id, $name)
     {
         $pdo = $this->dbConnect();
-        $sql = "UPDATE user SET user_name=? WHERE user_mail=? AND user_pass=?;";
+        $sql = "UPDATE user SET user_name=? WHERE user_id=?;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $name, PDO::PARAM_STR);
-        $ps->bindValue(2, $mail, PDO::PARAM_STR);
-        $ps->bindValue(3, $pass, PDO::PARAM_STR);
+        $ps->bindValue(2, $id, PDO::PARAM_INT);
         $ps->execute();
+    }
+
+    public function changePass($id, $pass)
+    {
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE user SET user_pass=? WHERE user_id=?;";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, password_hash($pass, PASSWORD_DEFAULT), PDO::PARAM_STR);
+        $ps->bindValue(2, $id, PDO::PARAM_INT);
+        $ps->execute();
+    }
+
+    public function addAdress($id, $post, $ken, $shi, $ban, $dtl, $tel)
+    {
+        $pdo = $this->dbConnect();
+        $sql = "INSERT INTO address (user_id, address_post, address_ken, address_shi, address_ban, address_detail, address_number, address_createdate, address_isdelete) VALUE (?, ?, ?, ?, ?, ?, ?, ?, 0);";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $id, PDO::PARAM_INT);
+        $ps->bindValue(2, $post, PDO::PARAM_STR);
+        $ps->bindValue(3, $ken, PDO::PARAM_STR);
+        $ps->bindValue(4, $shi, PDO::PARAM_STR);
+        $ps->bindValue(5, $ban, PDO::PARAM_STR);
+        $ps->bindValue(6, $dtl, PDO::PARAM_STR);
+        $ps->bindValue(7, $tel, PDO::PARAM_STR);
+        $ps->bindValue(8, date("c"), PDO::PARAM_STR);
+        $ps->execute();
+    }
+
+    public function showInfo($id)
+    {
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM user WHERE user_id=?;";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $id, PDO::PARAM_INT);
+        $ps->execute();
+        $selectdata = $ps->fetchAll();
+        if (count($selectdata) == 0) {
+            throw new BadMethodCallException("只今エラー中、個人情報表示できません");
+        } else {
+            return $selectdata;
+        }
+    }
+
+    public function showAddress($id)
+    {
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM address WHERE user_id=?;";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $id, PDO::PARAM_INT);
+        $ps->execute();
+        $selectdata = $ps->fetchAll();
+        return $selectdata;
     }
 
     public function showGoods()
@@ -170,16 +221,6 @@ class DBManagermst
             return false;
         }
     }
-    // public function mypage($iduser)
-    // {
-    //     $pdo = $this->dbConnect();
-    //     $sql = "SELECT * FROM user WHERE user_id=?;";
-    //     $ps = $pdo->prepare($sql);
-    //     $ps->bindValue(1, $iduser, PDO::PARAM_INT);
-    //     $ps->execute();
-    //     $selectdata = $ps->fetchAll();
-    //     return $selectdata;
-    // }
 
     public function showWishlist($iduser)
     {
@@ -230,6 +271,17 @@ class DBManagermst
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
         $ps->bindValue(3, date("c"), PDO::PARAM_STR);
+        $ps->execute();
+    }
+    
+    public function deleteWishlist($iduser, $idgoods)
+    {
+        $pdo = $this->dbConnect();
+        $sqli = "UPDATE wishlist SET wishlist_isdelete=1, wishlist_changedate=? WHERE user_id=? AND goods_id=?;";
+        $ps = $pdo->prepare($sqli);
+        $ps->bindValue(1, date("c"), PDO::PARAM_STR);
+        $ps->bindValue(2, $iduser, PDO::PARAM_INT);
+        $ps->bindValue(3, $idgoods, PDO::PARAM_INT);
         $ps->execute();
     }
 

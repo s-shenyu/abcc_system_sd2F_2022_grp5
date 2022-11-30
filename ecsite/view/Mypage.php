@@ -24,7 +24,7 @@ $dbmng = new DBManagermst();
   <?php if (isset($_SESSION['userido'])) : ?>
     <?php include_once '../controller/NavbarLogin.php' ?>
   <?php else : ?>
-    <?php include_once '../controller/Navbar.php' ?>
+    <?php header('Location: ../view/Login.php'); ?>
   <?php endif; ?>
 
   <div class="container">
@@ -76,7 +76,7 @@ $dbmng = new DBManagermst();
             </div>
             <div class="col-md-6 p-5">
               <div class="">
-                <a href="AccountSet.html">過去の購入履歴が確認できます。＞</a>
+                <a href="Purchase.php">過去の購入履歴が確認できます。＞</a>
               </div>
             </div>
             <div class="col-md-1">
@@ -94,7 +94,7 @@ $dbmng = new DBManagermst();
             </div>
             <div class="col-md-6 p-5">
               <div class="">
-                <a href="AccountSet.html">お気に入り登録したアイテムが確認できます。＞</a>
+                <a href="Wishlist.php">お気に入り登録したアイテムが確認できます。＞</a>
               </div>
             </div>
             <div class="col-md-1">
