@@ -1,25 +1,32 @@
+<?php
+session_start();
+require '../model/DBManagermst.php';
+$dbmng = new DBManagermst();
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OnLineShop</title>
   <style>
- 
+
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../public/css/style.css">
 </head>
 
 <body background="../public/img_site/topimage.jpg">
-
-<?php include_once '../controller/Navbar.php' ?>
-
+  <?php if (isset($_SESSION['userido'])) : ?>
+    <?php include_once '../controller/NavbarLogin.php' ?>
+  <?php else : ?>
+    <?php include_once '../controller/Navbar.php' ?>
+  <?php endif; ?>
 
   <div class="container">
     <div class="row">
@@ -28,16 +35,13 @@
 
           <div name="maindiv" class="container">
             <div class="row  gy-5 gx-3 mt-1 mb-5">
-
               <?php
-              require '../model/DBManagermst.php';
-              $dbmng = new DBManagermst();
-              $result = $dbmng->showGoods();
               try {
+                $result = $dbmng->showGoods();
                 foreach ($result as $row) {
                   echo '<div class="col-6 col-md-3">';
                   echo '<div class="card" style="border-style:none;">';
-                  echo '<a href="Detail.php?idgoods='.$row['goods_id'].'" class="img">';
+                  echo '<a href="Detail.php?idgoods=' . $row['goods_id'] . '" class="img">';
                   echo '<button>';
                   echo '<img src="' . $row['goods_imgurl1'] . '" class="card-img-top"  style="border:none">';
                   echo '<div class="card-body">';
