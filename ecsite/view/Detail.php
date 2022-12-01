@@ -9,7 +9,7 @@ if (isset($_SESSION['userido'])) {
 
 require '../model/DBManagermst.php';
 $dbmng = new DBManagermst();
-$goods = $dbmng->goodsDetail($_GET['idgoods']);
+$goods = $dbmng->goodsDetail(base64_decode($_GET['idgoods']));
 $idgood;
 foreach ($goods as $row) {
   $idgood = $row['goods_id'];
@@ -122,9 +122,9 @@ foreach ($goods as $row) {
                     お気入り登録
                   </button>
                 <?php else : ?>
-                  <p class='btn btn--orange2 btn--cubic2 btn--shadow2 hoge_button2'>
+                  <div class='btn btn--orange2 btn--cubic2 btn--shadow2 hoge_button2'>
                     お気入り登録した
-                  </p>
+                  </div>
                 <?php endif; ?>
               </form><br>
 
@@ -146,9 +146,9 @@ foreach ($goods as $row) {
                     カートに入れる
                   </button>
                 <?php else : ?>
-                  <p type="submit" class='btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3'>
+                  <div type="submit" class='btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3'>
                     カートに入れた
-                  </p>
+                  </div>
                 <?php endif; ?>
               </form>
 

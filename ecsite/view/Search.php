@@ -61,7 +61,7 @@ $dbmng = new DBManagermst();
                       echo '<div class="col-6 col-md-3">';
                       echo '<div style="width:100%; border-style:none;">';
                       if ($row['goods_flg'] == 1) {
-                        echo '<a href="Detail.php?idgoods=' . $row['goods_id'] . '" class="img">';
+                        echo '<a href="Detail.php?idgoods=' . base64_encode($row['goods_id']) . '" class="img">';
                       } else {
                         echo '<a class="img">';
                       }

@@ -10,7 +10,19 @@ foreach ($_POST['id'] as $goods) {
     }
 }
 $iduser = $_SESSION['userido'];
-
-$dbmng->addNewCart($iduser, $idgoods);
+try {
+    $flg = 0;
+    $results = $dbmng->showCart($iduser);
+    foreach ($results as $result) {
+        if ($result['goods_id'] == $idgoods) {
+            $flg++;
+        }
+    }
+    if ($flg == 0) {
+        $dbmng->addNewCart($iduser, $idgoods);
+    }
+} catch (BadMethodCallException $ex) {
+    $dbmng->addNewCart($iduser, $idgoods);
+}
 header('Location: ../view/Wishlist.php');
 ?>

@@ -38,7 +38,7 @@ session_start();
           <input type="password" placeholder="６文字以上半角英数字" size="10" name="pass" style="width:400px; height:30px;"><br><br>
 
           <div class="hoge_button3">
-            <button type="submit" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
+            <button type="submit" class="mt-5 btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
               ログイン
             </button>
           </div>
