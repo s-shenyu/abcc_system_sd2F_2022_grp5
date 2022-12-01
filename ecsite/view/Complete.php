@@ -56,7 +56,18 @@ $dbmng = new DBManagermst();
       <div style="background-color:#FFFF; padding-top: 30px; padding-bottom: 40px; ">
         <h3 class="font" style="background-color:#1E90FF; padding-top: 10px; padding-bottom: 10px; text-align:center;">ご注文ありがとうございました！</h3>
 
-        <h4 style="padding-top: 50px; text-align:center">注文番号は、<nobr class="ban">０００００００</nobr>です。</h4>
+        <h4 style="padding-top: 50px; text-align:center">注文番号は、<nobr class="ban">
+          <?php
+          try {
+            $results = $dbmng->showPurchaseID($_SESSION['userido']);
+            foreach ($results as $result) {
+            echo $result['purchaseH_id'];
+            }
+          } catch (BadMethodCallException $ex) {
+            echo $ex->getMessage();
+          }
+          ?>
+        </nobr>です。</h4>
         <br><br><br>
         <div class="hoge_button3">
           <a href="./Index.php" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">

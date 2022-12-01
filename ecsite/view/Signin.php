@@ -37,12 +37,8 @@ session_start();
 
         <hr class="hr1">
 
-        <!-- <form action="../controller/ckSignin.php" method="post" style="text-align:center;"> -->
-
         <div id="signinform" style="text-align:center;">
           <div>
-            <input v-mode="err" type="hidden" name="err">
-
             <p style="text-align:center">メールアドレスを入力して下さい</p>
             <input v-model="mail" type="text" placeholder="sample@stor.jp" size="10" name="mail" style="width:400px; height:30px;">
             <p v-if="isEmail" class="typeError" style="height:30px">Eメールアドレスの形式で入力してください。</p>
@@ -58,13 +54,15 @@ session_start();
             <p v-if="isSamePass" class="typeError" style="height:30px">パスワードは一致していません。</p>
             <p v-else class="typeError" style="height:30px"></p>
           </div>
-          <div v-if="isAllOK">123
-            <div class="hoge_button3">
-              <button class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">確認1</button>
+          <div v-if="isAllOK">
+            <div class="hoge_button3" style="text-align:center;">
+              <button class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3"><del>確認</del></button>
             </div>
           </div>
-          <div v-else>234
+          <div v-else>
             <form action="../controller/ckSignin.php" method="post" style="text-align:center;">
+              <input v-model="mail" type="hidden" name="mail" value="">
+              <input v-model="pass" type="hidden" name="pass" value="">
               <div class="hoge_button3">
                 <button type="submit" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">確認</button>
               </div>
@@ -77,7 +75,7 @@ session_start();
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="../public/script/script.js"></script>
+  <script src="../public/script/scriptVue.js"></script>
 </body>
 
 </html>

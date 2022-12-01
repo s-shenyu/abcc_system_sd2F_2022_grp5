@@ -6,8 +6,8 @@ $dbmng = new DBManagermst();
 try {
     $dbmng->buyGoods($_SESSION['userido'], $_POST['name'], $_POST['post'], $_POST['address'], $_POST['tel'], $_POST['id']);
     foreach ($_POST['id'] as $good) {
-        $dbmng->deleteWishlist($_SESSION['userido'], $good);
-        $dbmng->deleteCart($_SESSION['userido'], $good);
+        // $dbmng->deleteWishlist($_SESSION['userido'], $good);
+        $dbmng->deleteCartBuy($good);
     }
     header('Location: ../view/Complete.php');
 } catch (Exception $ex) {

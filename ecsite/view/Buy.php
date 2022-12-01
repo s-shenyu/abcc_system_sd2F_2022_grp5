@@ -55,8 +55,8 @@ $arrk = new ArrayKen();
 
   <div class="container">
     <div class="col-md-10 offset-md-1  mb-5">
-      <div style="background-color:#FFFF; padding-top: 20px; padding-bottom: 40px; ">
-        <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">購入者さま</h3>
+      <div style="background-color:#FFFF; padding-top: 10px;">
+        <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 30px; padding-bottom: 50px; ">購入者さま</h3>
 
         <?php
         $name = '';
@@ -85,9 +85,9 @@ $arrk = new ArrayKen();
         }
         ?>
         <form action="./BuyCheck.php" method="post">
-          <h4 style="padding-left: 30px;">お名前<br><input type="text" name="name" value="<?php echo $name ?>"></h4>
+          <h4 style="padding-left: 30px;">お名前<br><input v-model="name" type="text" name="name" value="<?php echo $name ?>" required></h4>
           <hr class="hr1">
-          <h4 style="padding-left: 30px;">郵便番号<br><input type="tel" name="post" value="<?php echo $post ?>"></h4>
+          <h4 style="padding-left: 30px;">郵便番号<br><input v-model="post" type="tel" name="post" value="<?php echo $post ?>" required></h4>
           <h4 class="col-md-4" style="padding-left: 30px;">都道府県<br>
             <?php
             $ken_datas = '';
@@ -105,12 +105,12 @@ $arrk = new ArrayKen();
               ?>
             </select>
           </h4>
-          <h4 style="padding-left: 30px;">市区町村<br><input type="text" name="shi" value="<?php echo $shi ?>"></h4>
-          <h4 style="padding-left: 30px;">番地<br><input type="text" name="ban" value="<?php echo $ban ?>"></h4>
+          <h4 style="padding-left: 30px;">市区町村<br><input v-model="shi" type="text" name="shi" value="<?php echo $shi ?>" required></h4>
+          <h4 style="padding-left: 30px;">番地<br><input type="text" name="ban" value="<?php echo $ban ?>" required></h4>
           <h4 style="padding-left: 30px;">詳細住所<br><input type="text" name="dtl" value="<?php echo $dtl ?>"></h4>
-          <h4 style="padding-left: 30px;">電話番号<br><input type="tel" name="tel" value="<?php echo $tel ?>"></h4>
+          <h4 style="padding-left: 30px;">電話番号<br><input v-model="tel" type="tel" name="tel" value="<?php echo $tel ?>" required></h4>
           <hr class="hr1"><br>
-          <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">お支払方法</h3>
+          <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 50px; ">お支払方法</h3>
           <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="credit" checked>
             クレジットカード
             <div style="padding-left: 30px;">
@@ -129,7 +129,7 @@ $arrk = new ArrayKen();
           <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="paypay">PayPay払い</h4>
           <h4 class="font border-bottom"></h4>
           <div class="hoge_button3">
-            <button type="submit" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
+            <button type="submit" class="mt-5 btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
               確認画面へ
             </button>
           </div>

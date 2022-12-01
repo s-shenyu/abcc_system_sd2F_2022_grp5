@@ -306,6 +306,15 @@ class DBManagermst
         $ps->execute();
     }
 
+    public function deleteCartBuy($idgoods)
+    {
+        $pdo = $this->dbConnect();
+        $sqli = "DELETE FROM cart WHERE goods_id=?;";
+        $ps = $pdo->prepare($sqli);
+        $ps->bindValue(1, $idgoods, PDO::PARAM_INT);
+        $ps->execute();
+    }
+
     public function showPurchase($iduser)
     {
         $pdo = $this->dbConnect();
@@ -316,6 +325,21 @@ class DBManagermst
         $selectdata = $ps->fetchAll();
         if (count($selectdata) == 0) {
             throw new BadMethodCallException("購入履歴はまだございません");
+        } else {
+            return $selectdata;
+        }
+    }
+
+    public function showPurchaseID($iduser)
+    {
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM purchaseH WHERE user_id=? ORDER BY purchaseH_id DESC LIMIT 1;";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $iduser, PDO::PARAM_INT);
+        $ps->execute();
+        $selectdata = $ps->fetchAll();
+        if (count($selectdata) == 0) {
+            throw new BadMethodCallException("注文番号は表示できません");
         } else {
             return $selectdata;
         }
