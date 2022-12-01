@@ -1,1 +1,3 @@
 SQLSTATE[42S02]: Base table or view not found: 1146 Table 'webdb.perchaseh' doesn't exist
+SQLSTATE[HY000] [1045] Access denied for user 'webuser'@'localhost' (using password: YES)
+SQLSTATE[HY000] [1045] Access denied for user 'webuser'@'localhost' (using password: YES)
