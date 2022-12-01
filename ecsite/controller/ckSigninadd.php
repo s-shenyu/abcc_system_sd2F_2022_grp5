@@ -14,15 +14,16 @@ $ban = $_POST['ban'];
 $dtl = $_POST['dtl'];
 $tel = $_POST['tel'];
 
-$dbmng->addInfo($id, $name);
+$dbmng->changeInfo($id, $name);
 $result = $dbmng->showInfo($id);
 foreach ($result as $row) {
     if ($pass!=$row['user_pass']) {
         $dbmng->changePass($id, $pass);
     }
 }
-if (!(empty($post) && empty($shi) && empty($ban) && empty($dtl) && empty($tel))) {
-    $dbmng->addAdress($id, $post, $ken, $shi, $ban, $dtl, $tel);
-}
-header('Location: ../view/Top.php');
+$dbmng->changeAdress($id, $post, $ken, $shi, $ban, $dtl, $tel);
+// if (!(empty($post) && empty($shi) && empty($ban) && empty($dtl) && empty($tel))) {
+//     $dbmng->changeAdress($id, $post, $ken, $shi, $ban, $dtl, $tel);
+// }
+header('Location: ../view/Index.php');
 ?>

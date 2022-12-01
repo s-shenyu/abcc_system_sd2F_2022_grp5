@@ -1,15 +1,14 @@
 CREATE TABLE `address` (
   `address_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `address_post` varchar(10) NOT NULL,
-  `address_ken` varchar(10) NOT NULL,
-  `address_shi` varchar(50) NOT NULL,
-  `address_ban` varchar(50) NOT NULL,
-  `address_detail` varchar(100) NOT NULL,
-  `address_number` varchar(20) NOT NULL,
+  `address_post` varchar(10) DEFAULT NULL,
+  `address_ken` varchar(10) DEFAULT NULL,
+  `address_shi` varchar(50) DEFAULT NULL,
+  `address_ban` varchar(50) DEFAULT NULL,
+  `address_detail` varchar(100) DEFAULT NULL,
+  `address_number` varchar(20) DEFAULT NULL,
   `address_createdate` date NOT NULL,
-  `address_changedate` date DEFAULT NULL,
-  `address_isdelete` tinyint(1) NOT NULL
+  `address_changedate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `goods` (
@@ -34,16 +33,14 @@ CREATE TABLE `purchaseh` (
   `purchaseH_post` varchar(10) NOT NULL,
   `purchaseH_address` varchar(255) NOT NULL,
   `purchaseH_number` varchar(20) NOT NULL,
-  `purchaseH_createdate` date NOT NULL,
-  `purchaseH_changedate` date DEFAULT NULL
+  `purchaseH_createdate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `purchasep` (
   `purchaseP_id` int(11) NOT NULL,
   `purchaseH_id` int(11) NOT NULL,
   `goods_id` int(11) NOT NULL,
-  `purchaseP_createdate` date NOT NULL,
-  `purchaseP_changedate` date DEFAULT NULL
+  `purchaseP_createdate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `user` (
@@ -59,18 +56,14 @@ CREATE TABLE `wishlist` (
   `wishlist_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `goods_id` int(11) NOT NULL,
-  `wishlist_createdate` date NOT NULL,
-  `wishlist_changedate` date DEFAULT NULL,
-  `wishlist_isdelete` tinyint(1) NOT NULL
+  `wishlist_createdate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `goods_id` int(11) NOT NULL,
-  `cart_createdate` date NOT NULL,
-  `cart_changedate` date DEFAULT NULL,
-  `cart_isdelete` tinyint(1) NOT NULL
+  `cart_createdate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE `address`
@@ -101,13 +94,13 @@ ALTER TABLE `goods`
   MODIFY `goods_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000000;
 
 ALTER TABLE `purchaseh`
-  MODIFY `purchaseH_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000000;
+  MODIFY `purchaseH_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000000;
 
 ALTER TABLE `purchasep`
   MODIFY `purchaseP_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000000;
 
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000000;
 
 ALTER TABLE `wishlist`
   MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000000;

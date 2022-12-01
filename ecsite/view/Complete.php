@@ -59,7 +59,7 @@ $dbmng = new DBManagermst();
         <h4 style="padding-top: 50px; text-align:center">注文番号は、<nobr class="ban">０００００００</nobr>です。</h4>
         <br><br><br>
         <div class="hoge_button3">
-          <a href="./Top.php" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
+          <a href="./Index.php" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
             ホームへ戻る
           </a>
         </div>

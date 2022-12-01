@@ -20,7 +20,7 @@ session_start();
 
 <body background="../public/img_site/topimage.jpg">
   <?php if (isset($_SESSION['userido'])) : ?>
-    <?php header('Location: ../view/Top.php'); ?>
+    <?php header('Location: ../view/Index.php'); ?>
   <?php else : ?>
     <?php include_once '../controller/Navbar.php' ?>
   <?php endif; ?>

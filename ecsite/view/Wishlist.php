@@ -64,8 +64,8 @@ $dbmng = new DBManagermst();
                 $rows = $dbmng->goodsDetail($result['goods_id']);
                 foreach ($rows as $row) {
                   echo '<form class="row mb-1" action="../controller/cDeletewishlist.php" method="post">';
-                  echo '<input type="hidden" name="id" value="' . $row['goods_id'] . '">';
-                  echo '<div class="col-md-6 mb-3 text-dark">';
+                  echo '<input type="hidden" name="id[]" value="' . $row['goods_id'] . '">';
+                  echo '<div class="col-md-6 mb-2 text-dark">';
                   echo '<img src="' . $row['goods_imgurl1'] . '" width="80" height="120" align="left" hspace="10px">';
                   echo $row['goods_name'];
                   echo '</div>';
@@ -73,7 +73,7 @@ $dbmng = new DBManagermst();
                   echo '<p class="text-center">' . $row['goods_price'] . '</p>';
                   echo '</div>';
                   echo '<div class="col-md-2  text-dark">';
-                  echo '<button type="submit" class="btn btn-light">外す</button>';
+                  echo '<input name="' . $row['goods_id'] . '" type="submit" class="btn btn-light" value="外す">';
                   echo '</div></from>';
                 }
               }
@@ -81,33 +81,6 @@ $dbmng = new DBManagermst();
               echo '<font color="black"><h4 style="position:relative;left:2%;padding-top: 1%;">' . $ex->getMessage() . '</h4></font>';
             }
             ?>
-            <?php
-
-            // $result = $dbmng->showWishlist('wish');
-            // try {
-            //   foreach ($result as $row) {
-            //     echo '<div class="col-md-6 text-dark">';
-            //     echo '<img src="' . $row['goods_imgurl1'] . '" width="150" height="150" align="left">';
-            //     echo   $row['goods_name'];
-            //     echo '</div>';
-            //     echo '<div class="col-md-2 text-dark">';
-            //     echo '<p class="text-center">' . $row['goods_price'] . '</p>';
-            //     echo '</div>';
-            //     echo '<div class="col-md-2 text-dark">';
-            //     echo '<table>';
-            //     echo '<tr>';
-            //     echo '<td><button class="btn btn-primary" style="width: 150px;">カートに入れる</button></td>'; //?
-            //     echo '<td><button class="btn btn-outline-dark" style="width: 80px;">削除</button></td>'; //?
-            //     echo '</tr>';
-            //     echo '</table>';
-            //     echo '</div>';
-            //     echo '</div>';
-            //   }
-            // } catch (error $err) {
-            //   echo "error";
-            // }
-            ?>
-
           </div>
         </div>
       </div>

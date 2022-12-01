@@ -53,20 +53,23 @@ $dbmng = new DBManagermst();
                 foreach ($result as $row) {
                   echo '<div class="col-6 col-md-3">';
                   echo '<div style="width:100%; border-style:none;">';
-
-                  echo '<a href="Detail.php?idgoods=' . $row['goods_id'] . '" class="img">';
-
+                  if ($row['goods_flg'] == 1) {
+                    echo '<a href="Detail.php?idgoods=' . $row['goods_id'] . '" class="img">';
+                  } else {
+                    echo '<a class="img">';
+                  }
                   echo '<button type="button" class="btn btn-light">';
                   echo '<img src="' . $row['goods_imgurl1'] . '" class="card-img-top"  style="border:none"><br>';
-
                   echo '<div>';
                   echo '<div class="goodsNa" style="margin:auto;"><b>' . $row['goods_name'] . '</b></div>';
-                  echo '<p style="color:#4e454a; padding-top:5%;">￥' . $row['goods_price'] . '</p>';
+                  if ($row['goods_flg'] == 1) {
+                    echo '<p style="color:#4e454a; padding-top:5%;">￥' . $row['goods_price'] . '</p>';
+                  } else {
+                    echo '<p style="color:red; padding-top:5%;">SOLD OUT</p>';
+                  }
                   echo '</div>';
-
                   echo '</button>';
                   echo '</a>';
-
                   echo '</div>';
                   echo '</div>';
                 }

@@ -20,7 +20,7 @@ session_start();
 
 <body background="../public/img_site/topimage.jpg">
   <?php if (isset($_SESSION['userido'])) : ?>
-    <?php header('Location: ../view/Top.php'); ?>
+    <?php header('Location: ../view/Index.php'); ?>
   <?php else : ?>
     <?php include_once '../controller/Navbar.php' ?>
   <?php endif; ?>
@@ -37,8 +37,12 @@ session_start();
 
         <hr class="hr1">
 
-        <form action="../controller/ckSignin.php" method="post" style="text-align:center;">
-          <div id="signinform">
+        <!-- <form action="../controller/ckSignin.php" method="post" style="text-align:center;"> -->
+
+        <div id="signinform" style="text-align:center;">
+          <div>
+            <input v-mode="err" type="hidden" name="err">
+
             <p style="text-align:center">メールアドレスを入力して下さい</p>
             <input v-model="mail" type="text" placeholder="sample@stor.jp" size="10" name="mail" style="width:400px; height:30px;">
             <p v-if="isEmail" class="typeError" style="height:30px">Eメールアドレスの形式で入力してください。</p>
@@ -53,13 +57,20 @@ session_start();
             <input v-model="pass2" type="password" placeholder="６文字以上半角英数字" size="10" name="pass2" style="width:400px; height:30px;">
             <p v-if="isSamePass" class="typeError" style="height:30px">パスワードは一致していません。</p>
             <p v-else class="typeError" style="height:30px"></p>
-
+          </div>
+          <div v-if="isAllOK">123
             <div class="hoge_button3">
-              <button type="submit" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">確認</button>
+              <button class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">確認1</button>
             </div>
           </div>
-        </form>
-
+          <div v-else>234
+            <form action="../controller/ckSignin.php" method="post" style="text-align:center;">
+              <div class="hoge_button3">
+                <button type="submit" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">確認</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>

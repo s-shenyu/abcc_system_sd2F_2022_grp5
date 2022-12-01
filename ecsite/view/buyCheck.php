@@ -55,6 +55,7 @@ $dbmng = new DBManagermst();
     <div class="row">
       <div class="col-md-10 offset-md-1 mt-5 mb-5 pb-3" style="background-color:#FFFF;">
         <form class="row mb-1" action="../controller/cBuy.php" method="post">
+        <!-- <form class="row mb-1" action="../controller/cTest.php" method="post"> -->
           <h3 style="padding-top: 2%; padding-bottom:4%; padding-left:2%; text-align:left">購入アイテム</h3>
           <hr>
           <div class="row">

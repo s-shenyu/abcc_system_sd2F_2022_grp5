@@ -1,3 +1,13 @@
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'webdb.perchaseh' doesn't exist
-SQLSTATE[HY000] [1045] Access denied for user 'webuser'@'localhost' (using password: YES)
-SQLSTATE[HY000] [1045] Access denied for user 'webuser'@'localhost' (using password: YES)
+メールアドレスは既に登録しました
+メールアドレスは既に登録しました
+メールアドレスは既に登録しました
+メールアドレスは既に登録しました
+メールアドレスは既に登録しました
+メールアドレスは既に登録しました
+メールアドレスは既に登録しました
+パスワードが一致しません
+アカウントが存在しません
+アカウントが存在しません
+アカウントが存在しません
+パスワードが一致しません
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_mail' cannot be null

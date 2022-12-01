@@ -68,39 +68,51 @@ class DBManagermst
         }
     }
 
-    public function addInfo($id, $name)
+    public function signinAddress($iduser)
     {
         $pdo = $this->dbConnect();
-        $sql = "UPDATE user SET user_name=? WHERE user_id=?;";
+        $sql = "INSERT INTO address (user_id, address_createdate) VALUE (?, ?);";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $iduser, PDO::PARAM_INT);
+        $ps->bindValue(2, date("c"), PDO::PARAM_STR);
+        $ps->execute();
+    }
+
+    public function changeInfo($id, $name)
+    {
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE user SET user_name=?, user_changedate=? WHERE user_id=?;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $name, PDO::PARAM_STR);
-        $ps->bindValue(2, $id, PDO::PARAM_INT);
+        $ps->bindValue(2, date("c"), PDO::PARAM_STR);
+        $ps->bindValue(3, $id, PDO::PARAM_INT);
         $ps->execute();
     }
 
     public function changePass($id, $pass)
     {
         $pdo = $this->dbConnect();
-        $sql = "UPDATE user SET user_pass=? WHERE user_id=?;";
+        $sql = "UPDATE user SET user_pass=?, user_changedate=? WHERE user_id=?;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, password_hash($pass, PASSWORD_DEFAULT), PDO::PARAM_STR);
-        $ps->bindValue(2, $id, PDO::PARAM_INT);
+        $ps->bindValue(2, date("c"), PDO::PARAM_INT);
+        $ps->bindValue(3, $id, PDO::PARAM_INT);
         $ps->execute();
     }
 
-    public function addAdress($id, $post, $ken, $shi, $ban, $dtl, $tel)
+    public function changeAdress($id, $post, $ken, $shi, $ban, $dtl, $tel)
     {
         $pdo = $this->dbConnect();
-        $sql = "INSERT INTO address (user_id, address_post, address_ken, address_shi, address_ban, address_detail, address_number, address_createdate, address_isdelete) VALUE (?, ?, ?, ?, ?, ?, ?, ?, 0);";
+        $sql = "UPDATE address SET address_post=?, address_ken=?, address_shi=?, address_ban=?, address_detail=?, address_number=?, address_changedate=? WHERE user_id=?;";
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1, $id, PDO::PARAM_INT);
-        $ps->bindValue(2, $post, PDO::PARAM_STR);
-        $ps->bindValue(3, $ken, PDO::PARAM_STR);
-        $ps->bindValue(4, $shi, PDO::PARAM_STR);
-        $ps->bindValue(5, $ban, PDO::PARAM_STR);
-        $ps->bindValue(6, $dtl, PDO::PARAM_STR);
-        $ps->bindValue(7, $tel, PDO::PARAM_STR);
-        $ps->bindValue(8, date("c"), PDO::PARAM_STR);
+        $ps->bindValue(1, $post, PDO::PARAM_STR);
+        $ps->bindValue(2, $ken, PDO::PARAM_STR);
+        $ps->bindValue(3, $shi, PDO::PARAM_STR);
+        $ps->bindValue(4, $ban, PDO::PARAM_STR);
+        $ps->bindValue(5, $dtl, PDO::PARAM_STR);
+        $ps->bindValue(6, $tel, PDO::PARAM_STR);
+        $ps->bindValue(7, date("c"), PDO::PARAM_STR);
+        $ps->bindValue(8, $id, PDO::PARAM_INT);
         $ps->execute();
     }
 
@@ -193,7 +205,7 @@ class DBManagermst
     public function goodsDetailWishlist($iduser, $idgoods)
     {
         $pdo = $this->dbConnect();
-        $sqls = "SELECT * FROM wishlist WHERE user_id=? AND goods_id=? AND wishlist_isdelete=0;";
+        $sqls = "SELECT * FROM wishlist WHERE user_id=? AND goods_id=?;";
         $ps = $pdo->prepare($sqls);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
@@ -209,7 +221,7 @@ class DBManagermst
     public function goodsDetailCart($iduser, $idgoods)
     {
         $pdo = $this->dbConnect();
-        $sqls = "SELECT * FROM cart WHERE user_id=? AND goods_id=? AND cart_isdelete=0;";
+        $sqls = "SELECT * FROM cart WHERE user_id=? AND goods_id=?;";
         $ps = $pdo->prepare($sqls);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
@@ -225,7 +237,7 @@ class DBManagermst
     public function showWishlist($iduser)
     {
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM wishlist WHERE user_id=? AND wishlist_isdelete=0;";
+        $sql = "SELECT * FROM wishlist WHERE user_id=?;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->execute();
@@ -240,7 +252,7 @@ class DBManagermst
     public function showCart($iduser)
     {
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM cart WHERE user_id=? AND cart_isdelete=0;";
+        $sql = "SELECT * FROM cart WHERE user_id=?;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->execute();
@@ -255,7 +267,7 @@ class DBManagermst
     public function addNewWishlist($iduser, $idgoods)
     {
         $pdo = $this->dbConnect();
-        $sqli = "INSERT INTO wishlist (user_id, goods_id, wishlist_createdate, wishlist_isdelete) VALUE (?, ?, ?, 0);";
+        $sqli = "INSERT INTO wishlist (user_id, goods_id, wishlist_createdate) VALUE (?, ?, ?);";
         $ps = $pdo->prepare($sqli);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
@@ -266,7 +278,7 @@ class DBManagermst
     public function addNewCart($iduser, $idgoods)
     {
         $pdo = $this->dbConnect();
-        $sqli = "INSERT INTO cart (user_id, goods_id, cart_createdate, cart_isdelete) VALUE (?, ?, ?, 0);";
+        $sqli = "INSERT INTO cart (user_id, goods_id, cart_createdate) VALUE (?, ?, ?);";
         $ps = $pdo->prepare($sqli);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
@@ -277,29 +289,27 @@ class DBManagermst
     public function deleteWishlist($iduser, $idgoods)
     {
         $pdo = $this->dbConnect();
-        $sqli = "UPDATE wishlist SET wishlist_isdelete=1, wishlist_changedate=? WHERE user_id=? AND goods_id=?;";
+        $sqli = "DELETE FROM wishlist WHERE user_id=? AND goods_id=?;";
         $ps = $pdo->prepare($sqli);
-        $ps->bindValue(1, date("c"), PDO::PARAM_STR);
-        $ps->bindValue(2, $iduser, PDO::PARAM_INT);
-        $ps->bindValue(3, $idgoods, PDO::PARAM_INT);
+        $ps->bindValue(1, $iduser, PDO::PARAM_INT);
+        $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
         $ps->execute();
     }
 
     public function deleteCart($iduser, $idgoods)
     {
         $pdo = $this->dbConnect();
-        $sqli = "UPDATE cart SET cart_isdelete=1, cart_changedate=? WHERE user_id=? AND goods_id=?;";
+        $sqli = "DELETE FROM cart WHERE user_id=? AND goods_id=?;";
         $ps = $pdo->prepare($sqli);
-        $ps->bindValue(1, date("c"), PDO::PARAM_STR);
-        $ps->bindValue(2, $iduser, PDO::PARAM_INT);
-        $ps->bindValue(3, $idgoods, PDO::PARAM_INT);
+        $ps->bindValue(1, $iduser, PDO::PARAM_INT);
+        $ps->bindValue(2, $idgoods, PDO::PARAM_INT);
         $ps->execute();
     }
 
     public function showPurchase($iduser)
     {
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM purchaseH AS H LEFT JOIN purchaseP AS P ON H.purchaseH_id = P.purchaseH_id WHERE user_id=?;";
+        $sql = "SELECT * FROM purchaseH AS H LEFT JOIN purchaseP AS P ON H.purchaseH_id = P.purchaseH_id WHERE user_id=? ORDER BY H.purchaseH_id ASC;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->execute();
@@ -311,42 +321,10 @@ class DBManagermst
         }
     }
 
-    public function userInfoChange($pass, $name, $id, $post, $ken, $shi, $ban, $detail, $number)
-    {
-        $pdo = $this->dbConnect();
-        $sqln = "UPDATE user SET user_pass=?, user_name=? WHERE user_mail=? AND user_pass=?;";
-        $ps = $pdo->prepare($sqln);
-        $ps->bindValue(1, password_hash($pass, PASSWORD_DEFAULT), PDO::PARAM_STR);
-        $ps->bindValue(2, $name, PDO::PARAM_STR);
-        $ps->execute();
-
-        $sqla = "INSERT INTO address (user_id, address_post, address_ken, address_shi, address_ban, address_detail, address_number) VALUE (?, ?, ?, ?, ?, ?, ?);";
-        $ps = $pdo->prepare($sqla);
-        $ps->bindValue(1, $id, PDO::PARAM_INT);
-        $ps->bindValue(2, $post, PDO::PARAM_STR);
-        $ps->bindValue(3, $ken, PDO::PARAM_STR);
-        $ps->bindValue(4, $shi, PDO::PARAM_STR);
-        $ps->bindValue(5, $ban, PDO::PARAM_STR);
-        $ps->bindValue(6, $detail, PDO::PARAM_STR);
-        $ps->bindValue(7, $number, PDO::PARAM_STR);
-        $ps->execute();
-    }
-
-    // public function userInfoBuy($id)
-    // {
-    //     $pdo = $this->dbConnect();
-    //     $sqln = "SELECT * FROM user AS U LEFT JOIN address AS A ON U.user_id = A.user_id WHERE user_id=? LIMIT 1;";
-    //     $ps = $pdo->prepare($sqln);
-    //     $ps->bindValue(1, $id, PDO::PARAM_INT);
-    //     $ps->execute();
-    //     $selectdata = $ps->fetchAll();
-    //     return $selectdata;
-    // }
-
     public function buyGoods($id, $name, $post, $addr, $tel, $goods)
     {
         $pdo = $this->dbConnect();
-        $sqlh = "INSERT INTO perchaseH (user_id, purchaseH_name, purchaseH_post, purchaseH_address, purchaseH_number, purchaseH_createdate) VALUE (?, ?, ?, ?, ?, ?);";
+        $sqlh = "INSERT INTO purchaseH (user_id, purchaseH_name, purchaseH_post, purchaseH_address, purchaseH_number, purchaseH_createdate) VALUE (?, ?, ?, ?, ?, ?);";
         $psh = $pdo->prepare($sqlh);
         $psh->bindValue(1, $id, PDO::PARAM_INT);
         $psh->bindValue(2, $name, PDO::PARAM_STR);
@@ -355,19 +333,23 @@ class DBManagermst
         $psh->bindValue(5, $tel, PDO::PARAM_STR);
         $psh->bindValue(6, date("c"), PDO::PARAM_STR);
         $psh->execute();
-        $sqls = "SELECT purchaseH_id FROM purchaseH WHERE user_id=? ORDER BY purchaseH_createdate DESC LIMIT 1";
+        $sqls = "SELECT purchaseH_id FROM purchaseH WHERE user_id=? ORDER BY purchaseH_id DESC LIMIT 1";
         $pss = $pdo->prepare($sqls);
         $pss->bindValue(1, $id, PDO::PARAM_INT);
         $pss->execute();
-        $selectdata = $pss->fetch();
+        $selectdatas = $pss->fetchAll();
+        $idpurch = 0;
+        foreach ($selectdatas as $selectdata) {
+            $idpurch = $selectdata['purchaseH_id'];
+        }
         foreach ($goods as $good) {
             $sqlp = "INSERT INTO purchaseP (purchaseH_id, goods_id, purchaseP_createdate) VALUE (?, ?, ?);
             UPDATE goods SET goods_flg=0 WHERE goods_id=?;";
             $psp = $pdo->prepare($sqlp);
-            $psp->bindValue(1, $selectdata['purchaseH_id'], PDO::PARAM_INT);
-            $psp->bindValue(2, $good['goods_id'], PDO::PARAM_INT);
+            $psp->bindValue(1, $idpurch, PDO::PARAM_INT);
+            $psp->bindValue(2, $good, PDO::PARAM_INT);
             $psp->bindValue(3, date("c"), PDO::PARAM_STR);
-            $psp->bindValue(3, $good['goods_id'], PDO::PARAM_INT);
+            $psp->bindValue(4, $good, PDO::PARAM_INT);
             $psp->execute();
         }
     }
