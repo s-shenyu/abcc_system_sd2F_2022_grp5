@@ -33,7 +33,12 @@ foreach ($goods as $row) {
 </head>
 
 <body background="../public/img_site/topimage.jpg">
-  <?php include_once '../controller/Navbar.php' ?>
+  
+<?php if (isset($_SESSION['userido'])) : ?>
+    <?php include_once '../controller/NavbarLogin.php' ?>
+  <?php else : ?>
+    <?php include_once '../controller/Navbar.php' ?>
+  <?php endif; ?>
 
   <div class="container-fluid">
     <div class="row">

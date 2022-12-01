@@ -67,7 +67,7 @@ $dbmng = new DBManagermst();
                   echo '</div>';
                   echo '<div class="col-md-2  text-dark">';
                   echo '<button type="submit" class="btn btn-light">削除</button>';
-                  echo '</div></from>';
+                  echo '</div></form>';
                 }
               }
             } catch (BadMethodCallException $ex) {
