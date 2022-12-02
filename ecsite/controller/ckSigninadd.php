@@ -22,8 +22,5 @@ foreach ($result as $row) {
     }
 }
 $dbmng->changeAdress($id, $post, $ken, $shi, $ban, $dtl, $tel);
-// if (!(empty($post) && empty($shi) && empty($ban) && empty($dtl) && empty($tel))) {
-//     $dbmng->changeAdress($id, $post, $ken, $shi, $ban, $dtl, $tel);
-// }
 header('Location: ../view/Index.php');
 ?>

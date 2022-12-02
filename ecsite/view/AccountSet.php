@@ -64,12 +64,12 @@ $arrk = new ArrayKen();
         }
         ?>
         <form action="../controller/ckSigninadd.php" method="post">
-          <h4 style="padding-left: 18%;">お名前<br><input type="text" name="name" value="<?php echo $name ?>"></h4>
-          <h4 style="padding-left: 18%;">パスワード<br><input type="password" name="pass" value="<?php echo $pass ?>"></h4>
+          <h4 style="padding-left: 18%;">お名前<br><input type="text" name="name" value="<?php echo $name ?>" required></h4>
+          <h4 style="padding-left: 18%;">パスワード<br><input type="password" name="pass" value="<?php echo $pass ?>" required></h4>
           <h6 style="padding-left: 18%;">*入力しないとパスワード変更しません</h6>
           <br>
           <hr class="hr1">
-          <h4 style="padding-left: 18%;">郵便番号<br><input type="tel" name="post" value="<?php echo $post ?>"></h4>
+          <h4 style="padding-left: 18%;">郵便番号<br><input type="tel" name="post" value="<?php echo $post ?>" required></h4>
           <h4 class="col-md-4" style="padding-left: 18%;">都道府県<br>
             <?php
             $ken_datas = '';
@@ -87,10 +87,10 @@ $arrk = new ArrayKen();
               ?>
             </select>
           </h4>
-          <h4 style="padding-left: 18%;">市区町村<br><input type="text" name="shi" value="<?php echo $shi ?>" size="56"></h4>
-          <h4 style="padding-left: 18%;">番地<br><input type="text" name="ban" value="<?php echo $ban ?>" size="56"></h4>
+          <h4 style="padding-left: 18%;">市区町村<br><input type="text" name="shi" value="<?php echo $shi ?>" size="56" required></h4>
+          <h4 style="padding-left: 18%;">番地<br><input type="text" name="ban" value="<?php echo $ban ?>" size="56" required></h4>
           <h4 style="padding-left: 18%;">詳細住所<br><input type="text" name="dtl" value="<?php echo $dtl ?>" size="56"></h4>
-          <h4 style="padding-left: 18%;">電話番号<br><input type="tel" name="tel" value="<?php echo $tel ?>"></h4>
+          <h4 style="padding-left: 18%;">電話番号<br><input type="tel" name="tel" value="<?php echo $tel ?>" required></h4>
           <hr class="hr1">
           <div class="hoge_button3">
             <button type="submit" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
