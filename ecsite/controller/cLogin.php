@@ -46,7 +46,7 @@ $dbmng = new DBManagermst();
                                 foreach ($result as $row) {
                                     $_SESSION['userido'] = $row['user_id'];
                                     $_SESSION['usermailo'] = $row['user_mail'];
-                                    $_SESSION['usernameo'] = $row['user_name'];
+                                    // $_SESSION['usernameo'] = $row['user_name'];
                                 }
                                 header('Location: ../view/Index.php');
                             } catch (BadMethodCallException $ex) {

@@ -318,7 +318,7 @@ class DBManagermst
     public function showPurchase($iduser)
     {
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM purchaseH AS H LEFT JOIN purchaseP AS P ON H.purchaseH_id = P.purchaseH_id WHERE user_id=? ORDER BY H.purchaseH_id ASC;";
+        $sql = "SELECT * FROM purchaseh AS H LEFT JOIN purchasep AS P ON H.purchaseH_id = P.purchaseH_id WHERE user_id=? ORDER BY H.purchaseH_id ASC;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->execute();
@@ -333,7 +333,7 @@ class DBManagermst
     public function showPurchaseID($iduser)
     {
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM purchaseH WHERE user_id=? ORDER BY purchaseH_id DESC LIMIT 1;";
+        $sql = "SELECT * FROM purchaseh WHERE user_id=? ORDER BY purchaseH_id DESC LIMIT 1;";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $iduser, PDO::PARAM_INT);
         $ps->execute();
@@ -348,7 +348,7 @@ class DBManagermst
     public function buyGoods($id, $name, $post, $addr, $tel, $goods)
     {
         $pdo = $this->dbConnect();
-        $sqlh = "INSERT INTO purchaseH (user_id, purchaseH_name, purchaseH_post, purchaseH_address, purchaseH_number, purchaseH_createdate) VALUE (?, ?, ?, ?, ?, ?);";
+        $sqlh = "INSERT INTO purchaseh (user_id, purchaseH_name, purchaseH_post, purchaseH_address, purchaseH_number, purchaseH_createdate) VALUE (?, ?, ?, ?, ?, ?);";
         $psh = $pdo->prepare($sqlh);
         $psh->bindValue(1, $id, PDO::PARAM_INT);
         $psh->bindValue(2, $name, PDO::PARAM_STR);
@@ -357,7 +357,7 @@ class DBManagermst
         $psh->bindValue(5, $tel, PDO::PARAM_STR);
         $psh->bindValue(6, date("c"), PDO::PARAM_STR);
         $psh->execute();
-        $sqls = "SELECT purchaseH_id FROM purchaseH WHERE user_id=? ORDER BY purchaseH_id DESC LIMIT 1";
+        $sqls = "SELECT purchaseH_id FROM purchaseh WHERE user_id=? ORDER BY purchaseH_id DESC LIMIT 1";
         $pss = $pdo->prepare($sqls);
         $pss->bindValue(1, $id, PDO::PARAM_INT);
         $pss->execute();
@@ -367,7 +367,7 @@ class DBManagermst
             $idpurch = $selectdata['purchaseH_id'];
         }
         foreach ($goods as $good) {
-            $sqlp = "INSERT INTO purchaseP (purchaseH_id, goods_id, purchaseP_createdate) VALUE (?, ?, ?);
+            $sqlp = "INSERT INTO purchasep (purchaseH_id, goods_id, purchaseP_createdate) VALUE (?, ?, ?);
             UPDATE goods SET goods_flg=0 WHERE goods_id=?;";
             $psp = $pdo->prepare($sqlp);
             $psp->bindValue(1, $idpurch, PDO::PARAM_INT);
