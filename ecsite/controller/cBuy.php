@@ -11,7 +11,7 @@ try {
     }
     header('Location: ../view/Complete.php');
 } catch (Exception $ex) {
-    header("refresh: 3; url= ../view/Index.php");
+    header("refresh: 3; url= ../view/top.php");
     error_log($ex->getMessage() . "\n", 3, "error_log.txt");
     echo "エラー発生";
 }

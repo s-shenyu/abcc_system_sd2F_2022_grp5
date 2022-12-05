@@ -2,6 +2,28 @@
 session_start();
 require '../model/DBManagermst.php';
 $dbmng = new DBManagermst();
+$mail = $_POST['mail'];
+$pass = $_POST['pass'];
+$exmsg = '';
+
+try {
+    $dbmng->signin($mail, $pass);
+    $result = $dbmng->login($mail, $pass);
+    foreach ($result as $row) {
+        $dbmng->signinAddress($row['user_id']);
+        $_SESSION['userido'] = $row['user_id'];
+        $_SESSION['usermailo'] = $row['user_mail'];
+    }
+    header('Location: ../view/AccountSet.php');
+} catch (BadMethodCallException $ex) {
+    header("refresh: 3; url= ../view/Signin.php");
+    error_log($ex->getMessage() . "\n", 3, "error_log.txt");
+    $exmsg = '<h5>' . $ex->getMessage() . '</h5>';
+} catch (Exception $ex) {
+    header("refresh: 3; url= ../view/Signin.php");
+    error_log($ex->getMessage() . "\n", 3, "error_log.txt");
+    $exmsg = '<h5>発信失敗</h5>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -41,27 +63,7 @@ $dbmng = new DBManagermst();
                     <div class="row">
                         <div class="p-5">
                             <?php
-                            $mail = $_POST['mail'];
-                            $pass = $_POST['pass'];
-
-                            try {
-                                $dbmng->signin($mail, $pass);
-                                $result = $dbmng->login($mail, $pass);
-                                foreach ($result as $row) {
-                                    $dbmng->signinAddress($row['user_id']);
-                                    $_SESSION['userido'] = $row['user_id'];
-                                    $_SESSION['usermailo'] = $row['user_mail'];
-                                }
-                                header('Location: ../view/AccountSet.php');
-                            } catch (BadMethodCallException $ex) {
-                                header("refresh: 3; url= ../view/Signin.php");
-                                error_log($ex->getMessage() . "\n", 3, "error_log.txt");
-                                echo '<h5>' . $ex->getMessage() . '</h5>';
-                            } catch (Exception $ex) {
-                                header("refresh: 3; url= ../view/Signin.php");
-                                error_log($ex->getMessage() . "\n", 3, "error_log.txt");
-                                echo '<h5>発信失敗</h5>';
-                            }
+                            echo $exmsg;
                             ?>
                         </div>
                     </div>

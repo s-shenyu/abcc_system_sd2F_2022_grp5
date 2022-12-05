@@ -4,6 +4,9 @@ require '../model/DBManagermst.php';
 require '../model/ArrayKen.php';
 $dbmng = new DBManagermst();
 $arrk = new ArrayKen();
+if (isset($_SESSION['userido'])==false) {
+  header('Location: ../view/Login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +26,7 @@ $arrk = new ArrayKen();
 </head>
 
 <body background="../public/img_site/topimage.jpg">
-  <?php if (isset($_SESSION['userido'])) : ?>
-    <?php include_once '../controller/NavbarLogin.php' ?>
-  <?php else : ?>
-    <?php header('Location: ../view/Login.php'); ?>
-  <?php endif; ?>
+  <?php include_once '../controller/NavbarLogin.php' ?>
 
   <div class="container">
     <div class="col-md-10 offset-md-1 mt-5 mb-5">
@@ -74,9 +73,9 @@ $arrk = new ArrayKen();
             <?php
             $ken_datas = '';
             foreach ($arrk->ken_data as $ken_data_key => $ken_data_val) {
-              if($ken_data_key == $ken){
+              if ($ken_data_key == $ken) {
                 $ken_datas .= '<option value="' . $ken_data_key . '" selected>' . $ken_data_val . '</option>';
-              }else{
+              } else {
                 $ken_datas .= '<option value="' . $ken_data_key . '">' . $ken_data_val . '</option>';
               }
             }

@@ -22,5 +22,5 @@ foreach ($result as $row) {
     }
 }
 $dbmng->changeAdress($id, $post, $ken, $shi, $ban, $dtl, $tel);
-header('Location: ../view/Index.php');
+header('Location: ../view/top.php');
 ?>

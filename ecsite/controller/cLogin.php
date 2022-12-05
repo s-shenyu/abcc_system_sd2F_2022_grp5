@@ -2,6 +2,29 @@
 session_start();
 require '../model/DBManagermst.php';
 $dbmng = new DBManagermst();
+$exmsg = '';
+
+try {
+    $result = $dbmng->login($_POST['mail'], $_POST['pass']);
+    foreach ($result as $row) {
+        $_SESSION['userido'] = $row['user_id'];
+        $_SESSION['usermailo'] = $row['user_mail'];
+        // $_SESSION['usernameo'] = $row['user_name'];
+    }
+    header('Location: ../view/top.php');
+} catch (BadMethodCallException $ex) {
+    header("refresh: 3; url= ../view/Login.php");
+    error_log($ex->getMessage() . "\n", 3, "error_log.txt");
+    echo $ex->getMessage();
+} catch (LogicException $ex) {
+    header("refresh: 3; url= ../view/Login.php");
+    error_log($ex->getMessage() . "\n", 3, "error_log.txt");
+    $exmsg = '<h5>' . $ex->getMessage() . '</h5>';
+} catch (Exception $ex) {
+    header("refresh: 3; url= ../view/Login.php");
+    error_log($ex->getMessage() . "\n", 3, "error_log.txt");
+    $exmsg = '<h5>エラー発生</h5>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -41,27 +64,7 @@ $dbmng = new DBManagermst();
                     <div class="row">
                         <div class="p-5">
                             <?php
-                            try {
-                                $result = $dbmng->login($_POST['mail'], $_POST['pass']);
-                                foreach ($result as $row) {
-                                    $_SESSION['userido'] = $row['user_id'];
-                                    $_SESSION['usermailo'] = $row['user_mail'];
-                                    // $_SESSION['usernameo'] = $row['user_name'];
-                                }
-                                header('Location: ../view/Index.php');
-                            } catch (BadMethodCallException $ex) {
-                                header("refresh: 3; url= ../view/Login.php");
-                                error_log($ex->getMessage() . "\n", 3, "error_log.txt");
-                                echo $ex->getMessage();
-                            } catch (LogicException $ex) {
-                                header("refresh: 3; url= ../view/Login.php");
-                                error_log($ex->getMessage() . "\n", 3, "error_log.txt");
-                                echo '<h5>' . $ex->getMessage() . '</h5>';
-                            } catch (Exception $ex) {
-                                header("refresh: 3; url= ../view/Login.php");
-                                error_log($ex->getMessage() . "\n", 3, "error_log.txt");
-                                echo '<h5>エラー発生</h5>';
-                            }
+                            echo $exmsg;
                             ?>
                         </div>
                     </div>

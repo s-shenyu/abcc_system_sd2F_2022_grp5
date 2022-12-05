@@ -1,3 +1,3 @@
 <?php
-header('Location: ./ecsite/view/Index.php');
+header('Location: ./ecsite/view/top.php');
 ?>

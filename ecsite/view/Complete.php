@@ -2,6 +2,9 @@
 session_start();
 require '../model/DBManagermst.php';
 $dbmng = new DBManagermst();
+if (isset($_SESSION['userido'])==false) {
+  header('Location: ../view/Login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,11 +24,7 @@ $dbmng = new DBManagermst();
 </head>
 
 <body background="../public/img_site/topimage.jpg">
-<?php if (isset($_SESSION['userido'])) : ?>
-    <?php include_once '../controller/NavbarLogin.php' ?>
-  <?php else : ?>
-    <?php header('Location: ../view/Login.php'); ?>
-  <?php endif; ?>
+  <?php include_once '../controller/NavbarLogin.php' ?>
 
   <div class="container">
     <div class="row">
@@ -57,20 +56,20 @@ $dbmng = new DBManagermst();
         <h3 class="font" style="background-color:#1E90FF; padding-top: 10px; padding-bottom: 10px; text-align:center;">ご注文ありがとうございました！</h3>
 
         <h4 style="padding-top: 50px; text-align:center">注文番号は、<nobr class="ban">
-          <?php
-          try {
-            $results = $dbmng->showPurchaseID($_SESSION['userido']);
-            foreach ($results as $result) {
-            echo $result['purchaseH_id'];
+            <?php
+            try {
+              $results = $dbmng->showPurchaseID($_SESSION['userido']);
+              foreach ($results as $result) {
+                echo $result['purchaseH_id'];
+              }
+            } catch (BadMethodCallException $ex) {
+              echo $ex->getMessage();
             }
-          } catch (BadMethodCallException $ex) {
-            echo $ex->getMessage();
-          }
-          ?>
-        </nobr>です。</h4>
+            ?>
+          </nobr>です。</h4>
         <br><br><br>
         <div class="hoge_button3">
-          <a href="./Index.php" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
+          <a href="./top.php" class="btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
             ホームへ戻る
           </a>
         </div>

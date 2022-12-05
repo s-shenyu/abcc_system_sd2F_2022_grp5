@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_SESSION['userido'])) {
+  header('Location: ../view/top.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,11 +22,7 @@ session_start();
 </head>
 
 <body background="../public/img_site/topimage.jpg">
-  <?php if (isset($_SESSION['userido'])) : ?>
-    <?php header('Location: ../view/Index.php'); ?>
-  <?php else : ?>
     <?php include_once '../controller/Navbar.php' ?>
-  <?php endif; ?>
 
   <div class="container">
     <div class="col-md-10 offset-md-1 mt-5 mb-5">

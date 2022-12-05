@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['userido'])) {
   $iduser = $_SESSION['userido'];
 } else {
-  $iduser = 0;
+  header('Location: ../view/Login.php');
 }
 
 require '../model/DBManagermst.php';
@@ -28,11 +28,7 @@ $dbmng = new DBManagermst();
 </head>
 
 <body background="../public/img_site/topimage.jpg">
-  <?php if (isset($_SESSION['userido'])) : ?>
-    <?php include_once '../controller/NavbarLogin.php' ?>
-  <?php else : ?>
-    <?php header('Location: ../view/Login.php'); ?>
-  <?php endif; ?>
+  <?php include_once '../controller/NavbarLogin.php' ?>
 
   <div class="container">
     <div class="row">
