@@ -15,7 +15,7 @@ try {
 } catch (BadMethodCallException $ex) {
     header("refresh: 3; url= ../view/Login.php");
     error_log($ex->getMessage() . "\n", 3, "error_log.txt");
-    echo $ex->getMessage();
+    $exmsg = '<h5>' . $ex->getMessage() . '</h5>';
 } catch (LogicException $ex) {
     header("refresh: 3; url= ../view/Login.php");
     error_log($ex->getMessage() . "\n", 3, "error_log.txt");

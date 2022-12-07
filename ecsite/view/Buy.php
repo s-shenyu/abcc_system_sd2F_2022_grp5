@@ -113,7 +113,7 @@ if (isset($_SESSION['userido'])==false) {
           <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="credit" checked>
             クレジットカード
             <div style="padding-left: 30px;">
-              <img src="../public/img_site/viza.png" class="img-fluid picture" alt="" style="height: 50px;">
+              <img src="../public/img_site/visa.png" class="img-fluid picture" alt="" style="height: 50px;">
               <img src="../public/img_site/master.png" class="img-fluid picture" alt="" style="height: 50px;">
               <img src="../public/img_site/jcb.png" class="img-fluid picture" alt="" style="height: 50px;">
               <img src="../public/img_site/amex.png" class="img-fluid picture" alt="" style="height: 50px;">
