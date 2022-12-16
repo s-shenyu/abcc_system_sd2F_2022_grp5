@@ -110,7 +110,7 @@ if (isset($_SESSION['userido'])==false) {
           <h4 style="padding-left: 30px;">電話番号<br><input v-model="tel" type="tel" name="tel" value="<?php echo $tel ?>" required></h4>
           <hr class="hr1"><br>
           <h3 class="font border-bottom" style=" padding-left: 30px; padding-top: 10px; padding-bottom: 50px; ">お支払方法</h3>
-          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="credit" checked>
+          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="クレジットカード" checked>
             クレジットカード
             <div style="padding-left: 30px;">
               <img src="../public/img_site/visa.png" class="img-fluid picture" alt="" style="height: 50px;">
@@ -121,11 +121,11 @@ if (isset($_SESSION['userido'])==false) {
             </div>
           </h4>
           <h4 class="font border-bottom"></h4>
-          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="bank">銀行振込</h4>
+          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="銀行振込">銀行振込</h4>
           <h4 class="font border-bottom"></h4>
-          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="convenience">コンビニ決済</h4>
+          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="コンビニ決済">コンビニ決済</h4>
           <h4 class="font border-bottom"></h4>
-          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="paypay">PayPay払い</h4>
+          <h4 style="padding-left: 30px;"><input type="radio" name="payment" value="PayPay払い">PayPay払い</h4>
           <h4 class="font border-bottom"></h4>
           <div class="hoge_button3">
             <button type="submit" class="mt-5 btn btn--orange3 btn--cubic3 btn--shadow3 hoge_button3">
